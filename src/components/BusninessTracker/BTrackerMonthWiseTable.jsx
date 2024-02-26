@@ -1,6 +1,6 @@
 import { setSelectedField } from "@/store/slices/selectedFieldSlice";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 const tableValues = [
   "Feb2024",
   "1196",

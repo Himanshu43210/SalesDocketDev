@@ -57,10 +57,10 @@ const DeliveryAnalysis = () => {
         break;
      
       case "monthwise":
-        labels = ["NA"];
+        labels = ["NAdad"];
         setGraphLabels(labels);
-        setGraphType("DoubleBarGraph");
-        setTitle("Month Wise");
+        setGraphType("DoubleBarGraph ");
+        setTitle("Month Wise new");
         break;
         
         default: break;

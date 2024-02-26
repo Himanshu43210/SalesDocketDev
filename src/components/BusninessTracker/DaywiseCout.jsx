@@ -72,8 +72,7 @@ export const data = {
   ],
 };
 const DayWise = () => {
-  
-  return (
+   return (
     <div>
       <h2 className="mb-2 text-3xl font-medium">Day wise report</h2>
       <div style={{ height: "400px", width: "800px" }}>
@@ -82,5 +81,4 @@ const DayWise = () => {
     </div>
   );
 };
-
 export default DayWise;

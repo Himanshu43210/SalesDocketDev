@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import BtrendFilter from "@/components/Btrend/Filtertrend";
 
 
-function DealerWise() {
+function DealerWisee() {
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("Enquiry Wise");
   const [tablesData, setTablesData] = useState([]);
@@ -20,6 +20,8 @@ function DealerWise() {
   const [selectedAccordionIndex, setSelectedAccordionIndex] = useState(null);
   const graphLabels = ["Today", "1_Day_Delay", "2_Day_Delay", "3_Day_Delay"];
   const navigate = useNavigate();
+
+  console.log(selectedAccordionIndex);
 
   let selectedComponent;
   switch (selectedBtn) {
@@ -51,7 +53,7 @@ function DealerWise() {
       break;
     default:
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry new Wise"} />
       );
       break;
   }
@@ -240,4 +242,4 @@ function DealerWise() {
   );
 }
 
-export default DealerWise;
+export default DealerWisee;
