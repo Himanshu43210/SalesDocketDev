@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import TripleBarGraph from "../common/TripleBarGraph";
 import DoubleBarGraphTwo from "../common/DoubleBarGraphTwo";
 import axios from "axios";
 import DataTable from "../Table/DataTable";

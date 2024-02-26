@@ -60,7 +60,7 @@ function ModelWise() {
       break;
     default:
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry new Wise"} />
       );
       break;
   }

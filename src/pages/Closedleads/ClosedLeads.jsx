@@ -26,30 +26,30 @@ function Closedleads() {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
-  let selectedComponent;
-  switch (selectedBtn) {
-    case "monthwiseclosed":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "DayWiseCount":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "ModelWisecount":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "Regionwise":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "dealerwise":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "scwise":
-      selectedComponent = <LineBarGraph />;
-      break;
-    default:
-      selectedComponent = <LineBarGraph />;
-      break;
-  }
+  let selectedComponent =<LineBarGraph />;
+  // switch (selectedBtn) {
+  //   case "monthwiseclosed":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "DayWiseCount":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "ModelWisecount":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "Regionwise":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "dealerwise":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "scwise":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   default:
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  // }
 
   const icons = [
     <GiSteeringWheel size={60} />,
@@ -177,18 +177,18 @@ function Closedleads() {
         break;
       default:
         labels = [
-          "Jasbir Kaur",
-          "Meenu",
-          "Amit Joshi",
-          "Vijay Kumar",
-          "Ritu Malik",
+          "Jasbir Kaurr ",
+          "Meenu s",
+          "Amitr Joshi",
+          "Vijay t Kumar",
+          "Ritu k Malik",
         ];
-        barData = [75, 43, 64, 45, 79];
-        lineData = [60, 40, 56, 26, 67];
+        barData = [7, 4, 6, 45, 7];
+        lineData = [6, 4, 56, 2, 67];
         setBarGraphData(barData);
         setLineGraphData(lineData);
         setGraphLabels(labels);
-        setTitle("SC Wise");
+        setTitle("SC new Wise");
         break;
     }
   }, [selectedBtn]);
@@ -382,9 +382,9 @@ function Closedleads() {
           title={title}
         />
       </div>
-      <div className="grid grid-cols-2 gap-4 mx-4 mt-4 pb-10">
+      <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map((tableData, index) => (
-          <div className="accordian border-2  rounded-lg bg-white p-4 ">
+          <div className="p-4 bg-white border-2 rounded-lg accordian ">
             <div className="flex items-center justify-between">
               <p className="font-medium ">{tableData.heading}</p>
               <Button onClick={() => toggleAccordion(index)}>

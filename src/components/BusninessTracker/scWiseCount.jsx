@@ -72,7 +72,6 @@ export const data = {
   ],
 };
 const SCWise = () => {
- 
   return (
     <div>
       <h2 className="mb-2 text-3xl font-medium">SC wise report </h2>
