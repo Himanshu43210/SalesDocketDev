@@ -48,21 +48,21 @@ const AllLeads = () => {
           <div className="w-[90%] mx-auto">
             <DataCard
               figure={2807}
-              btnText={"Enquiry Data Excel"}
+              btnText={"Enquiry process Excel"}
               cardColor={"#E13300"}
             />
           </div>
           <div className="w-[90%] mx-auto">
             <DataCard
               figure={2807}
-              btnText={"Enquiry Data Excel"}
+              btnText={"Enquiry Excel"}
               cardColor={"#006450"}
             />
           </div>
           <div className="w-[90%] mx-auto">
             <DataCard
               figure={2807}
-              btnText={"Enquiry Data Excel"}
+              btnText={"Enquiry Data"}
               cardColor={"#8400E7"}
             />
           </div>
