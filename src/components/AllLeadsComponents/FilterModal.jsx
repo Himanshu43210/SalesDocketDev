@@ -8,12 +8,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Calendar } from "../ui/calendar";
-import { cn } from "@/lib/utils";
-import { CalendarIcon } from "lucide-react";
-import { format } from "date-fns";
 import { MultiSelect } from "react-multi-select-component";
+import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
 const FilterModal = ({
   fromDate,
   toDate,
@@ -24,8 +20,6 @@ const FilterModal = ({
   setSelected,
 }) => {
   const [open, setOpen] = useState(true);
-  const [calendarOpenFrom, setCalendarOpenFrom] = useState(false);
-  const [calendarOpenTo, setCalendarOpenTo] = useState(false);
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
@@ -38,59 +32,23 @@ const FilterModal = ({
           <DialogHeader>
             <DialogTitle>Select Filters</DialogTitle>
           </DialogHeader>
-          <div className="flex gap-4 flex-wrap">
-            <Popover open={calendarOpenFrom} onOpenChange={setCalendarOpenFrom}>
-              <PopoverTrigger asChild>
-                <Button
-                  variant={"outline"}
-                  className={cn(
-                    "w-[240px] justify-start text-left font-normal",
-                    !fromDate && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {fromDate ? format(fromDate, "PPP") : <span>From date</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                  mode="single"
-                  selected={fromDate}
-                  onSelect={(newDate) => {
-                    setCalendarOpenFrom(false);
-                    setFromDate(newDate);
-                  }}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
-            <Popover open={calendarOpenTo} onOpenChange={setCalendarOpenTo}>
-              <PopoverTrigger asChild>
-                <Button
-                  variant={"outline"}
-                  className={cn(
-                    "w-[240px] justify-start text-left font-normal",
-                    !toDate && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {toDate ? format(toDate, "PPP") : <span>To date</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                  mode="single"
-                  selected={toDate}
-                  onSelect={(newDate) => {
-                    setCalendarOpenTo(false);
-                    setToDate(newDate);
-                  }}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
-          </div>
-          <div className="flex gap-2 flex-wrap">
+
+          <CustomDatePicker
+            label="From date"
+            date={fromDate}
+            isOpen={false}
+            setDate={setFromDate}
+            setIsOpen={() => {}}
+          />
+          <CustomDatePicker
+            date={toDate}
+            setDate={setToDate}
+            label="To date"
+            isOpen={false}
+            setIsOpen={() => {}}
+          />
+
+          <div className="gap-2 flex  flex-wrap">
             <div className="w-[44%]">
               <p>Dealer</p>
               <MultiSelect

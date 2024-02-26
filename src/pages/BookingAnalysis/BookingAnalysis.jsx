@@ -55,36 +55,36 @@ const BookingAnalysis = () => {
   }, []);
 
   return (
-    <div className="  bg-[#F4F3F9] w-[100%]  ">
+    <div className=" booking-parent bg-[#F4F3F9] w-[100%]  ">
       <div className="navbar">
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
       </div>
       <div className="flex flex-wrap justify-between gap-2 pt-4 mx-2">
         <StatsCard
-          icon={<GiSteeringWheel size={60} />}
           title="Test Drive Given"
-          color="bg-blue-500 text-white"
+          icon={<GiSteeringWheel size={60} />}
+          color=" bg-blue-500 text-white"
         />
         <StatsCard
-          icon={<FaCarAlt size={60} />}
           title="First Time Buyer"
-          color="bg-yellow-400 text-white"
+          color=" bg-yellow-400     text-white"
+          icon={<FaCarAlt size={59} />}
         />
         <StatsCard
-          icon={<IoIosRefresh size={60} />}
-          title="Repeat Brand Buyer"
-          color="bg-red-500 text-white"
+          icon={<IoIosRefresh size={58} />}
+          color="  bg-red-500 text-white "
+          title="     Repeat Brand Buyer "
         />
         <StatsCard
-          icon={<FaArrowRightArrowLeft size={60} />}
           title="Exchange Buyer"
+          icon={<FaArrowRightArrowLeft size={61} />}
           color="bg-purple-500 text-white"
         />
         <StatsCard
-          icon={<FaDatabase size={60} />}
-          title="Interested in Competition"
-          color="bg-blue-400 text-white"
+          color=" bg-blue-400 text-white   "
+          icon={<FaDatabase size={62} />}
+          title="Interested   in Competition"
         />
       </div>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
@@ -119,7 +119,7 @@ const BookingAnalysis = () => {
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4 mx-4 mt-4 pb-10">
+      <div className="booking-accordian grid grid-cols-2   gap-4 mx-4 mt-4 pb-10">
         {tablesData.length > 0 &&
           tablesData.map((tableData, index) => (
             <Accordion

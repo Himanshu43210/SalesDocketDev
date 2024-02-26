@@ -8,9 +8,9 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
@@ -25,59 +25,58 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top' ,
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Chart.js Bar Chart',
+      text: "Chart.js Bar Chart",
     },
   },
 };
 
-const labels = ['delhi', 'chandigarh', 'pune', 'bihar'];
+const labels = ["delhi", "chandigarh", "pune", "bihar"];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'closed',
+      label: "closed",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: 'rgb(213, 89, 234)',
+      backgroundColor: "rgb(213, 89, 234)",
     },
     {
-      label: 'Walkins',
+      label: "Walkins",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: 'rgb(255, 193, 7)',
+      backgroundColor: "rgb(255, 193, 7)",
     },
     {
-      label: 'Enquiry',
+      label: "Enquiry",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: 'rgb(0, 255, 255)',
+      backgroundColor: "rgb(0, 255, 255)",
     },
     {
-      label: 'Booking',
+      label: "Booking",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: 'pink',
+      backgroundColor: "pink",
     },
     {
-      label: 'Delivery',
+      label: "Delivery",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: 'green',
+      backgroundColor: "green",
     },
     {
-      label: 'Lost',
+      label: "Lost",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: 'red',
-    }
+      backgroundColor: "red",
+    },
   ],
 };
 const RegionWise = () => {
- 
   return (
     <div>
       <h2 className="mb-2 text-3xl font-medium">Region wise report </h2>
       <div style={{ height: "400px", width: "800px" }}>
-      <Bar options={options} data={data} />
+        <Bar options={options} data={data} />
       </div>
     </div>
   );

@@ -56,8 +56,10 @@ const DoubleBarGraphTwo = ({ graphLabels, title }) => {
   };
   return (
     <div>
-      {/* <h2 className="mb-2 text-3xl font-medium">Month wise Report</h2> */}
-      <div style={{ height: "400px", width: "800px" }} className="">
+      <div
+        className="graph-doublebar"
+        style={{ height: "400px", width: "800px" }}
+      >
         <Bar options={options} data={data} />
       </div>
     </div>
