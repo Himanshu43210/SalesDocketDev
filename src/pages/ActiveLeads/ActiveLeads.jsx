@@ -77,6 +77,45 @@ const ActiveLeads = () => {
     setIsCollapsed(!isCollapsed);
   };
 
+  const buttonData = [
+    {
+      label: 'EPR vs Registered',
+      value: 'eprvsregistered'
+    },
+    {
+      label: 'Month Wise',
+      value: 'monthwise'
+    },
+    {
+      label: 'Model Wise',
+      value: 'modelwise'
+    },
+    {
+      label: 'Lead Source Wise',
+      value: 'leadsourcewise'
+    },
+    {
+      label: 'Source of Information Wise',
+      value: 'sourceofinformationwise'
+    },
+    {
+      label: 'Sales Consultant Wise',
+      value: 'salesconsultantwise'
+    },
+    {
+      label: 'Dealer Wise',
+      value: 'dealerwise'
+    },
+    {
+      label: 'Lead State Wise',
+      value: 'leadstatewise'
+    },
+    {
+      label: 'Successful Follow Ups',
+      value: 'successfulfollowups'
+    }
+  ];
+
   useEffect(() => {
     axios
       .get("https://api.npoint.io/446ca71ee7941000f4dd")
@@ -128,99 +167,20 @@ const ActiveLeads = () => {
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection></TableSelection>
       </div>
-
-      <div className="flex flex-wrap gap-2 mx-2 mt-4 active-btn-list">
+      {/* //map button  */}
+     <div className="flex flex-wrap gap-2 mx-2 mt-4 active-btn-list">
+      {buttonData.map((button, index) => (
         <Button
-          className={`  border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "eprvsregistered"
-              ? "bg-white   text-black hover:bg-white "
-              : "none "
-          }  `}
-          onClick={() => setSelectedBtn("eprvsregistered")}
+          key={index}
+          className={`border-2 hover:bg-white hover:text-black ${
+            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
+          }`}
+          onClick={() => setSelectedBtn(button.value)}
         >
-          EPR vs Registered
+          {button.label}
         </Button>
-        <Button
-          className={`border-2   hover:bg-white   hover:text-black ${
-            selectedBtn === "monthwise"
-              ? "bg-white text-black hover:bg-white"
-              : "  none"
-          }  `}
-          onClick={() => setSelectedBtn("monthwise")}
-        >
-          Month Wise
-        </Button>
-        <Button
-          className={`  border-2 hover:bg-white   hover:text-black  ${
-            selectedBtn === "modelwise"
-              ? "bg-white text-black   hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("modelwise")}
-        >
-          Model Wise
-        </Button>
-        <Button
-          className={` border-2     hover:bg-white     hover:text-black  ${
-            selectedBtn === "leadsourcewise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("leadsourcewise")}
-        >
-          Lead Source Wise
-        </Button>
-        <Button
-          className={`border-2 hover:text-black      hover:bg-white   ${
-            selectedBtn === "sourceofinformationwise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("sourceofinformationwise")}
-        >
-          Source of Information Wise
-        </Button>
-        <Button
-          className={`       hover:bg-white hover:text-black border-2 ${
-            selectedBtn === "salesconsultantwise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("salesconsultantwise")}
-        >
-          Sales Consultant Wise
-        </Button>
-        <Button
-          className={`hover:bg-white border-2  hover:text-black  ${
-            selectedBtn === "dealerwise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("dealerwise")}
-        >
-          Dealer Wise
-        </Button>
-        <Button
-          className={`  hover:bg-white border-2  hover:text-black  ${
-            selectedBtn === "leadstatewise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("leadstatewise")}
-        >
-          Lead State Wise
-        </Button>
-        <Button
-          className={`   hover:text-blackborder-2 hover:bg-white   ${
-            selectedBtn === "successfulfollowups"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("successfulfollowups")}
-        >
-          Successful Follow Ups
-        </Button>
-      </div>
+      ))}
+    </div>
       <div className="flex justify-center mt-4 ">
         <LineBarGraph
           graphLabels={graphLabels}
@@ -229,7 +189,7 @@ const ActiveLeads = () => {
           title={title}
         />
       </div>
-      <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4  activeAccordian">
+      <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4 activeAccordian">
         {tablesData.length > 0 &&
           tablesData.map((tableData, index) => (
             <Accordion

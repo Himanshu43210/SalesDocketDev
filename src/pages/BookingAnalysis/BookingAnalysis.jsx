@@ -18,8 +18,7 @@ const BookingAnalysis = () => {
   const [accordionStates, setAccordionStates] = useState([]);
   const [bookingButtonList, setBookingButtonList] = useState([]);
   const [bookingGraphLabel, setBookingGraphLabel] = useState([]);
-  const [selectedBookingBtn, setSelectedBookingBtn] =
-    useState("Type of Booking");
+  const [selectedBookingBtn, setSelectedBookingBtn] = useState("Type of Booking");
 
   useEffect(() => {
     axios
@@ -109,7 +108,7 @@ const BookingAnalysis = () => {
         ))}
       </div>
       {bookingGraphLabel[selectedBookingBtn] && (
-        <div className="flex flex-col items-center gap-10 justify-center mt-4">
+        <div className="flex flex-col items-center justify-center gap-10 mt-4">
           <div>
             <h2 className="mb-2 text-3xl font-medium">{selectedBookingBtn}</h2>
             <LineBarGraph2
@@ -119,7 +118,7 @@ const BookingAnalysis = () => {
         </div>
       )}
 
-      <div className="booking-accordian grid grid-cols-2   gap-4 mx-4 mt-4 pb-10">
+      <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4 booking-accordian">
         {tablesData.length > 0 &&
           tablesData.map((tableData, index) => (
             <Accordion

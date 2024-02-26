@@ -22,45 +22,45 @@ function ModelWise() {
   switch (selectedBtn) {
     case "Enquiry Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry-Wise"} />
       );
       break;
     case "Walk-In Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Walk-In Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Walk-In-Wise"} />
       );
       break;
     case "Booking Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Booking Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Booking-Wise"} />
       );
       break;
     case "Delivery Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Delivery Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Delivery-Wise"} />
       );
       break;
     case "Lost Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Lost Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Lost-Wise"} />
       );
       break;
     case "Closed Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Closed Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Closed-Wise"} />
       );
       break;
     case "Conversation Ratio":
       selectedComponent = (
         <SingleBarGraph
           graphLabels={graphLabels}
-          title={"Conversation Ratio"}
+          title={"Conversation-Ratio"}
         />
       );
       break;
     default:
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry new Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry-new-Wise"} />
       );
       break;
   }
@@ -75,6 +75,44 @@ function ModelWise() {
     { label: "option A", value: "optiona" },
     { label: "option B", value: "optionb" },
     { label: "option C", value: "optionc" },
+  ];
+
+  const buttonData = [
+    {
+      label: 'Enquiry Wise ',
+      value: 'Enquiry Wise',
+      tableHeading: 'Dealer Wise Enquiry Table'
+    },
+    {
+      label: 'Walk-In Wise ',
+      value: 'Walk-In Wise',
+      tableHeading: 'Dealer Wise Walk-In table'
+    },
+    {
+      label: 'Booking Wise ',
+      value: 'Booking Wise',
+      tableHeading: 'Dealer Wise Booking Table'
+    },
+    {
+      label: 'Delivery Wise ',
+      value: 'Delivery Wise',
+      tableHeading: 'Dealer Wise Delivery Table'
+    },
+    {
+      label: 'Lost Wise ',
+      value: 'Lost Wise',
+      tableHeading: 'Dealer Wise Lost Table'
+    },
+    {
+      label: 'Closed Wise ',
+      value: 'Closed Wise',
+      tableHeading: 'Dealer wise Closed Table'
+    },
+    {
+      label: 'Conversation Ratio ',
+      value: 'Conversation Ratio',
+      tableHeading: null
+    }
   ];
   useEffect(() => {
     axios
@@ -111,97 +149,21 @@ function ModelWise() {
 
       <div className="flex justify-between">
       <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
+      {buttonData.map((button, index) => (
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Enquiry Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setTableHeading("Dealer Wise Enquiry Table");
-            setSelectedBtn("Enquiry Wise");
-          }}
-        >
-          Enquiry Wise
-        </Button>
-        <Button
+          key={index}
           className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === "Walk-In Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
+            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
+          }`}
+          
           onClick={() => {
-            setTableHeading("Dealer Wise Walk-In table");
-            setSelectedBtn("Walk-In Wise");
+            setTableHeading(button.tableHeading);
+            setSelectedBtn(button.value);
           }}
         >
-          Walk-In Wise
+          {button.label}
         </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Booking Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setTableHeading("Dealer Wise Booking Table");
-            setSelectedBtn("Booking Wise");
-          }}
-        >
-          Booking Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Delivery Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setTableHeading("Dealer Wise Delivery Table");
-            setSelectedBtn("Delivery Wise");
-          }}
-        >
-          Delivery Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Lost Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setTableHeading("Dealer Wise Lost Table");
-            setSelectedBtn("Lost Wise");
-          }}
-        >
-          Lost Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Closed Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setTableHeading("Dealer wise Closed Table");
-            setSelectedBtn("Closed Wise");
-          }}
-        >
-          Closed Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Conversation Ratio"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setTableHeading(null);
-            setSelectedBtn("Conversation Ratio");
-          }}
-        >
-          Conversation Ratio
-        </Button>
+      ))}
         </div>
         <div className="mx-2 mt-4 right">
         <Button
