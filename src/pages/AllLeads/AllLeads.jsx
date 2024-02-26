@@ -1,5 +1,5 @@
 import DataCard from "@/components/AllLeadsComponents/DataCard";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import FilterModal from "@/components/AllLeadsComponents/FilterModal";

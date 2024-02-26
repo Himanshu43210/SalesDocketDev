@@ -3,7 +3,6 @@ import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import { Button } from "@/components/ui/button";
 import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
-import LeadSource from "@/components/LostLeadsComponents/LeadSource/LeadSource";
 import { FaCarAlt, FaDatabase } from "react-icons/fa";
 import { GiSteeringWheel } from "react-icons/gi";
 import { IoIosRefresh } from "react-icons/io";
@@ -12,11 +11,7 @@ import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/Line
 import StatsCard from "@/components/common/StatsCard/Graphs/LineBarGraph/StatsCard/StatsCard";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import axios from "axios";
-import DataTable from "@/components/Table/DataTable";
-
-// const mappingData = {
-//   "type":
-// }
+import Accordion from "@/components/Accordion/Accordion";
 
 const ActiveLeads = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -27,7 +22,7 @@ const ActiveLeads = () => {
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
   const [title, setTitle] = useState("");
-  let selectedComponent;
+
   useEffect(() => {
     let labels = [];
     let barData = [];
@@ -35,8 +30,8 @@ const ActiveLeads = () => {
     switch (selectedBtn) {
       case "eprvsregistered":
         labels = ["Registered", "EPR"];
-        barData = [65, 59];
-        lineData = [45, 48];
+        barData = [45, 19];
+        lineData = [35, 68];
         setBarGraphData(barData);
         setLineGraphData(lineData);
         setGraphLabels(labels);
@@ -105,59 +100,60 @@ const ActiveLeads = () => {
       </div>
       <div className="flex flex-wrap justify-between gap-2 pt-4 mx-2">
         <StatsCard
-          icon={<GiSteeringWheel size={60} />}
+          icon={<GiSteeringWheel size={61} />}
           title="Test Drive Given"
-          color="bg-blue-500 text-white"
+          color="text-white bg-blue-500 "
         />
         <StatsCard
-          icon={<FaCarAlt size={60} />}
+          icon={<FaCarAlt size={61} />}
           title="First Time Buyer"
-          color="bg-yellow-400 text-white"
+          color="  bg-yellow-400 text-white"
         />
         <StatsCard
-          icon={<IoIosRefresh size={60} />}
+          icon={<IoIosRefresh size={59} />}
           title="Repeat Brand Buyer"
-          color="bg-red-500 text-white"
+          color="   text-white bg-red-500 "
         />
         <StatsCard
-          icon={<FaArrowRightArrowLeft size={60} />}
+          icon={<FaArrowRightArrowLeft size={59} />}
           title="Exchange Buyer"
-          color="bg-purple-500 text-white"
+          color="    bg-purple-500 text-white"
         />
         <StatsCard
           icon={<FaDatabase size={60} />}
           title="Interested in Competition"
-          color="bg-blue-400 text-white"
+          color="text-white    bg-blue-400 "
         />
       </div>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection></TableSelection>
       </div>
-      <div className="flex flex-wrap gap-2 mx-2 mt-4">
+
+      <div className="active-btn-list flex flex-wrap gap-2 mx-2 mt-4">
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`  border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "eprvsregistered"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
+              ? "bg-white   text-black hover:bg-white "
+              : "none "
           }  `}
           onClick={() => setSelectedBtn("eprvsregistered")}
         >
           EPR vs Registered
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black ${
+          className={`border-2   hover:bg-white   hover:text-black ${
             selectedBtn === "monthwise"
               ? "bg-white text-black hover:bg-white"
-              : "none"
+              : "  none"
           }  `}
           onClick={() => setSelectedBtn("monthwise")}
         >
           Month Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`  border-2 hover:bg-white   hover:text-black  ${
             selectedBtn === "modelwise"
-              ? "bg-white text-black hover:bg-white"
+              ? "bg-white text-black   hover:bg-white"
               : "none"
           }  `}
           onClick={() => setSelectedBtn("modelwise")}
@@ -165,7 +161,7 @@ const ActiveLeads = () => {
           Model Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={` border-2     hover:bg-white     hover:text-black  ${
             selectedBtn === "leadsourcewise"
               ? "bg-white text-black hover:bg-white"
               : "none"
@@ -175,7 +171,7 @@ const ActiveLeads = () => {
           Lead Source Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`border-2 hover:text-black      hover:bg-white   ${
             selectedBtn === "sourceofinformationwise"
               ? "bg-white text-black hover:bg-white"
               : "none"
@@ -185,7 +181,7 @@ const ActiveLeads = () => {
           Source of Information Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`       hover:bg-white hover:text-black border-2 ${
             selectedBtn === "salesconsultantwise"
               ? "bg-white text-black hover:bg-white"
               : "none"
@@ -195,7 +191,7 @@ const ActiveLeads = () => {
           Sales Consultant Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`hover:bg-white border-2  hover:text-black  ${
             selectedBtn === "dealerwise"
               ? "bg-white text-black hover:bg-white"
               : "none"
@@ -205,7 +201,7 @@ const ActiveLeads = () => {
           Dealer Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`  hover:bg-white border-2  hover:text-black  ${
             selectedBtn === "leadstatewise"
               ? "bg-white text-black hover:bg-white"
               : "none"
@@ -215,7 +211,7 @@ const ActiveLeads = () => {
           Lead State Wise
         </Button>
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
+          className={`   hover:text-blackborder-2 hover:bg-white   ${
             selectedBtn === "successfulfollowups"
               ? "bg-white text-black hover:bg-white"
               : "none"
@@ -225,7 +221,7 @@ const ActiveLeads = () => {
           Successful Follow Ups
         </Button>
       </div>
-      <div className="flex justify-center mt-4">
+      <div className=" flex justify-center   mt-4">
         <LineBarGraph
           graphLabels={graphLabels}
           barData={barGraphData}
@@ -233,25 +229,17 @@ const ActiveLeads = () => {
           title={title}
         />
       </div>
-      {/* <div className="flex justify-center mt-4">{selectedComponent}</div> */}
-      <div className="grid grid-cols-2 gap-4 mx-4 mt-4 pb-10">
-        {tablesData.map((tableData, index) => (
-          <div className="accordian border-2  rounded-lg bg-white p-4 ">
-            <div className="flex items-center justify-between">
-              <p className="font-medium ">{tableData.heading}</p>
-              <Button onClick={() => toggleAccordion(index)}>
-                {accordionStates[index] ? "Hide" : "Show"}
-              </Button>
-            </div>
-            {accordionStates[index] && (
-              <DataTable
-                columns={tableData.tableheaddata}
-                data={tableData.tablerowdata}
-                tableName={tableData.heading}
-              />
-            )}
-          </div>
-        ))}
+      <div className=" grid grid-cols-2 gap-4 mx-4   mt-4   pb-10 activeAccordian">
+        {tablesData.length > 0 &&
+          tablesData.map((tableData, index) => (
+            <Accordion
+              key={index}
+              tableData={tableData}
+              index={index}
+              accordionStates={accordionStates}
+              toggleAccordion={toggleAccordion}
+            />
+          ))}
       </div>
     </div>
   );

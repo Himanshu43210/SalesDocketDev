@@ -1,10 +1,7 @@
-import DateModal from "@/components/DeliveryAnalysisComponents/DateModal";
 import React, { useEffect, useState } from "react";
 import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import { Button } from "@/components/ui/button";
-import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
-import LeadSource from "@/components/LostLeadsComponents/LeadSource/LeadSource";
 import { FaCarAlt, FaDatabase } from "react-icons/fa";
 import { GiSteeringWheel } from "react-icons/gi";
 import { IoIosRefresh } from "react-icons/io";
@@ -17,8 +14,6 @@ import DeliveryAnalysisTwo from "@/components/DeliveryAnalysisComponents/Deliver
 import DeliveryAnalysisThree from "@/components/DeliveryAnalysisComponents/DeliveryAnalysisThree";
 
 const DeliveryAnalysis = () => {
-  const [fromDate, setFromDate] = useState();
-  const [toDate, setToDate] = useState();
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("monthwise");
   const [graphLabels, setGraphLabels] = useState([]);
@@ -85,39 +80,39 @@ const DeliveryAnalysis = () => {
         </div>
         <div className="flex flex-wrap justify-between gap-2 pt-4 mx-2">
           <StatsCard
-            icon={<GiSteeringWheel size={60} />}
             title="Test Drive Given"
             color="bg-blue-500 text-white"
+            icon={<GiSteeringWheel size={59} />}
           />
           <StatsCard
-            icon={<FaCarAlt size={60} />}
             title="First Time Buyer"
+            icon={<FaCarAlt size={61} />}
             color="bg-yellow-400 text-white"
           />
           <StatsCard
-            icon={<IoIosRefresh size={60} />}
             title="Repeat Brand Buyer"
+            icon={<IoIosRefresh size={59} />}
             color="bg-red-500 text-white"
           />
           <StatsCard
-            icon={<FaArrowRightArrowLeft size={60} />}
-            title="Exchange Buyer"
+            icon={<FaArrowRightArrowLeft size={59} />}
             color="bg-purple-500 text-white"
+            title="Exchange Buyer"
           />
           <StatsCard
-            icon={<FaDatabase size={60} />}
-            title="Interested in Competition"
+            icon={<FaDatabase size={59} />}
             color="bg-blue-400 text-white"
+            title="Interested in Competition"
           />
         </div>
         <div className="flex w-[100vw] items-center justify-center mt-[5px]">
           <TableSelection></TableSelection>
         </div>
-        <div className="flex flex-wrap gap-2 mx-2 mt-4">
+        <div className=" deli-btn flex-wrap gap-2 mx-2 mt-4 flex">
           <Button
             className={`border-2 hover:bg-white hover:text-black ${
               selectedBtn === "monthwise"
-                ? "bg-white text-black hover:bg-white"
+                ? "bg-white  hover:bg-white text-black"
                 : "none"
             }  `}
             onClick={() => setSelectedBtn("monthwise")}
@@ -125,7 +120,7 @@ const DeliveryAnalysis = () => {
             Month Wise
           </Button>
           <Button
-            className={`border-2 hover:bg-white hover:text-black ${
+            className={`border-2 hover:bg-white     hover:text-black ${
               selectedBtn === "rowisedelivery"
                 ? "bg-white text-black hover:bg-white"
                 : "none"
@@ -155,7 +150,7 @@ const DeliveryAnalysis = () => {
             SC Wise Delivery
           </Button>
           <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
+            className={`  border-2 hover:bg-white hover:text-black  ${
               selectedBtn === "modelwisedelivery"
                 ? "bg-white text-black hover:bg-white"
                 : "none"
@@ -165,7 +160,7 @@ const DeliveryAnalysis = () => {
             Model Wise Delivery
           </Button>
           <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
+            className={`border-2    hover:bg-white hover:text-black  ${
               selectedBtn === "sourcewise"
                 ? "bg-white text-black hover:bg-white"
                 : "none"
@@ -175,7 +170,7 @@ const DeliveryAnalysis = () => {
             Source Wise
           </Button>
           <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
+            className={`border-2     hover:bg-white  hover:text-black  ${
               selectedBtn === "sourceofinformation"
                 ? "bg-white text-black hover:bg-white"
                 : "none"
@@ -258,7 +253,6 @@ const DeliveryAnalysis = () => {
             />
           )}
         </div>
-        {/* <div className="flex justify-center mt-4">{selectedComponent}</div> */}
       </div>
       <DeliveryAnalysisTwo />
       <DeliveryAnalysisThree />
