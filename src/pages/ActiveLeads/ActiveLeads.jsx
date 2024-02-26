@@ -65,7 +65,7 @@ const ActiveLeads = () => {
         setTitle("Lead Source Wise");
         break;
       default:
-        selectedComponent = <LostTo />;
+        
         break;
     }
   }, [selectedBtn]);
@@ -129,7 +129,7 @@ const ActiveLeads = () => {
         <TableSelection></TableSelection>
       </div>
 
-      <div className="active-btn-list flex flex-wrap gap-2 mx-2 mt-4">
+      <div className="flex flex-wrap gap-2 mx-2 mt-4 active-btn-list">
         <Button
           className={`  border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "eprvsregistered"
@@ -221,7 +221,7 @@ const ActiveLeads = () => {
           Successful Follow Ups
         </Button>
       </div>
-      <div className=" flex justify-center   mt-4">
+      <div className="flex justify-center mt-4 ">
         <LineBarGraph
           graphLabels={graphLabels}
           barData={barGraphData}
@@ -229,7 +229,7 @@ const ActiveLeads = () => {
           title={title}
         />
       </div>
-      <div className=" grid grid-cols-2 gap-4 mx-4   mt-4   pb-10 activeAccordian">
+      <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4  activeAccordian">
         {tablesData.length > 0 &&
           tablesData.map((tableData, index) => (
             <Accordion

@@ -41,11 +41,8 @@ const graphLabel = {
     "Aura",
   ],
   "Additional Buyer Model Aging": [
-    ">5years old",
-    "5 year old",
-    "3 year old",
-    "1 year old",
-    "2 year old",
+    ">7years old",
+   
   ],
   "Exchange Buyer": ["Yes"],
   "Exchange Brand Break Up": [
@@ -63,11 +60,8 @@ const graphLabel = {
     "Beat",
   ],
   "Exchange Model Aging": [
-    ">5years old",
-    "5 year old",
-    "3 year old",
-    "1 year old",
-    "2 year old",
+    ">9years old",
+    
   ],
   "Repeat Buyer": ["Yes"],
   "Repeat Buyer Model": [
@@ -78,11 +72,8 @@ const graphLabel = {
     "All New I20",
   ],
   "Repeat Buyer Aging": [
-    ">5years old",
-    "5 year old",
-    "3 year old",
-    "1 year old",
-    "2 year old",
+    ">3years old",
+    
   ],
   "Interested In Comp": ["Yes"],
   "Model Interested": ["Swift"],
@@ -140,9 +131,9 @@ const DeliveryAnalysisThree = () => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-1 gap-4 mx-4 mt-4 pb-10">
+      <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {selectedBtn3 && (
-          <div className="accordian bg-white border-2  rounded-lg  p-4 ">
+          <div className="p-4 bg-white border-2 rounded-lg accordian ">
             <div className="flex items-center justify-between">
               <p className="font-medium ">{tablesData[selectedBtn3].heading}</p>
               <Button onClick={() => setAccordionStates(!accordionStates)}>
@@ -163,7 +154,7 @@ const DeliveryAnalysisThree = () => {
       {selectedBtn3 && (
         <div className="flex justify-center mt-4">
           <div>
-            <h2 className=" text-3xl font-medium">{selectedBtn3}</h2>
+            <h2 className="text-3xl font-medium ">{selectedBtn3}</h2>
             <DoubleBarGraphTwo graphLabels={graphLabel[selectedBtn3]} />
           </div>
         </div>

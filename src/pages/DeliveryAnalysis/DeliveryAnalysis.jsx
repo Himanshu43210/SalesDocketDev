@@ -55,13 +55,15 @@ const DeliveryAnalysis = () => {
         setGraphType("LineBarGraph");
         setTitle("Fuel");
         break;
-      default:
+     
       case "monthwise":
         labels = ["NA"];
         setGraphLabels(labels);
         setGraphType("DoubleBarGraph");
         setTitle("Month Wise");
         break;
+        
+        default: break;
     }
   }, [selectedBtn]);
   return (
@@ -108,7 +110,7 @@ const DeliveryAnalysis = () => {
         <div className="flex w-[100vw] items-center justify-center mt-[5px]">
           <TableSelection></TableSelection>
         </div>
-        <div className=" deli-btn flex-wrap gap-2 mx-2 mt-4 flex">
+        <div className="flex flex-wrap gap-2 mx-2 mt-4 deli-btn">
           <Button
             className={`border-2 hover:bg-white hover:text-black ${
               selectedBtn === "monthwise"
