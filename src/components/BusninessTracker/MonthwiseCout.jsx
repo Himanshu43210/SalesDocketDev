@@ -72,12 +72,7 @@ export const data = {
   ],
 };
 const MonthWise = () => {
-
-
-  
-  
- 
-  return (
+ return (
     <div>
       <h2 className="mb-2 text-3xl font-medium">Month wise Report</h2>
       <div style={{ height: "400px", width: "80vw" }} className="flex items-center justify-center"> 

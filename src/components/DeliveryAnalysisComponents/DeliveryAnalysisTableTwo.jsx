@@ -1,12 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { setSelectedField } from "@/store/slices/selectedFieldSlice";
 
 const DeliveryAnalysisTableTwo = ({ tableName, tableData }) => {
   const dispatch = useDispatch();
-  const printValue = useSelector((state) => state.selectedField);
+  
   const handleClick = (value) => {
-    let columnName = tableData.table.tableHeader[0];
+    const columnName = tableData.table.tableHeader[0];
 
     dispatch(
       setSelectedField({

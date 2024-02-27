@@ -84,12 +84,12 @@ function BusinessTra() {
       </div>
       <div className="maindata">
         <FilterBT
-        open={open}
-        setOpen={setOpen}
-        MonthOptions={MonthOptions}
-        ModelOptions={ModelOptions}
-        CityOptions={CityOptions}
-        ROOptions={ROOptions}
+          open={open}
+          setOpen={setOpen}
+          MonthOptions={MonthOptions}
+          ModelOptions={ModelOptions}
+          CityOptions={CityOptions}
+          ROOptions={ROOptions}
           dealerOptions={dealerOptions}
           selected={selected}
           setSelected={setSelected}

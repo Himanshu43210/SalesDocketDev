@@ -13,17 +13,19 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
   const [storeData, setStoreData] = useState([]);
   const [companyData, setCompanyData] = useState([]);
 
+  const config = {
+    method: "get",
+    url: `${
+      import.meta.env.VITE_REACT_APP_ENDPOINT
+    }/api/store/findAll?page=0&limit=9999`,
+    headers: { Authorization: token },
+  };
+
   const getStore = () => {
     setIsTableLoaded(true);
     const token = sessionStorage.getItem("authToken");
 
-    let config = {
-      method: "get",
-      url: `${
-        import.meta.env.VITE_REACT_APP_ENDPOINT
-      }/api/store/findAll?page=0&limit=9999`,
-      headers: { Authorization: token },
-    };
+  
 
     axios
       .request(config)
@@ -47,13 +49,7 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
     setIsTableLoaded(true);
     const token = sessionStorage.getItem("authToken");
 
-    let config = {
-      method: "get",
-      url: `${
-        import.meta.env.VITE_REACT_APP_ENDPOINT
-      }/api/company/findAll?page=0&limit=9999`,
-      headers: { Authorization: token },
-    };
+ 
 
     axios
       .request(config)
@@ -108,7 +104,7 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
       return;
     }
 
-    let data = JSON.stringify({
+    const data = JSON.stringify({
       userID: formData._id,
       firstName: formData.firstName,
       lastName: formData.lastName,
@@ -121,7 +117,7 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
       address: formData.address,
     });
 
-    let config = {
+    const config = {
       method: "put",
       maxBodyLength: Infinity,
       url: `${import.meta.env.VITE_REACT_APP_ENDPOINT}/api/userregistry/update`,
@@ -158,7 +154,7 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
         className="items-center bg-white max-w-[900px] flex py-8 mx-auto mt-4 justify-center flex-col"
       >
         <div className="flex flex-col w-[900px]">
-          <div className="mb-6 flex flex-col gap-2 border-b-2 mr-10 pb-2 ml-10">
+          <div className="flex flex-col gap-2 pb-2 mb-6 ml-10 mr-10 border-b-2">
             <IoClose
               size={35}
               className="absolute right-[220px] text-[#EC2752] transition ease hover:rotate-[360deg] duration-500"
@@ -167,66 +163,66 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
             <p className="text-4xl font-bold">Update User Details</p>
             <p className="text-lg">All fields marked with * are required</p>
           </div>
-          <form className="ml-10 flex flex-col gap-4" onSubmit={submitHandler}>
+          <form className="flex flex-col gap-4 ml-10" onSubmit={submitHandler}>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">First name*</span>
+              <span className="text-xl font-medium">First name*</span>
               <input
                 name="firstName"
                 id="firstName"
                 placeholder="Enter first name"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Last name</span>
+              <span className="text-xl font-medium">Last name</span>
               <input
                 name="lastName"
                 id="lastName"
                 placeholder="Enter last name"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Email*</span>
+              <span className="text-xl font-medium">Email*</span>
               <input
                 name="email"
                 id="email"
                 placeholder="Enter your email address"
                 value={formData.email}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none "
+                className="px-2 py-2 border-2 rounded-lg outline-none "
                 type="email"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2 ">
-              <span className="font-medium text-xl">Mobile Number*</span>
+              <span className="text-xl font-medium">Mobile Number*</span>
               <input
                 name="phoneNumber"
                 id="phoneNumber"
                 placeholder="Enter 10-digit mobile number"
                 value={formData.phoneNumber}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="number"
                 required
               />
             </label>
 
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Company Name*</span>
+              <span className="text-xl font-medium">Company Name*</span>
               <select
                 id="companyId"
                 name="companyId"
                 value={formData.companyId}
-                className="outline-none text-base border-2 px-2 py-2 rounded-lg"
+                className="px-2 py-2 text-base border-2 rounded-lg outline-none"
                 onChange={handleChange}
                 required
               >
@@ -239,12 +235,12 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
               </select>
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Store Name*</span>
+              <span className="text-xl font-medium">Store Name*</span>
               <select
                 id="storeId"
                 name="storeId"
                 value={formData.storeId}
-                className="outline-none text-base border-2 px-2 py-2 rounded-lg"
+                className="px-2 py-2 text-base border-2 rounded-lg outline-none"
                 onChange={handleChange}
                 required
               >
@@ -257,42 +253,42 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
               </select>
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Role*</span>
+              <span className="text-xl font-medium">Role*</span>
               <input
                 name="role"
                 id="role"
                 value={formData.role}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">City</span>
+              <span className="text-xl font-medium">City</span>
               <input
                 name="city"
                 id="city"
                 placeholder="Enter your city name"
                 value={formData.city}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Adddress</span>
+              <span className="text-xl font-medium">Adddress</span>
               <input
                 name="address"
                 id="address"
                 placeholder="Enter your full address"
                 value={formData.address}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
               />
             </label>
-            <div className="mt-8 flex flex-row justify-start gap-4 items-center">
+            <div className="flex flex-row items-center justify-start gap-4 mt-8">
               <button
                 type="submit"
                 className="font-medium text-sm text-white p-3 rounded bg-[#EC2752]"

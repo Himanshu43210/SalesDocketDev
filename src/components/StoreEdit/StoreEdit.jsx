@@ -42,7 +42,7 @@ const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
       return;
     }
 
-    let data = JSON.stringify({
+    const data = JSON.stringify({
         "id" : formData._id,
         "storeName": formData.storeName,
         "uniqueId": formData.uniqueId,
@@ -54,7 +54,7 @@ const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
 
     console.log(data);
 
-    let config = {
+    const config = {
       method: 'put',
       maxBodyLength: Infinity,
       url: `${import.meta.env.VITE_REACT_APP_ENDPOINT}/api/store/edit`,
@@ -91,88 +91,88 @@ const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
       >
       
         <div className="flex flex-col w-[900px]">
-          <div className="mb-6 flex flex-col gap-2 border-b-2 mr-10 pb-2 ml-10">
+          <div className="flex flex-col gap-2 pb-2 mb-6 ml-10 mr-10 border-b-2">
           <IoClose size={35} className="absolute right-[220px] text-[#EC2752] transition ease hover:rotate-[360deg] duration-500" onClick={closeHandler}/>
             <p className="text-4xl font-bold">Update Store Details 
             </p>
             <p className="text-lg">All fields marked with * are required</p>
           </div>
-          <form className="ml-10 flex flex-col gap-4" onSubmit={submitHandler}>
+          <form className="flex flex-col gap-4 ml-10" onSubmit={submitHandler}>
           <div className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Store Name*</span>
+              <span className="text-xl font-medium">Store Name*</span>
               <input
                 id="storeName"
                 name="storeName"
                 value={formData.storeName}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required={true}
               />
             </div>
             <div className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Unique Id*</span>
+              <span className="text-xl font-medium">Unique Id*</span>
               <input
                 id="uniqueId"
                 name="uniqueId"
                 value={formData.uniqueId}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none "
+                className="px-2 py-2 border-2 rounded-lg outline-none "
                 type="text"
                 required={true}
               />
             </div>
 
             <div className="flex flex-col w-[70%] gap-2 ">
-              <span className="font-medium text-xl">Email*</span>
+              <span className="text-xl font-medium">Email*</span>
               <input
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="email"
                 required={true}
               />
             </div>
 
             <div className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Contact Number*</span>
+              <span className="text-xl font-medium">Contact Number*</span>
               <input
                 id="contactNumber"
                 name="contactNumber"
                 value={formData.contactNumber}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="number"
                 required={true}
               />
             </div>
             <div className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Region*</span>
+              <span className="text-xl font-medium">Region*</span>
               <input
                 id="region"
                 name="region"
                 value={formData.region}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required={true}
               />
             </div>
             <div className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Adddress*</span>
+              <span className="text-xl font-medium">Adddress*</span>
               <input
                 id="address"
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required={true}
               />
             </div>
-            <div className="mt-8 flex flex-row justify-start gap-4 items-center">
+            <div className="flex flex-row items-center justify-start gap-4 mt-8">
               <button
                 type="submit"
                 className="font-medium text-sm text-white p-3 rounded bg-[#EC2752]"
