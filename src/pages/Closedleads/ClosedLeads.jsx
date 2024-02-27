@@ -26,30 +26,30 @@ function Closedleads() {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
-  let selectedComponent;
-  switch (selectedBtn) {
-    case "monthwiseclosed":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "DayWiseCount":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "ModelWisecount":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "Regionwise":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "dealerwise":
-      selectedComponent = <LineBarGraph />;
-      break;
-    case "scwise":
-      selectedComponent = <LineBarGraph />;
-      break;
-    default:
-      selectedComponent = <LineBarGraph />;
-      break;
-  }
+  let selectedComponent =<LineBarGraph />;
+  // switch (selectedBtn) {
+  //   case "monthwiseclosed":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "DayWiseCount":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "ModelWisecount":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "Regionwise":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "dealerwise":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   case "scwise":
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  //   default:
+  //     selectedComponent = <LineBarGraph />;
+  //     break;
+  // }
 
   const icons = [
     <GiSteeringWheel size={60} />,
@@ -177,21 +177,34 @@ function Closedleads() {
         break;
       default:
         labels = [
-          "Jasbir Kaur",
-          "Meenu",
-          "Amit Joshi",
-          "Vijay Kumar",
-          "Ritu Malik",
+          "Jasbir Kaurr ",
+          "Meenu s",
+          "Amitr Joshi",
+          "Vijay t Kumar",
+          "Ritu k Malik",
         ];
-        barData = [75, 43, 64, 45, 79];
-        lineData = [60, 40, 56, 26, 67];
+        barData = [7, 4, 6, 45, 7];
+        lineData = [6, 4, 56, 2, 67];
         setBarGraphData(barData);
         setLineGraphData(lineData);
         setGraphLabels(labels);
-        setTitle("SC Wise");
+        setTitle("SC new Wise");
         break;
     }
   }, [selectedBtn]);
+
+  const buttonData = [
+    { label: 'Month Wise-closed', value: 'monthwiseclosed' },
+    { label: 'Model wise', value: 'leadSource' },
+    { label: 'RO Wise', value: 'month' },
+    { label: 'Dealer Wise', value: 'lostmodelown' },
+    { label: 'SC Wise', value: 'ro1' },
+    { label: 'City Wise', value: 'ro2' },
+    { label: 'Source Wise', value: 'ro3' },
+    { label: 'Lead State Wise', value: 'ro4' },
+    { label: 'Reason Wise', value: 'ro5' },
+    { label: 'Month Wise -Enquired', value: 'dealer' }
+  ];
 
   useEffect(() => {
     axios
@@ -281,98 +294,20 @@ function Closedleads() {
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection></TableSelection>
       </div>
-      <div className="flex flex-wrap gap-2 mx-2 mt-4">
+     
+        <div className="flex flex-wrap gap-2 mx-2 mt-4">
+      {buttonData.map((button, index) => (
         <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "monthwiseclosed"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("monthwiseclosed")}
-        >
-          Month Wise-closed
-        </Button>
-        <Button
+          key={index}
           className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === "leadSource"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("DayWiseCount")}
+            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
+          }`}
+          onClick={() => setSelectedBtn(button.value)}
         >
-          Model wise
+          {button.label}
         </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "month"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("ModelWisecount")}
-        >
-          RO Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "lostmodelown"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("Regionwise")}
-        >
-          Dealer Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "ro" ? "bg-white text-black hover:bg-white" : "none"
-          }  `}
-          onClick={() => setSelectedBtn("dealerwise")}
-        >
-          SC Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "ro" ? "bg-white text-black hover:bg-white" : "none"
-          }  `}
-          onClick={() => setSelectedBtn("dealerwise")}
-        >
-          City Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "ro" ? "bg-white text-black hover:bg-white" : "none"
-          }  `}
-          onClick={() => setSelectedBtn("dealerwise")}
-        >
-          Source Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "ro" ? "bg-white text-black hover:bg-white" : "none"
-          }  `}
-          onClick={() => setSelectedBtn("dealerwise")}
-        >
-          Lead State Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "ro" ? "bg-white text-black hover:bg-white" : "none"
-          }  `}
-          onClick={() => setSelectedBtn("dealerwise")}
-        >
-          Reason Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "dealer"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => setSelectedBtn("scwise")}
-        >
-          Month Wise -Enquired
-        </Button>
-      </div>
+      ))}
+    </div>
       <div className="flex justify-center mt-4">
         {" "}
         <LineBarGraph
@@ -382,9 +317,9 @@ function Closedleads() {
           title={title}
         />
       </div>
-      <div className="grid grid-cols-2 gap-4 mx-4 mt-4 pb-10">
+      <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map((tableData, index) => (
-          <div className="accordian border-2  rounded-lg bg-white p-4 ">
+          <div className="p-4 bg-white border-2 rounded-lg accordian ">
             <div className="flex items-center justify-between">
               <p className="font-medium ">{tableData.heading}</p>
               <Button onClick={() => toggleAccordion(index)}>

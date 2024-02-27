@@ -44,7 +44,7 @@ const RegisterUserDetails = () => {
     setIsTableLoaded(true);
     const token = sessionStorage.getItem("authToken");
 
-    let config = {
+    const config = {
       method: "get",
       url: `localhost:/getData`,
       headers: { Authorization: token },
@@ -70,7 +70,7 @@ const RegisterUserDetails = () => {
     const LoggedInUser = JSON.parse(sessionStorage.getItem("profile"));
     const token = sessionStorage.getItem("authToken");
 
-    let config = {
+    const config = {
       method: "get",
       url: `localhost:searchUser`,
       headers: { Authorization: token },
@@ -121,13 +121,13 @@ const RegisterUserDetails = () => {
     const LoggedInUser = JSON.parse(sessionStorage.getItem("profile"));
     const token = sessionStorage.getItem("authToken");
 
-    let data = JSON.stringify({
+    const data = JSON.stringify({
       userID: userID,
     });
 
     console.log(data);
 
-    let config = {
+    const config = {
       method: "delete",
       maxBodyLength: Infinity,
       url: `localhost:deleteUser`,
@@ -200,7 +200,7 @@ const RegisterUserDetails = () => {
           />
         </div>
       )}
-      <div className="flex items-center border-b-2 w-screen h-16 py-4 bg-white HEADER ">
+      <div className="flex items-center w-screen h-16 py-4 bg-white border-b-2 HEADER ">
         <div className="navbar">
           <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
           <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
@@ -276,7 +276,7 @@ const RegisterUserDetails = () => {
         </div>
       )}
       {isTableLoaded && (
-        <div className="fixed top-0 left-0 z-49 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+        <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 z-49">
           <BeatLoader color={"#EC2752"} loading={isTableLoaded} size={15} />
         </div>
       )}

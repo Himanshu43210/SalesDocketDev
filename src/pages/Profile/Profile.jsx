@@ -31,7 +31,7 @@ const Profile = () => {
     const authToken = sessionStorage.getItem("authToken");
     const storedProfile = JSON.parse(sessionStorage.getItem("profile"));
 
-    let config = {
+    const config = {
       method: "get",
       maxBodyLength: Infinity,
       url: `localhost:/getprofile`,
@@ -181,7 +181,7 @@ const Profile = () => {
     event.preventDefault();
     const authToken = sessionStorage.getItem("authToken");
 
-    for (let key in profile) {
+    for (const key in profile) {
       if (profile[key].trim().length === 0) {
         setIsTableLoaded(false);
         setErrorMsg("Please fill all the fields.");
@@ -203,9 +203,9 @@ const Profile = () => {
         setIsTableLoaded(false);
         setErrorMsg("Profile updated successfully");
       } else {
-        console.log("Failed to update profile");
+       
         setIsTableLoaded(false);
-        setErrorMsg("Failed to update profile");
+        setErrorMsg("Failed to");
       }
     } catch (error) {
       console.error("An error occurred while updating the profile:", error);
@@ -234,13 +234,13 @@ const Profile = () => {
         }}
         className="items-center bg-white w-[900px] flex py-4 mx-auto mt-4 justify-center flex-col"
       >
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col items-center justify-center">
           <p className="text-4xl font-bold">Profile</p>
           <p className="font-medium text-[#0F172A]">{errorMsg}</p>
         </div>
         <form className="w-[800px]  flex flex-col gap-2">
           <div className="flex justify-between ">
-            <div className="right flex ">
+            <div className="flex right ">
               <div className="w-[100px] h-[100px] flex items-center justify-center">
                 <img
                   className="w-[90%] h-[90%] rounded-full"
@@ -249,7 +249,7 @@ const Profile = () => {
                 />
               </div>
               {isEditing && (
-                <div className="flex flex-col gap-2 items-baseline">
+                <div className="flex flex-col items-baseline gap-2">
                   <button
                     onClick={handleUploadButtonClick}
                     className={styles.prof_button}
@@ -284,11 +284,11 @@ const Profile = () => {
               )}
             </div>
           </div>
-          <div className="w-full flex gap-4">
+          <div className="flex w-full gap-4">
             <label className="flex flex-col w-1/2 gap-2">
-              <span className="font-medium text-xl">First Name</span>
+              <span className="text-xl font-medium">First Name</span>
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="firstName"
                 value={profile.firstName}
@@ -299,10 +299,10 @@ const Profile = () => {
             </label>
 
             <label className="flex flex-col w-1/2 gap-2">
-              <span className="font-medium text-xl">Last Name</span>
+              <span className="text-xl font-medium">Last Name</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="lastName"
                 value={profile.lastName}
@@ -312,12 +312,12 @@ const Profile = () => {
               />
             </label>
           </div>
-          <div className="w-full flex gap-4">
+          <div className="flex w-full gap-4">
             <label className="flex flex-col w-1/2 gap-2 ">
-              <span className="font-medium text-xl">Email</span>
+              <span className="text-xl font-medium">Email</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="email"
                 value={profile.email}
@@ -327,10 +327,10 @@ const Profile = () => {
               />
             </label>
             <label className="flex flex-col w-1/2 gap-2">
-              <span className="font-medium text-xl">Website</span>
+              <span className="text-xl font-medium">Website</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="website"
                 value={profile.website}
@@ -340,12 +340,12 @@ const Profile = () => {
               />
             </label>
           </div>
-          <div className="w-full flex gap-4">
+          <div className="flex w-full gap-4">
             <label className="flex flex-col w-full gap-2">
-              <span className="font-medium text-xl">Contact Number</span>
+              <span className="text-xl font-medium">Contact Number</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="phoneNumber"
                 value={profile.phoneNumber}
@@ -355,10 +355,10 @@ const Profile = () => {
               />
             </label>
             <label className="flex flex-col w-full gap-2">
-              <span className="font-medium text-xl">Company Name</span>
+              <span className="text-xl font-medium">Company Name</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="companyName"
                 value={profile.companyName}
@@ -368,12 +368,12 @@ const Profile = () => {
               />
             </label>
           </div>
-          <div className="w-full flex gap-4">
+          <div className="flex w-full gap-4">
             <label className="flex flex-col w-full gap-2">
-              <span className="font-medium text-xl">Address</span>
+              <span className="text-xl font-medium">Address</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="address"
                 value={profile.address}
@@ -383,10 +383,10 @@ const Profile = () => {
               />
             </label>
             <label className="flex flex-col w-full gap-2">
-              <span className="font-medium text-xl">Manager Name</span>
+              <span className="text-xl font-medium">Manager Name</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="managerName"
                 value={profile.managerName}
@@ -396,12 +396,12 @@ const Profile = () => {
               />
             </label>
           </div>
-          <div className="w-full flex gap-4 items-center">
+          <div className="flex items-center w-full gap-4">
             <label className="flex flex-col w-1/2 gap-2">
-              <span className="font-medium text-xl">Pin Code</span>
+              <span className="text-xl font-medium">Pin Code</span>
 
               <input
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 name="pincode"
                 value={profile.pincode}

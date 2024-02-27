@@ -8,7 +8,7 @@ import axios from "axios";
 import DataTable from "@/components/Table/DataTable";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-const FollowUpUniqueMonth = () => {
+const FollowUpUniqueMonthh = () => {
   const [sideMenu, setsideMenu] = useState(false);
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
@@ -86,4 +86,4 @@ const FollowUpUniqueMonth = () => {
   );
 };
 
-export default FollowUpUniqueMonth;
+export default FollowUpUniqueMonthh;

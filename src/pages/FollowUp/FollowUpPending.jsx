@@ -49,9 +49,9 @@ const FollowUpPending = () => {
         setTitle("Type Of Pending");
         break;
       default:
-        labels = ["Today", "1_Day_Delay", "2_Day_Delay", "3_Day_Delay"];
+        labels = ["Today g", "1_Day_Delay fg", "2_Day_Delay ff", "3_Day_Delayfdf"];
         setGraphLabels(labels);
-        setTitle("Overall Pending");
+        setTitle("Overall Pendinggg");
         break;
     }
   }, [selectedBtn]);

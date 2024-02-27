@@ -10,8 +10,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import BtrendFilter from "@/components/Btrend/Filtertrend";
 
-
-function DealerWise() {
+function DealerWisee() {
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("Enquiry Wise");
   const [tablesData, setTablesData] = useState([]);
@@ -21,26 +20,28 @@ function DealerWise() {
   const graphLabels = ["Today", "1_Day_Delay", "2_Day_Delay", "3_Day_Delay"];
   const navigate = useNavigate();
 
+  console.log(selectedAccordionIndex);
+
   let selectedComponent;
   switch (selectedBtn) {
     case "Enquiry Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry-Wise"} />
       );
       break;
     case "Walk-In Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Walk-In Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Walk-In-Wise"} />
       );
       break;
     case "Booking Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Booking Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Booking-Wise"} />
       );
       break;
     case "Delivery Wise":
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Delivery Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Delivery-Wise"} />
       );
       break;
     case "dealerwise":
@@ -51,7 +52,7 @@ function DealerWise() {
       break;
     default:
       selectedComponent = (
-        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry Wise"} />
+        <SingleBarGraph graphLabels={graphLabels} title={"Enquiry new Wise"} />
       );
       break;
   }
@@ -65,6 +66,51 @@ function DealerWise() {
     { label: "option A", value: "optiona" },
     { label: "option B", value: "optionb" },
     { label: "option C", value: "optionc" },
+  ];
+
+  const buttonData = [
+    {
+      label: "Enquiry_Wise",
+      value: "Enquiry Wise",
+      tableHeading: "Dealer Wise Enquiry Table",
+      accordionIndex: 0,
+    },
+    {
+      label: "Walk-In-Wise",
+      value: "Walk-In Wise",
+      tableHeading: "Dealer Wise Walk-In table",
+      accordionIndex: 1,
+    },
+    {
+      label: "Booking_Wise",
+      value: "Booking Wise",
+      tableHeading: "Dealer Wise Bookinggg Table",
+      accordionIndex: 2,
+    },
+    {
+      label: "Delivery_Wise",
+      value: "Delivery Wise",
+      tableHeading: "Dealer Wise Deliveryy Table",
+      accordionIndex: 3,
+    },
+    {
+      label: "Lost_Wise",
+      value: "Lost Wise",
+      tableHeading: "Dealer Wise Lostt Table",
+      accordionIndex: 4,
+    },
+    {
+      label: "Closed_Wise",
+      value: "Closed Wise",
+      tableHeading: "Dealer wise ClosedTablee",
+      accordionIndex: 5,
+    },
+    {
+      label: "Conversation_Ratio",
+      value: "Conversation Ratio",
+      tableHeading: null,
+      accordionIndex: null,
+    },
   ];
 
   useEffect(() => {
@@ -86,129 +132,55 @@ function DealerWise() {
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
       </div>
 
-      <BtrendFilter  open={open}
+      <BtrendFilter
+        open={open}
         setOpen={setOpen}
         fromDate={fromDate}
-            toDate={toDate}
-            setFromDate={setFromDate}
-            setToDate={setToDate}
-            dealerOptions={dealerOptions}
-            selected={selected}
-            setSelected={setSelected}/>
+        toDate={toDate}
+        setFromDate={setFromDate}
+        setToDate={setToDate}
+        dealerOptions={dealerOptions}
+        selected={selected}
+        setSelected={setSelected}
+      />
 
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection setOpen={setOpen}></TableSelection>
       </div>
 
       <div className="flex justify-between">
-      <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Enquiry Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Enquiry Wise");
-            setTableHeading("Dealer Wise Enquiry Table");
-            setSelectedAccordionIndex(0);
-          }}
-        >
-          Enquiry Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === "Walk-In Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Walk-In Wise");
-            setTableHeading("Dealer Wise Walk-In table");
-            setSelectedAccordionIndex(1);
-          }}
-        >
-          Walk-In Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Booking Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Booking Wise");
-            setTableHeading("Dealer Wise Booking Table");
-            setSelectedAccordionIndex(2);
-          }}
-        >
-          Booking Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Delivery Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Delivery Wise");
-            setTableHeading("Dealer Wise Delivery Table");
-            setSelectedAccordionIndex(3);
-          }}
-        >
-          Delivery Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Lost Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Lost Wise");
-            setTableHeading("Dealer Wise Lost Table");
-            setSelectedAccordionIndex(4);
-          }}
-        >
-          Lost Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Closed Wise"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Closed Wise");
-            setTableHeading("Dealer wise Closed Table");
-            setSelectedAccordionIndex(5);
-          }}
-        >
-          Closed Wise
-        </Button>
-        <Button
-          className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "Conversation Ratio"
-              ? "bg-white text-black hover:bg-white"
-              : "none"
-          }  `}
-          onClick={() => {
-            setSelectedBtn("Conversation Ratio");
-            setTableHeading(null);
-          }}
-        >
-          Conversation Ratio
-        </Button>
+      
+        <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
+          {buttonData.map((button, index) => (
+            <Button
+              key={index}
+              className={`border-2 hover:bg-white hover:text-black ${
+                selectedBtn === button.value
+                  ? "bg-white text-black hover:bg-white"
+                  : "none"
+              }`}
+              onClick={() => {
+                setSelectedBtn(button.value);
+                setTableHeading(button.tableHeading);
+                setSelectedAccordionIndex(button.accordionIndex);
+              }}
+              // onClick={() => handleButtonClick(button.value, button.tableHeading, button.accordionIndex)}
+            >
+              {button.label}
+            </Button>
+          ))}
         </div>
+
         <div className="mx-2 mt-4 right">
-        <Button
-          className={`border-2 hover:bg-white hover:text-black `} 
-           
-          onClick={() => {navigate('/BusinessTrend')}}
-        >
-          <FaArrowLeft  className="mr-[2px] animate-moveBackButton"/>
-          Back
-        </Button>
+          <Button
+            className={`border-2 hover:bg-white hover:text-black `}
+            onClick={() => {
+              navigate("/BusinessTrend");
+            }}
+          >
+            <FaArrowLeft className="mr-[2px] animate-moveBackButton" />
+            Back
+          </Button>
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
@@ -240,4 +212,4 @@ function DealerWise() {
   );
 }
 
-export default DealerWise;
+export default DealerWisee;

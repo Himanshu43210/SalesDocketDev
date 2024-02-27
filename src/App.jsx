@@ -13,7 +13,6 @@ import Closedleads from "./pages/Closedleads/ClosedLeads";
 import DeliveryAnalysis from "./pages/DeliveryAnalysis/DeliveryAnalysis";
 import AllLeads from "./pages/AllLeads/AllLeads";
 import KPI from "./pages/KPI/KPI";
-
 import FollowUp from "./pages/FollowUp/FollowUp";
 import FollowUpPending from "./pages/FollowUp/FollowUpPending";
 import TodaysUniqueFollowUp from "./pages/FollowUp/TodaysUniqueFollowUp";

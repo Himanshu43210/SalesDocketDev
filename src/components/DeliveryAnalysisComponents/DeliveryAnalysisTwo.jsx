@@ -70,7 +70,9 @@ const DeliveryAnalysisTwo = () => {
   const [selectedBtn2, setSelectedBtn2] = useState(null);
   const [tableData, setTableData] = useState({});
   const [accordionStates, setAccordionStates] = useState(false);
-  const [Model, setModel] = useState({});
+  const [model, setModel] = useState({});
+
+  console.log(model);
   useEffect(() => {
     axios
       .get("https://api.npoint.io/a7bd231f795472b4e0ee")
@@ -104,9 +106,9 @@ const DeliveryAnalysisTwo = () => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-1 gap-4 mx-4 mt-4 pb-10">
+      <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {selectedBtn2 && (
-          <div className="accordian bg-white border-2  rounded-lg  p-4 ">
+          <div className="p-4 bg-white border-2 rounded-lg accordian ">
             <div className="flex items-center justify-between">
               <p className="font-medium ">{selectedBtn2}</p>
               <Button onClick={() => setAccordionStates(!accordionStates)}>
@@ -123,7 +125,7 @@ const DeliveryAnalysisTwo = () => {
         )}
       </div>
       {selectedBtn2 && (
-        <div className="flex flex-col items-center gap-10 justify-center mt-4">
+        <div className="flex flex-col items-center justify-center gap-10 mt-4">
           <div>
             <h2 className="mb-2 text-3xl font-medium">Count Wise Comparison</h2>
             <TripleBarGraph graphLabels={graphLabel[selectedBtn2]} />

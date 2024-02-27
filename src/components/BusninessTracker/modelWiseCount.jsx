@@ -72,7 +72,6 @@ export const data = {
   ],
 };
 const MOdelWiseWise = () => {
- 
   return (
     <div>
       <h2 className="mb-2 text-3xl font-medium">Model wise Report </h2>

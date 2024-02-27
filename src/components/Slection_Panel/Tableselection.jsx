@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 function TableSelection({setOpen}) {
   const [selectedBtn, setSelectedBtn] = useState("");
 
+   console.log(selectedBtn);
+
   const dispatch = useDispatch();
   const selectedField = useSelector((state) => state.selectedField);
   console.log("selected", selectedField);

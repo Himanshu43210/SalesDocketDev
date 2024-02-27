@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-const TripleBarGraph = ({ graphLabels, title }) => {
+const TripleBarGraph = ({ graphLabels }) => {
   const labels = graphLabels;
   const options = {
     responsive: true,
@@ -29,10 +29,6 @@ const TripleBarGraph = ({ graphLabels, title }) => {
       legend: {
         position: "top",
       },
-      // title: {
-      //   display: true,
-      //   text: title,
-      // },
     },
   };
   const data = {
@@ -41,30 +37,29 @@ const TripleBarGraph = ({ graphLabels, title }) => {
       {
         label: "FTM",
         data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgba(255, 99, 132, 1)",
         borderWidth: 1,
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
       },
       {
         label: "LMTD",
         data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
+        borderWidth: 1,
         backgroundColor: "rgba(255, 19, 132, 0.2)",
         borderColor: "rgba(255, 19, 132, 1)",
-        borderWidth: 1,
       },
       {
         label: "LYMTD",
         data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
         backgroundColor: " rgb(154,208,245,0.5)",
-        borderColor: "rgb(154,208,245, 1)",
         borderWidth: 1,
+        borderColor: "rgb(154,208,245, 1)",
       },
     ],
   };
   return (
     <div>
-      {/* <h2 className="mb-2 text-3xl font-medium">Month wise Report</h2> */}
-      <div style={{ height: "400px", width: "800px" }} className="">
+      <div style={{ height: "400px", width: "800px" }} className=" triplegraph">
         <Bar options={options} data={data} />
       </div>
     </div>

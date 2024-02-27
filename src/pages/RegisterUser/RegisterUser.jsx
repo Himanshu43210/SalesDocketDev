@@ -77,7 +77,7 @@ const RegisterUser = () => {
       return;
     }
 
-    let data = JSON.stringify({
+    const data = JSON.stringify({
       firstName: formData.firstName,
       lastName: formData.lastName,
       // email: formData.email,
@@ -92,7 +92,7 @@ const RegisterUser = () => {
 
     console.log(data);
 
-    let config = {
+    const config = {
       method: "post",
       maxBodyLength: Infinity,
       url: `${
@@ -176,11 +176,11 @@ const RegisterUser = () => {
         className="items-center bg-white max-w-[900px] flex py-8 mx-auto mt-4 justify-center flex-col"
       >
         <div className="flex flex-col w-[900px]">
-          <div className="mb-6 flex flex-col gap-2 border-b-2 mr-10 pb-2 ml-10">
+          <div className="flex flex-col gap-2 pb-2 mb-6 ml-10 mr-10 border-b-2">
             <p className="text-4xl font-bold">Register User</p>
             <p className="text-lg">All fields marked with * are required</p>
           </div>
-          <div className="flex flex-wrap gap-2 ml-10 mb-10">
+          <div className="flex flex-wrap gap-2 mb-10 ml-10">
             <button
               onClick={() => navigate("/registeruserdetails")}
               className="font-medium text-sm text-white p-3 rounded bg-[#0F172A]"
@@ -188,79 +188,79 @@ const RegisterUser = () => {
               View Details
             </button>
           </div>
-          <form className="ml-10 flex flex-col gap-4">
+          <form className="flex flex-col gap-4 ml-10">
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">First name*</span>
+              <span className="text-xl font-medium">First name*</span>
               <input
                 name="firstName"
                 id="firstName"
                 placeholder="Enter first name"
                 // value={formData.firstName}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Last name</span>
+              <span className="text-xl font-medium">Last name</span>
               <input
                 name="lastName"
                 id="lastName"
                 placeholder="Enter last name"
                 // value={formData.lastName}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Email*</span>
+              <span className="text-xl font-medium">Email*</span>
               <input
                 name="email"
                 id="email"
                 placeholder="Enter your email address"
                 // value={formData.email}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none "
+                className="px-2 py-2 border-2 rounded-lg outline-none "
                 type="email"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Password*</span>
+              <span className="text-xl font-medium">Password*</span>
               <input
                 name="password"
                 id="password"
                 placeholder="Enter new password (min. 6 characters)"
                 // value={formData.password}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none "
+                className="px-2 py-2 border-2 rounded-lg outline-none "
                 type="password"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2 ">
-              <span className="font-medium text-xl">Mobile Number*</span>
+              <span className="text-xl font-medium">Mobile Number*</span>
               <input
                 name="phoneNumber"
                 id="phoneNumber"
                 placeholder="Enter 10-digit mobile number"
                 // value={formData.phoneNumber}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="number"
                 required
               />
             </label>
 
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Company Name*</span>
+              <span className="text-xl font-medium">Company Name*</span>
               <select
                 id="companyId"
                 name="companyId"
                 // value={formData.companyId}
-                className="outline-none text-base border-2 px-2 py-2 rounded-lg"
+                className="px-2 py-2 text-base border-2 rounded-lg outline-none"
                 // onChange={handleChange}
                 required
               >
@@ -274,38 +274,38 @@ const RegisterUser = () => {
             </label>
 
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Role*</span>
+              <span className="text-xl font-medium">Role*</span>
               <input
                 name="role"
                 id="role"
                 // value={formData.role}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
                 required
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">City</span>
+              <span className="text-xl font-medium">City</span>
               <input
                 name="city"
                 id="city"
                 placeholder="Enter your city name"
                 // value={formData.city}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
               />
             </label>
             <label className="flex flex-col w-[70%] gap-2">
-              <span className="font-medium text-xl">Adddress</span>
+              <span className="text-xl font-medium">Adddress</span>
               <input
                 name="address"
                 id="address"
                 placeholder="Enter your full address"
                 // value={formData.address}
                 // onChange={handleChange}
-                className="border-2 px-2 py-2 rounded-lg  outline-none"
+                className="px-2 py-2 border-2 rounded-lg outline-none"
                 type="text"
               />
             </label>
