@@ -9,6 +9,8 @@ import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import BtrendFilter from "@/components/Btrend/Filtertrend";
+import TableDataMapper from "@/components/BusninessTracker/TableDataMapper";
+import Navbar from "@/components/ui/Navbar";
 
 function ModelWise() {
   const [sideMenu, setsideMenu] = useState(false);
@@ -90,10 +92,8 @@ function ModelWise() {
 
   return (
     <>
-      <div className="navbar">
-        <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
-        <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
-      </div>
+    
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
 
       <BtrendFilter  open={open}
         setOpen={setOpen}
@@ -215,7 +215,8 @@ function ModelWise() {
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
-      <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
+      <TableDataMapper tablesData={tablesData} tableHeading={tableHeading} setAccordionStates={setAccordionStates} accordionStates={accordionStates}/>
+      {/* <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map(
           (tableData, index) =>
             tableData.heading === tableHeading && (
@@ -237,7 +238,7 @@ function ModelWise() {
               </div>
             )
         )}
-      </div>
+      </div> */}
     </>
   );
 }

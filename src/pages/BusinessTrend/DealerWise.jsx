@@ -9,6 +9,8 @@ import DataTable from "@/components/Table/DataTable";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import BtrendFilter from "@/components/Btrend/Filtertrend";
+import Navbar from "@/components/ui/Navbar";
+import TableDataMapper from "@/components/BusninessTracker/TableDataMapper";
 
 
 function DealerWise() {
@@ -81,10 +83,7 @@ function DealerWise() {
 
   return (
     <>
-      <div className="navbar">
-        <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
-        <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
-      </div>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
 
       <BtrendFilter  open={open}
         setOpen={setOpen}
@@ -212,12 +211,12 @@ function DealerWise() {
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
-
-      <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
+      <TableDataMapper tablesData={tablesData} tableHeading={tableHeading} setAccordionStates={setAccordionStates} accordionStates={accordionStates}/>
+      {/* <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map(
           (tableData, index) =>
             tableData.heading === tableHeading && (
-              <div className="p-4 bg-white border-2 rounded-lg accordian ">
+              <div key={index} className="p-4 bg-white border-2 rounded-lg accordian ">
                 <div className="flex items-center justify-between">
                   <p className="font-medium ">{tableData.heading}</p>
                   <Button onClick={() => setAccordionStates(!accordionStates)}>
@@ -235,7 +234,7 @@ function DealerWise() {
               </div>
             )
         )}
-      </div>
+      </div> */}
     </>
   );
 }
