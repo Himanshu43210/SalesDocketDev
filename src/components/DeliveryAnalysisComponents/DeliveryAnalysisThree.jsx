@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import DoubleBarGraphTwo from "../common/DoubleBarGraphTwo";
 import axios from "axios";
 import DataTable from "../Table/DataTable";
+import LineBarGraph2 from "../common/LineBarGraph2";
 
 const buttonList = [
   "First Time Buyer",
@@ -153,8 +153,8 @@ const DeliveryAnalysisThree = () => {
       {selectedBtn3 && (
         <div className="flex justify-center mt-4">
           <div>
-            <h2 className="text-3xl font-medium ">{selectedBtn3}</h2>
-            <DoubleBarGraphTwo graphLabels={graphLabel[selectedBtn3]} />
+            <h2 className=" text-3xl font-medium">{selectedBtn3}</h2>
+            <LineBarGraph2 graphLabels={graphLabel[selectedBtn3]} isLineGraph={false} />
           </div>
         </div>
       )}

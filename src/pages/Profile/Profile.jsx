@@ -6,6 +6,8 @@ import { MdModeEditOutline } from "react-icons/md";
 import axios from "axios";
 import styles from "./Profile.module.css";
 import { BeatLoader } from "react-spinners";
+import LoadingBeatLoader from "@/components/ui/LoadingBeatLoader";
+import Navbar from "@/components/ui/Navbar";
 
 const Profile = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -217,15 +219,8 @@ const Profile = () => {
   // console.log(profile);
   return (
     <div className="min-h-screen  pb-8 bg-[#F5F4F9] ">
-      {isTableLoaded && (
-        <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-          <BeatLoader color={"#0F172A"} loading={isTableLoaded} size={15} />
-        </div>
-      )}
-      <div className="navbar">
-        <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
-        <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
-      </div>
+      <LoadingBeatLoader isTableLoaded={isTableLoaded}/>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
 
       <div
         style={{

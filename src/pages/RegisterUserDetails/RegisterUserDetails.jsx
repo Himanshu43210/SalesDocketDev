@@ -18,6 +18,8 @@ import AdminNavbar from "../../components/Admin_Navbar";
 import SideMenu from "../../components/SideMenu";
 import RegisterUserEdit from "../../components/RegisterUserEdit/RegisterUserEdit";
 import { useNavigate } from "react-router-dom";
+import SuccessBox from "@/components/RegisterUser/SuccessBox";
+import LoadingBeatLoader from "@/components/ui/LoadingBeatLoader";
 
 const RegisterUserDetails = () => {
   const [data, setData] = useState([]);
@@ -206,42 +208,7 @@ const RegisterUserDetails = () => {
           <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
         </div>
       </div>
-      {(sucBox || failBox) && (
-        <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-          <div
-            className={`${styles.err_mod_box} ${
-              sucBox ? "text-green-500" : "text-[#0F172A]"
-            }`}
-          >
-            {sucBox ? (
-              <IoIosCheckmarkCircle
-                className={sucBox ? "text-green-500" : "text-[#0F172A]"}
-                size={90}
-              />
-            ) : (
-              <IoIosCloseCircle
-                className={sucBox ? "text-green-500" : "text-[#0F172A]"}
-                size={90}
-              />
-            )}
-            <h6 className={sucBox ? "text-green-500" : "text-[#0F172A]"}>
-              {sucBox ? "Success!" : "Error!"}
-            </h6>
-            <p className="text-slate-500">{errMsg}</p>
-            <button
-              onClick={() => {
-                setSucBox(false);
-                setFailBox(false);
-              }}
-              className={
-                sucBox ? "bg-green-500 text-white" : "bg-[#0F172A] text-white"
-              }
-            >
-              Okay
-            </button>
-          </div>
-        </div>
-      )}
+      <SuccessBox sucBox={sucBox} failBox={failBox} errMsg={errMsg} setFailBox={setFailBox} setSucBox={setSucBox}/>
       {confBox && (
         <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
           <div
@@ -275,11 +242,7 @@ const RegisterUserDetails = () => {
           </div>
         </div>
       )}
-      {isTableLoaded && (
-        <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 z-49">
-          <BeatLoader color={"#EC2752"} loading={isTableLoaded} size={15} />
-        </div>
-      )}
+      <LoadingBeatLoader isTableLoaded={isTableLoaded}/>
 
       <div className="m-2 flex flex-col gap-2 items-center w-[100%]">
         <div className="flex gap-2 items-center justify-center outline-none mt-5 w-[100%]">

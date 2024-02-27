@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
 import axios from "axios";
 import { IoClose } from "react-icons/io5";
+import LoadingBeatLoader from "../ui/LoadingBeatLoader";
 
 const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
   const [isTableLoaded, setIsTableLoaded] = useState(false);
@@ -80,11 +81,7 @@ const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
 
   return (
     <div className="min-h-screen  pb-8 bg-[#F5F4F9]">
-      {isTableLoaded && (
-        <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-          <BeatLoader color={"#EC2752"} loading={isTableLoaded} size={15} />
-        </div>
-      )}
+      <LoadingBeatLoader isTableLoaded={isTableLoaded}/>
       <div
         style={{
           boxShadow:

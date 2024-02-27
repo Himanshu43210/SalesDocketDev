@@ -6,6 +6,7 @@ import SideMenu from "../../components/SideMenu";
 import { BeatLoader } from "react-spinners";
 import axios from "axios";
 import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/io";
+import SuccessBox from "@/components/RegisterUser/SuccessBox";
 
 const RegisterUser = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -132,42 +133,7 @@ const RegisterUser = () => {
           <BeatLoader color={"#EC2752"} loading={isTableLoaded} size={15} />
         </div>
       )} */}
-      {(sucBox || failBox) && (
-        <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-          <div
-            className={`${styles.err_mod_box} ${
-              sucBox ? "text-green-500" : "text-[#EC2752]"
-            }`}
-          >
-            {sucBox ? (
-              <IoIosCheckmarkCircle
-                className={sucBox ? "text-green-500" : "text-[#EC2752]"}
-                size={90}
-              />
-            ) : (
-              <IoIosCloseCircle
-                className={sucBox ? "text-green-500" : "text-[#EC2752]"}
-                size={90}
-              />
-            )}
-            <h6 className={sucBox ? "text-green-500" : "text-[#EC2752]"}>
-              {sucBox ? "Success!" : "Error!"}
-            </h6>
-            <p className="text-slate-500">{errMsg}</p>
-            <button
-              onClick={() => {
-                setSucBox(false);
-                setFailBox(false);
-              }}
-              className={
-                sucBox ? "bg-green-500 text-white" : "bg-[#0F172A] text-white"
-              }
-            >
-              Okay
-            </button>
-          </div>
-        </div>
-      )}
+      <SuccessBox sucBox={sucBox} failBox={failBox} errMsg={errMsg} setFailBox={setFailBox} setSucBox={setSucBox}/>
       <div
         style={{
           boxShadow:
@@ -262,7 +228,7 @@ const RegisterUser = () => {
                 // value={formData.companyId}
                 className="px-2 py-2 text-base border-2 rounded-lg outline-none"
                 // onChange={handleChange}
-                required
+                // required
               >
                 <option value="">None</option>
                 {companyData.map((item) => (

@@ -8,6 +8,7 @@ import TableTwokpI from "@/components/kpIPopout/kpiTable2";
 import Popout from "@/components/kpIPopout/kpiPopout";
 
 import {  useSelector } from 'react-redux';
+import Navbar from "@/components/ui/Navbar";
 
 function KPI() {
   const [sideMenu, setsideMenu] = useState(false);
@@ -637,7 +638,152 @@ const SunheaderTwo2=[
     "DataCout",
 ];
  
- 
+const tableData = [
+  {
+    header: "Leads Received",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Leads Received",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Test Drive",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Test Drive",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Closed and Lost",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Closed and Lost",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Booking Delivery Conversion Ratio",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Booking Delivery CR",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Cash Vs Finance",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Cash Vs Finance",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Exchange Penetration",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Exchange Penetration",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  }
+];
+
+const tableDataFollowups = [
+  {
+    header: "Call follow-ups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Call follow-ups",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Home Follow Ups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Home Follow Ups",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Showroom Followups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Showroom Followups",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "No.of Followups done and Delayed followups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Followups done and Delayed",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  }
+];
+
   
 
 
@@ -651,10 +797,7 @@ const SunheaderTwo2=[
 
   return (
     <>
-      <div className="navbar">
-        <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
-        <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
-      </div>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
   
       {popout ? (
         <div className="popout">
@@ -669,70 +812,29 @@ const SunheaderTwo2=[
           {nAME === "KPI" ? (
             <div className="border-4 maintablelist border-stone-500 mt-4 mx-[5vw]">
         
-            <TableTwokpI header={"Leads Received"} rowdata={firstGrapDataKPI} mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo}/>
-           
-            <TableTwokpI
-              header={"Product wise Leads Received"}
-              rowdata={SecondGrapDataKPI} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-           
-             <TableTwokpI header={"Test Drive"} rowdata={firstGrapDataKPI} mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo}/>
-            
-             <TableTwokpI
-              header={"Product wise Test Drive"}
-              rowdata={SecondGrapDataKPI} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-            
-            <TableTwokpI header={"Closed and Lost"} rowdata={firstGrapDataKPI} mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo} />
-            
-             <TableTwokpI
-              header={"Product wise Closed and Lost"}
-              rowdata={SecondGrapDataKPI} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-            
-            <TableTwokpI header={"Booking Delivery Conversion Ratio"} rowdata={firstGrapDataKPI}  mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo}/>
-          
-             <TableTwokpI
-              header={"Product wise Booking Delivery CR"}
-              rowdata={SecondGrapDataKPI} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-            
-            <TableTwokpI header={"Cash Vs Finance"} rowdata={firstGrapDataKPI} mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo} />
-             
-             <TableTwokpI
-              header={"Product wise Cash Vs Finance"}
-              rowdata={SecondGrapDataKPI} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-            
-            <TableTwokpI header={"Exchange Penetration"} rowdata={firstGrapDataKPI}  mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo}/>
-           
-             <TableTwokpI
-              header={"Product wise Exchange Penetration"}
-              rowdata={SecondGrapDataKPI} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-          </div>
+              {tableData.map((data, index) => (
+                <TableTwokpI
+                  key={index}
+                  header={data.header}
+                  rowdata={data.rowdata}
+                  mainheader={data.mainheader}
+                  SubheaderFirst={data.SubheaderFirst}
+                  SunheaderTwo={data.SunheaderTwo}
+                />
+              ))}
+            </div>
           ) : (
             <div className="border-4 maintablelist border-stone-500 mt-4 mx-[5vw]">
-            <TableTwokpI header={"Call follow-ups"} rowdata={firstGrapDatakpiFollow}  mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo}/>
-            <TableTwokpI
-              header={"Product wise Call follow-ups"}
-              rowdata={SecondGrapDatakpiFollow} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-             <TableTwokpI header={"Home Follow Ups"} rowdata={firstGrapDatakpiFollow}  mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo} />
-             <TableTwokpI
-              header={"Product wise Home Follow Ups"}
-              rowdata={SecondGrapDatakpiFollow} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-            <TableTwokpI header={"Showroom Followups"} rowdata={firstGrapDatakpiFollow} mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo} />
-             <TableTwokpI
-              header={"Product wise Showroom Followups"}
-              rowdata={SecondGrapDatakpiFollow} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
-            <TableTwokpI header={"No.of Followups done and Delayed followups"} rowdata={firstGrapDatakpiFollow} mainheader={mainheader} SubheaderFirst={SubheaderFirst} SunheaderTwo={SunheaderTwo} />
-             <TableTwokpI
-              header={"Product wise Followups done and Delayed"}
-              rowdata={SecondGrapDatakpiFollow} mainheader={mainheadertwo} SubheaderFirst={SubheaderFirsttwo} SunheaderTwo={SunheaderTwo2}
-            />
+            {tableDataFollowups.map((data, index) => (
+                <TableTwokpI
+                  key={index}
+                  header={data.header}
+                  rowdata={data.rowdata}
+                  mainheader={data.mainheader}
+                  SubheaderFirst={data.SubheaderFirst}
+                  SunheaderTwo={data.SunheaderTwo}
+                />
+              ))}
            
           </div>
           )}

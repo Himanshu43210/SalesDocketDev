@@ -113,6 +113,7 @@ const BookingAnalysis = () => {
             <h2 className="mb-2 text-3xl font-medium">{selectedBookingBtn}</h2>
             <LineBarGraph2
               graphLabels={bookingGraphLabel[selectedBookingBtn]}
+              isLineGraph={true}
             />
           </div>
         </div>
