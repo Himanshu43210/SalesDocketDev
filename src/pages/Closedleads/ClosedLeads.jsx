@@ -1,10 +1,4 @@
 import AdminNavbar from "@/components/Admin_Navbar";
-import DayWise from "@/components/BusninessTracker/DaywiseCout";
-import DealerWise from "@/components/BusninessTracker/DealerWise";
-import MonthWise from "@/components/BusninessTracker/MonthwiseCout";
-import RegionWise from "@/components/BusninessTracker/RegionwiseCout";
-import MOdelWiseWise from "@/components/BusninessTracker/modelWiseCount";
-import SCWise from "@/components/BusninessTracker/scWiseCount";
 import SideMenu from "@/components/SideMenu";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
