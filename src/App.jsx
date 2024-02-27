@@ -1,6 +1,4 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
-import Login from "./pages/Login";
 import RegisterUser from "./pages/RegisterUser/RegisterUser";
 import RegisterUserDetails from "./pages/RegisterUserDetails/RegisterUserDetails";
 import Profile from "./pages/Profile/Profile";
@@ -14,11 +12,6 @@ import DeliveryAnalysis from "./pages/DeliveryAnalysis/DeliveryAnalysis";
 import AllLeads from "./pages/AllLeads/AllLeads";
 import KPI from "./pages/KPI/KPI";
 import FollowUp from "./pages/FollowUp/FollowUp";
-import FollowUpPending from "./pages/FollowUp/FollowUpPending";
-import TodaysUniqueFollowUp from "./pages/FollowUp/TodaysUniqueFollowUp";
-import NonUniqueFollowUpToday from "./pages/FollowUp/NonUniqueFollowUpToday";
-import FollowUpNonUniqueMonth from "./pages/FollowUp/FollowUpNonUniqueMonth";
-import FollowUpUniqueMonth from "./pages/FollowUp/FollowUpUniqueMonth";
 import BusinessTrend from "./pages/BusinessTrend/BusinessTrend";
 import DealerWise from "./pages/BusinessTrend/DealerWise";
 import ModelWise from "./pages/BusinessTrend/ModelWise";
@@ -50,24 +43,7 @@ function App() {
           <Route path="/KPI" element={<KPI />}></Route>
           <Route path="/KPIfllow" element={<KPI />}></Route>
           <Route path="/followup" element={<FollowUp />}></Route>
-          <Route path="/followup/pending" element={<FollowUpPending />}></Route>
-          <Route
-            path="/followup/todaysuniquefollowup"
-            element={<TodaysUniqueFollowUp />}
-          ></Route>
-          <Route
-            path="/followup/nouniquefollowupstoday"
-            element={<NonUniqueFollowUpToday />}
-          ></Route>
-          <Route
-            path="/followup/followupnonuniquemonth"
-            element={<FollowUpNonUniqueMonth />}
-          ></Route>
-          <Route
-            path="/followup/followupuniquemonth"
-            element={<FollowUpUniqueMonth />}
-          ></Route>
-          <Route path="/BusinessTrend" element={<BusinessTrend />}></Route>
+         <Route path="/BusinessTrend" element={<BusinessTrend />}></Route>
           <Route
             path="/BusinessTrend/DealerWise"
             element={<DealerWise />}
