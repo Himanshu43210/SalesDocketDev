@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import RegisterUser from "./pages/RegisterUser/RegisterUser";
 import RegisterUserDetails from "./pages/RegisterUserDetails/RegisterUserDetails";
@@ -26,7 +26,7 @@ import ModelWise from "./pages/BusinessTrend/ModelWise";
 function App() {
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Login />}></Route> */}
           <Route path="/" element={<ActiveLeads />}></Route>
@@ -78,7 +78,7 @@ function App() {
             element={<ModelWise />}
           ></Route>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </>
   );
 }
