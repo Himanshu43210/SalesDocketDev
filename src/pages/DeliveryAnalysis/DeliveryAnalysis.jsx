@@ -22,6 +22,22 @@ const DeliveryAnalysis = () => {
   const [graphType, setGraphType] = useState("DoubleBarGraph");
   const [title, setTitle] = useState("");
 
+  const buttonData = [
+    { id: "monthwise", label: "Month Wise" },
+    { id: "rowisedelivery", label: "RO Wise Delivery" },
+    { id: "dealerwisedelivery", label: "Dealer Wise Delivery" },
+    { id: "scwisedelivery", label: "SC Wise Delivery" },
+    { id: "modelwisedelivery", label: "Model Wise Delivery" },
+    { id: "sourcewise", label: "Source Wise" },
+    { id: "sourceofinformation", label: "Source of Information" },
+    { id: "citywise", label: "City Wise" },
+    { id: "fuel", label: "Fuel" },
+    { id: "firsttimebuyer", label: "First Time Buyer" },
+    { id: "additionalbuyer", label: "Additional Buyer" },
+    { id: "exchangebuyer", label: "Exchange Buyer" },
+    { id: "reasonselectingbrand", label: "Reason-Selecting Brand" },
+  ];
+
   useEffect(() => {
     let labels = [];
     let barData = [];
@@ -55,15 +71,16 @@ const DeliveryAnalysis = () => {
         setGraphType("LineBarGraph");
         setTitle("Fuel");
         break;
-     
+
       case "monthwise":
         labels = ["NAdad"];
         setGraphLabels(labels);
         setGraphType("DoubleBarGraph ");
         setTitle("Month Wise new");
         break;
-        
-        default: break;
+
+      default:
+        break;
     }
   }, [selectedBtn]);
   return (
@@ -110,137 +127,20 @@ const DeliveryAnalysis = () => {
         <div className="flex w-[100vw] items-center justify-center mt-[5px]">
           <TableSelection></TableSelection>
         </div>
-        <div className="flex flex-wrap gap-2 mx-2 mt-4 deli-btn">
-          <Button
-            className={`border-2 hover:bg-white hover:text-black ${
-              selectedBtn === "monthwise"
-                ? "bg-white  hover:bg-white text-black"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("monthwise")}
-          >
-            Month Wise
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white     hover:text-black ${
-              selectedBtn === "rowisedelivery"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("rowisedelivery")}
-          >
-            RO Wise Delivery
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black ${
-              selectedBtn === "dealerwisedelivery"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("dealerwisedelivery")}
-          >
-            Dealer Wise Delivery
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black ${
-              selectedBtn === "scwisedelivery"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("scwisedelivery")}
-          >
-            SC Wise Delivery
-          </Button>
-          <Button
-            className={`  border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "modelwisedelivery"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("modelwisedelivery")}
-          >
-            Model Wise Delivery
-          </Button>
-          <Button
-            className={`border-2    hover:bg-white hover:text-black  ${
-              selectedBtn === "sourcewise"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("sourcewise")}
-          >
-            Source Wise
-          </Button>
-          <Button
-            className={`border-2     hover:bg-white  hover:text-black  ${
-              selectedBtn === "sourceofinformation"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("sourceofinformation")}
-          >
-            Source of Information
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "citywise"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("citywise")}
-          >
-            City Wise
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "fuel"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("fuel")}
-          >
-            Fuel
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "firsttimebuyer"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("firsttimebuyer")}
-          >
-            First Time Buyer
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "additionalbuyer"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("additionalbuyer")}
-          >
-            Additional Buyer
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "exchangebuyer"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("exchangebuyer")}
-          >
-            Exchange Buyer
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "reasonselectingbrand"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("reasonselectingbrand")}
-          >
-            Reason-Selecting Brand
-          </Button>
+       <div className="flex flex-wrap gap-2 mx-2 mt-4 deli-btn">
+          {buttonData.map((button) => (
+            <Button
+              key={button.id}
+              className={`border-2 hover:bg-white hover:text-black ${
+                selectedBtn === button.id
+                  ? "bg-white text-black hover:bg-white"
+                  : "none"
+              }`}
+              onClick={() => setSelectedBtn(button.id)}
+            >
+              {button.label}
+            </Button>
+          ))}
         </div>
 
         <div className="flex justify-center mt-4">
