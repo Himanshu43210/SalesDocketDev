@@ -1,9 +1,24 @@
 import React from "react";
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const ChartComponent = ({ labels }) => {
   const options = {
@@ -19,40 +34,38 @@ const ChartComponent = ({ labels }) => {
     },
   };
 
-
-
   const data = {
     labels,
     datasets: [
       {
         label: "closed",
-        data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
+        data: labels.map(() => faker.number.int({ min: 5, max: 995 })),
         backgroundColor: "rgb(213, 89, 234)",
       },
       {
+        data: labels.map(() => faker.number.int({ min: 4, max: 996 })),
         label: "Walkins",
-        data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
         backgroundColor: "rgb(255, 193, 7)",
       },
       {
-        label: "Enquiry",
-        data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
+        data: labels.map(() => faker.number.int({ min: 3, max: 997 })),
         backgroundColor: "rgb(0, 255, 255)",
+        label: "Enquiry",
       },
       {
         label: "Booking",
-        data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
         backgroundColor: "pink",
+        data: labels.map(() => faker.number.int({ min: 2, max: 998 })),
       },
       {
-        label: "Delivery",
         data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
+        label: "Delivery",
         backgroundColor: "green",
       },
       {
-        label: "Lost",
-        data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
         backgroundColor: "red",
+        label: "Lost",
+        data: labels.map(() => faker.number.int({ min: 1, max: 999 })),
       },
     ],
   };
