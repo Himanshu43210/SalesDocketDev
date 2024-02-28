@@ -33,88 +33,88 @@ const LeadsInDanger = () => {
     let lineData = [];
     switch (selectedBtn) {
       case "monthwise":
+        lineData = [40];
         labels = ["NA"];
         barData = [45];
-        lineData = [40];
-        setBarGraphData(barData);
         setLineGraphData(lineData);
-        setGraphLabels(labels);
+        setBarGraphData(barData);
         setTitle("ERP vs Registered");
+        setGraphLabels(labels);
         break;
 
       case "modelwise":
         labels = [
-          "Creta",
           "Venue",
-          "Grand NIOS",
           "All New i20",
+          "Grand NIOS",
           "Exter",
-          "Verna",
+          "Creta",
           "Aura",
           "Elite i20",
-          "Grand",
+          "Verna",
           "Alcazar",
+          "Grand",
         ];
-        barData = [36, 66, 87, 89, 44, 56, 87, 47, 56, 94];
-        lineData = [30, 55, 26, 55, 33, 65, 39, 74, 86, 99];
+        barData = [31, 46, 67, 99, 64, 46, 77, 57, 45, 74];
+        lineData = [40, 35, 56, 45, 53, 75, 49, 64, 76, 89];
         setBarGraphData(barData);
-        setLineGraphData(lineData);
-        setGraphLabels(labels);
         setTitle("Model Wise");
+        setGraphLabels(labels);
+        setLineGraphData(lineData);
         break;
       case "rowise":
-        labels = ["RO Sawan"];
         barData = [45];
         lineData = [40];
-        setBarGraphData(barData);
+        labels = ["RO Sawan"];
         setLineGraphData(lineData);
-        setGraphLabels(labels);
+        setBarGraphData(barData);
         setTitle("RO Wise");
+        setGraphLabels(labels);
         break;
       case "dealerwise":
         labels = [
-          "Kaushalya Motors",
           "Samta Hyundai",
-          "Sawan Hyundai",
-          "Sawan Hyundai 2",
-          "Khushi Ford",
+          "Kausalya Motor",
+          "Sawn Hyundai",
+          "Khusi Ford",
+          "Sawn Hyundai 3",
         ];
-        barData = [45, 23, 44, 65, 89];
-        lineData = [40, 33, 54, 36, 77];
+        barData = [55, 33, 64, 55, 79];
         setBarGraphData(barData);
-        setLineGraphData(lineData);
-        setGraphLabels(labels);
+        lineData = [30, 43, 64, 46, 67];
         setTitle("Dealer Wise");
+        setGraphLabels(labels);
+        setLineGraphData(lineData);
         break;
       case "scwise":
         labels = [
-          "Jasbir Kaur",
-          "Meenu",
-          "Amit Joshi",
-          "Vijay Kumar",
-          "Ritu Malik",
+          "Rakesh Mangla",
+          "Pradeep",
+          "Rajesh Kumar",
+          "Manisha",
+          "Mahipal Tanwar",
         ];
-        barData = [75, 43, 64, 45, 79];
-        lineData = [60, 40, 56, 26, 67];
+        barData = [65, 53, 54, 35, 69];
         setBarGraphData(barData);
         setLineGraphData(lineData);
-        setGraphLabels(labels);
         setTitle("SC Wise");
+        lineData = [50, 60, 46, 66, 87];
+        setGraphLabels(labels);
         break;
       default:
         labels = [
-          "Jasbir Kaur",
-          "Meenu",
-          "Amit Joshi",
-          "Vijay Kumar",
-          "Ritu Malik",
+          "Rakesh Mangla",
+          "Pradeep",
+          "Rajesh Kumar",
+          "Manisha",
+          "Mahipal Tanwar",
         ];
-        barData = [75, 43, 64, 45, 79];
-        lineData = [60, 40, 56, 26, 67];
+        barData = [65, 53, 54, 35, 69];
         setBarGraphData(barData);
         setLineGraphData(lineData);
-        setGraphLabels(labels);
         setTitle("SC Wise");
+        lineData = [50, 60, 46, 66, 87];
+        setGraphLabels(labels);
         break;
     }
   }, [selectedBtn]);
@@ -142,8 +142,8 @@ const LeadsInDanger = () => {
   }, []);
   return (
     <div className="  bg-[#F4F3F9] w-[100%]  ">
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
-      <StatsCardList/>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
+      <StatsCardList />
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection></TableSelection>
       </div>
