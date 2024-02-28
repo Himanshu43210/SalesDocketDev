@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from "react";
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
 import { Button } from "@/components/ui/button";
-import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
-import LeadSource from "@/components/LostLeadsComponents/LeadSource/LeadSource";
-import { FaCarAlt, FaDatabase } from "react-icons/fa";
-import { GiSteeringWheel } from "react-icons/gi";
-import { IoIosRefresh } from "react-icons/io";
-import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
-import StatsCard from "@/components/common/StatsCard/Graphs/LineBarGraph/StatsCard/StatsCard";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
-import DataTable from "@/components/Table/DataTable";
 import axios from "axios";
 import Accordion from "@/components/Accordion/Accordion";
 import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";

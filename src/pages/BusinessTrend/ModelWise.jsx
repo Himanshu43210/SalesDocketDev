@@ -1,10 +1,7 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import SingleBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import DataTable from "@/components/Table/DataTable";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -81,40 +78,40 @@ function ModelWise() {
 
   const buttonData = [
     {
-      label: 'Enquiry Wise ',
-      value: 'Enquiry Wise',
-      tableHeading: 'Dealer Wise Enquiry Table'
+      label: "Enquiry Wise ",
+      value: "Enquiry Wise",
+      tableHeading: "Dealer Wise Enquiry Table",
     },
     {
-      label: 'Walk-In Wise ',
-      value: 'Walk-In Wise',
-      tableHeading: 'Dealer Wise Walk-In table'
+      label: "Walk-In Wise ",
+      value: "Walk-In Wise",
+      tableHeading: "Dealer Wise Walk-In table",
     },
     {
-      label: 'Booking Wise ',
-      value: 'Booking Wise',
-      tableHeading: 'Dealer Wise Booking Table'
+      label: "Booking Wise ",
+      value: "Booking Wise",
+      tableHeading: "Dealer Wise Booking Table",
     },
     {
-      label: 'Delivery Wise ',
-      value: 'Delivery Wise',
-      tableHeading: 'Dealer Wise Delivery Table'
+      label: "Delivery Wise ",
+      value: "Delivery Wise",
+      tableHeading: "Dealer Wise Delivery Table",
     },
     {
-      label: 'Lost Wise ',
-      value: 'Lost Wise',
-      tableHeading: 'Dealer Wise Lost Table'
+      label: "Lost Wise ",
+      value: "Lost Wise",
+      tableHeading: "Dealer Wise Lost Table",
     },
     {
-      label: 'Closed Wise ',
-      value: 'Closed Wise',
-      tableHeading: 'Dealer wise Closed Table'
+      label: "Closed Wise ",
+      value: "Closed Wise",
+      tableHeading: "Dealer wise Closed Table",
     },
     {
-      label: 'Conversation Ratio ',
-      value: 'Conversation Ratio',
-      tableHeading: null
-    }
+      label: "Conversation Ratio ",
+      value: "Conversation Ratio",
+      tableHeading: null,
+    },
   ];
   useEffect(() => {
     axios
@@ -130,54 +127,62 @@ function ModelWise() {
 
   return (
     <>
-    
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
 
-      <BtrendFilter  open={open}
+      <BtrendFilter
+        open={open}
         setOpen={setOpen}
         fromDate={fromDate}
-            toDate={toDate}
-            setFromDate={setFromDate}
-            setToDate={setToDate}
-            dealerOptions={dealerOptions}
-            selected={selected}
-            setSelected={setSelected}/>
+        toDate={toDate}
+        setFromDate={setFromDate}
+        setToDate={setToDate}
+        dealerOptions={dealerOptions}
+        selected={selected}
+        setSelected={setSelected}
+      />
 
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection setOpen={setOpen}></TableSelection>
       </div>
 
       <div className="flex justify-between">
-      <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
-      {buttonData.map((button, index) => (
-        <Button
-          key={index}
-          className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
-          }`}
-          
-          onClick={() => {
-            setTableHeading(button.tableHeading);
-            setSelectedBtn(button.value);
-          }}
-        >
-          {button.label}
-        </Button>
-      ))}
+        <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
+          {buttonData.map((button, index) => (
+            <Button
+              key={index}
+              className={`border-2 hover:bg-white hover:text-black ${
+                selectedBtn === button.value
+                  ? "bg-white text-black hover:bg-white"
+                  : "none"
+              }`}
+              onClick={() => {
+                setTableHeading(button.tableHeading);
+                setSelectedBtn(button.value);
+              }}
+            >
+              {button.label}
+            </Button>
+          ))}
         </div>
         <div className="mx-2 mt-4 right">
-        <Button
-          className={`border-2 hover:bg-white hover:text-black `} 
-           
-          onClick={() => {navigate('/BusinessTrend')}}
-        >
-          <FaArrowLeft  className="mr-[2px] animate-moveBackButton"/>
-          Back
-        </Button>
+          <Button
+            className={`border-2 hover:bg-white hover:text-black `}
+            onClick={() => {
+              navigate("/BusinessTrend");
+            }}
+          >
+            <FaArrowLeft className="mr-[2px] animate-moveBackButton" />
+            Back
+          </Button>
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
-      <TableDataMapper tablesData={tablesData} tableHeading={tableHeading} setAccordionStates={setAccordionStates} accordionStates={accordionStates}/>
+      <TableDataMapper
+        tablesData={tablesData}
+        tableHeading={tableHeading}
+        setAccordionStates={setAccordionStates}
+        accordionStates={accordionStates}
+      />
       {/* <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map(
           (tableData, index) =>

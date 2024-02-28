@@ -9,7 +9,6 @@ import { IoIosRefresh } from "react-icons/io";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
 import axios from "axios";
-import DataTable from "@/components/Table/DataTable";
 import Accordion from "@/components/Accordion/Accordion";
 
 function Closedleads() {

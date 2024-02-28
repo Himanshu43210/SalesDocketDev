@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import DataCard from "@/components/AllLeadsComponents/DataCard";
 import axios from "axios";
-import DataTable from "@/components/Table/DataTable";
 import { FaArrowLeft } from "react-icons/fa";
 import Accordion from "@/components/Accordion/Accordion";
 
