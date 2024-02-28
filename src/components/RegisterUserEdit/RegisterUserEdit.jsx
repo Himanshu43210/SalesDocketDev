@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
 import axios from "axios";
 import { IoClose } from "react-icons/io5";
 import LoadingBeatLoader from "../ui/LoadingBeatLoader";
@@ -25,8 +24,6 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
     setIsTableLoaded(true);
     const token = sessionStorage.getItem("authToken");
 
-  
-
     axios
       .request(config)
       .then((response) => {
@@ -48,8 +45,6 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
   const getCompany = () => {
     setIsTableLoaded(true);
     const token = sessionStorage.getItem("authToken");
-
- 
 
     axios
       .request(config)
@@ -145,7 +140,7 @@ const RegisterUserEdit = ({ userData, setEditBoxOpen, setEditSuccess }) => {
 
   return (
     <div className="min-h-screen  pb-8 bg-[#F5F4F9]">
-      <LoadingBeatLoader isTableLoaded={isTableLoaded}/>
+      <LoadingBeatLoader isTableLoaded={isTableLoaded} />
       <div
         style={{
           boxShadow:

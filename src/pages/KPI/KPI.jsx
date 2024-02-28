@@ -1,5 +1,3 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
 import { useEffect, useState } from "react";
 
 import TableSelection from "@/components/Slection_Panel/Tableselection";
