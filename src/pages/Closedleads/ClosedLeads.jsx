@@ -10,6 +10,7 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
 import axios from "axios";
 import DataTable from "@/components/Table/DataTable";
+import Accordion from "@/components/Accordion/Accordion";
 
 function Closedleads() {
   const [sideMenu, setsideMenu] = useState(false);
@@ -20,7 +21,7 @@ function Closedleads() {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
-  let selectedComponent =<LineBarGraph />;
+  let selectedComponent = <LineBarGraph />;
   // switch (selectedBtn) {
   //   case "monthwiseclosed":
   //     selectedComponent = <LineBarGraph />;
@@ -188,16 +189,16 @@ function Closedleads() {
   }, [selectedBtn]);
 
   const buttonData = [
-    { label: 'Month Wise-closed', value: 'monthwiseclosed' },
-    { label: 'Model wise', value: 'leadSource' },
-    { label: 'RO Wise', value: 'month' },
-    { label: 'Dealer Wise', value: 'lostmodelown' },
-    { label: 'SC Wise', value: 'ro1' },
-    { label: 'City Wise', value: 'ro2' },
-    { label: 'Source Wise', value: 'ro3' },
-    { label: 'Lead State Wise', value: 'ro4' },
-    { label: 'Reason Wise', value: 'ro5' },
-    { label: 'Month Wise -Enquired', value: 'dealer' }
+    { label: "Month Wise-closed", value: "monthwiseclosed" },
+    { label: "Model wise", value: "leadSource" },
+    { label: "RO Wise", value: "month" },
+    { label: "Dealer Wise", value: "lostmodelown" },
+    { label: "SC Wise", value: "ro1" },
+    { label: "City Wise", value: "ro2" },
+    { label: "Source Wise", value: "ro3" },
+    { label: "Lead State Wise", value: "ro4" },
+    { label: "Reason Wise", value: "ro5" },
+    { label: "Month Wise -Enquired", value: "dealer" },
   ];
 
   useEffect(() => {
@@ -288,20 +289,21 @@ function Closedleads() {
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection></TableSelection>
       </div>
-     
-        <div className="flex flex-wrap gap-2 mx-2 mt-4">
-      {buttonData.map((button, index) => (
-        <Button
-          key={index}
-          className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
-          }`}
-          onClick={() => setSelectedBtn(button.value)}
-        >
-          {button.label}
-        </Button>
-      ))}
-    </div>
+      <div className="flex flex-wrap gap-2 mx-2 mt-4">
+        {buttonData.map((button, index) => (
+          <Button
+            key={index}
+            className={`border-2 hover:bg-white hover:text-black ${
+              selectedBtn === button.value
+                ? "bg-white text-black hover:bg-white"
+                : "none"
+            }`}
+            onClick={() => setSelectedBtn(button.value)}
+          >
+            {button.label}
+          </Button>
+        ))}
+      </div>
       <div className="flex justify-center mt-4">
         {" "}
         <LineBarGraph
@@ -312,23 +314,16 @@ function Closedleads() {
         />
       </div>
       <div className="grid grid-cols-2 gap-4 pb-10 mx-4 mt-4">
-        {tablesData.map((tableData, index) => (
-          <div className="p-4 bg-white border-2 rounded-lg accordian ">
-            <div className="flex items-center justify-between">
-              <p className="font-medium ">{tableData.heading}</p>
-              <Button onClick={() => toggleAccordion(index)}>
-                {accordionStates[index] ? "Hide" : "Show"}
-              </Button>
-            </div>
-            {accordionStates[index] && (
-              <DataTable
-                columns={tableData.tableheaddata}
-                data={tableData.tablerowdata}
-                tableName={tableData.heading}
-              />
-            )}
-          </div>
-        ))}
+        {tablesData.length > 0 &&
+          tablesData.map((tableData, index) => (
+            <Accordion
+              key={index}
+              tableData={tableData}
+              index={index}
+              accordionStates={accordionStates}
+              toggleAccordion={toggleAccordion}
+            />
+          ))}
       </div>
     </>
   );
