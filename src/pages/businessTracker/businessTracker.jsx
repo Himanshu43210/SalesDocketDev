@@ -8,45 +8,16 @@ import { RiRecycleFill } from "react-icons/ri";
 import { FaDropbox } from "react-icons/fa";
 import { IoServer } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
-import MonthWise from "@/components/BusninessTracker/MonthwiseCout";
-import DayWise from "@/components/BusninessTracker/DaywiseCout";
-import MOdelWiseWise from "@/components/BusninessTracker/modelWiseCount";
-import RegionWise from "@/components/BusninessTracker/RegionwiseCout";
-import DealerWise from "@/components/BusninessTracker/DealerWise";
-import SCWise from "@/components/BusninessTracker/scWiseCount";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import BTrackerMonthWiseTable from "@/components/BusninessTracker/BTrackerMonthWiseTable";
 import FilterBT from "@/components/BusninessTracker/FilterBT";
+import ChartComponent from "@/components/BusninessTracker/Chart_BusinessTraker";
 
 function BusinessTra() {
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("MonthWise");
   const [accordionStates, setAccordionStates] = useState(false);
   const [open, setOpen] = useState(true);
-  let selectedComponent;
-  switch (selectedBtn) {
-    case "MonthWise":
-      selectedComponent = <MonthWise />;
-      break;
-    case "DayWiseCount":
-      selectedComponent = <DayWise />;
-      break;
-    case "ModelWisecount":
-      selectedComponent = <MOdelWiseWise />;
-      break;
-    case "Regionwise":
-      selectedComponent = <RegionWise />;
-      break;
-    case "dealerwise":
-      selectedComponent = <DealerWise />;
-      break;
-    case "scwise":
-      selectedComponent = <SCWise />;
-      break;
-    default:
-      selectedComponent = <MonthWise />;
-      break;
-  }
 
   const [selected, setSelected] = useState([]);
 
@@ -74,6 +45,38 @@ function BusinessTra() {
     { label: "jan", value: "jan" },
     { label: "feb", value: "feb" },
     { label: "july", value: "july" },
+  ];
+
+  const ReportTypes = {
+    DayWiseCount: [
+      "2024-02-15",
+      "2024-02-14",
+      "2024-02-13",
+      "2024-02-12",
+      "2024-02-11",
+      "2024-02-10",
+    ],
+    dealerwise: ["delhi", "chandigarh", "pune", "bihar"],
+    ModelWisecount: [
+      "creata",
+      "thar",
+      "scorpio",
+      "laandrover",
+      "alto",
+      "cycle",
+    ],
+    MonthWise: ["January", "February", "March", "April", "May", "June", "July"],
+    Regionwise: ["delhi", "chandigarh", "pune", "bihar"],
+    scwise: ["delhi", "chandigarh", "pune", "bihar"],
+  };
+
+  const buttonsInfo = [
+    { key: "MonthWise", label: "Month Wise Report" },
+    { key: "DayWiseCount", label: "Day Wise Count" },
+    { key: "ModelWisecount", label: "Model Wise Count" },
+    { key: "Regionwise", label: "Region Wise Count" },
+    { key: "dealerwise", label: "Dealer Wise" },
+    { key: "scwise", label: "SC Wise" },
   ];
 
   return (
@@ -162,69 +165,24 @@ function BusinessTra() {
           <TableSelection setOpen={setOpen}></TableSelection>
         </div>
 
-        <div className="flex flex-wrap gap-2 mx-2 mt-4">
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "MonthWise"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("MonthWise")}
-          >
-            Month Wise Report
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black ${
-              selectedBtn === "DayWiseCount"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("DayWiseCount")}
-          >
-            Day Wise Count
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "ModelWisecount"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("ModelWisecount")}
-          >
-            Model Wise Count
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "Regionwise"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("Regionwise")}
-          >
-            Region Wise Count
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "dealerwise"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("dealerwise")}
-          >
-            Dealer Wise
-          </Button>
-          <Button
-            className={`border-2 hover:bg-white hover:text-black  ${
-              selectedBtn === "scwise"
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
-            onClick={() => setSelectedBtn("scwise")}
-          >
-            SC Wise
-          </Button>
+        <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
+          {buttonsInfo.map((button) => (
+            <Button
+              key={button.key}
+              className={`border-2 hover:bg-white hover:text-black ${
+                selectedBtn === button.key
+                  ? "bg-white text-black hover:bg-white"
+                  : ""
+              }`}
+              onClick={() => setSelectedBtn(button.key)}
+            >
+              {button.label}
+            </Button>
+          ))}
         </div>
-        <div className="flex justify-center mt-4">{selectedComponent}</div>
+        <div className="flex justify-center mt-4">
+          <ChartComponent labels={ReportTypes[selectedBtn]} />
+        </div>
         {/* <div className="flex justify-center w-[94%] mx-4">
         </div> */}
         <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">

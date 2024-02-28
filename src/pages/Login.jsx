@@ -26,11 +26,11 @@ const Login = () => {
   }, []);
 
   const userLogin = () => {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (!emailRegex.test(userEmail)) {
-      toast.error("Please enter a valid email address");
-    } else {
+    // if (!emailRegex.test(userEmail)) {
+    //   toast.error("Please enter a valid email address");
+    // } else {
       setIsLoading(true);
       setError(null);
       axios
@@ -57,7 +57,7 @@ const Login = () => {
               "Please enter correct login credentials"
           );
         });
-    }
+    
   };
 
   const handleClick = (event) => {
@@ -67,7 +67,7 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white Container">
       <div className="flex flex-col items-center justify-center px-10 pb-4 secondContainer">
-        <h1 className="mb-2 text-2xl font-semibold sm:text-3xl mt-10">
+        <h1 className="mt-10 mb-2 text-2xl font-semibold sm:text-3xl">
           Sign in
         </h1>
         <div className="underline"></div>
@@ -168,7 +168,7 @@ const Login = () => {
               onClick={handleClick}
             />
 
-            <div className="bg-grey-400 rounded-full p-1">
+            <div className="p-1 rounded-full bg-grey-400">
               <img
                 className="w-[30px] mt-[2px]"
                 src="https://flat-icons.com/wp-content/uploads/2022/07/Gmail-Icon-Aesthetic.png"
