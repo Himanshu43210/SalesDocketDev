@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import { Button } from "@/components/ui/button";
-import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
 import { FaCarAlt, FaDatabase } from "react-icons/fa";
 import { GiSteeringWheel } from "react-icons/gi";
 import { IoIosRefresh } from "react-icons/io";
@@ -65,7 +64,6 @@ const ActiveLeads = () => {
         setTitle("Lead Source Wise");
         break;
       default:
-        
         break;
     }
   }, [selectedBtn]);
@@ -79,41 +77,41 @@ const ActiveLeads = () => {
 
   const buttonData = [
     {
-      label: 'EPR vs Registered',
-      value: 'eprvsregistered'
+      label: "EPR vs Registered",
+      value: "eprvsregistered",
     },
     {
-      label: 'Month Wise',
-      value: 'monthwise'
+      label: "Month Wise",
+      value: "monthwise",
     },
     {
-      label: 'Model Wise',
-      value: 'modelwise'
+      label: "Model Wise",
+      value: "modelwise",
     },
     {
-      label: 'Lead Source Wise',
-      value: 'leadsourcewise'
+      label: "Lead Source Wise",
+      value: "leadsourcewise",
     },
     {
-      label: 'Source of Information Wise',
-      value: 'sourceofinformationwise'
+      label: "Source of Information Wise",
+      value: "sourceofinformationwise",
     },
     {
-      label: 'Sales Consultant Wise',
-      value: 'salesconsultantwise'
+      label: "Sales Consultant Wise",
+      value: "salesconsultantwise",
     },
     {
-      label: 'Dealer Wise',
-      value: 'dealerwise'
+      label: "Dealer Wise",
+      value: "dealerwise",
     },
     {
-      label: 'Lead State Wise',
-      value: 'leadstatewise'
+      label: "Lead State Wise",
+      value: "leadstatewise",
     },
     {
-      label: 'Successful Follow Ups',
-      value: 'successfulfollowups'
-    }
+      label: "Successful Follow Ups",
+      value: "successfulfollowups",
+    },
   ];
 
   useEffect(() => {
@@ -168,19 +166,21 @@ const ActiveLeads = () => {
         <TableSelection></TableSelection>
       </div>
       {/* //map button  */}
-     <div className="flex flex-wrap gap-2 mx-2 mt-4 active-btn-list">
-      {buttonData.map((button, index) => (
-        <Button
-          key={index}
-          className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
-          }`}
-          onClick={() => setSelectedBtn(button.value)}
-        >
-          {button.label}
-        </Button>
-      ))}
-    </div>
+      <div className="flex flex-wrap gap-2 mx-2 mt-4 active-btn-list">
+        {buttonData.map((button, index) => (
+          <Button
+            key={index}
+            className={`border-2 hover:bg-white hover:text-black ${
+              selectedBtn === button.value
+                ? "bg-white text-black hover:bg-white"
+                : "none"
+            }`}
+            onClick={() => setSelectedBtn(button.value)}
+          >
+            {button.label}
+          </Button>
+        ))}
+      </div>
       <div className="flex justify-center mt-4 ">
         <LineBarGraph
           graphLabels={graphLabels}

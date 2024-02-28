@@ -1,11 +1,8 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import SingleBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import DataTable from "@/components/Table/DataTable";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import BtrendFilter from "@/components/Btrend/Filtertrend";
@@ -129,7 +126,7 @@ function DealerWisee() {
 
   return (
     <>
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
 
       <BtrendFilter
         open={open}
@@ -148,7 +145,6 @@ function DealerWisee() {
       </div>
 
       <div className="flex justify-between">
-      
         <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
           {buttonData.map((button, index) => (
             <Button
@@ -183,7 +179,12 @@ function DealerWisee() {
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
-      <TableDataMapper tablesData={tablesData} tableHeading={tableHeading} setAccordionStates={setAccordionStates} accordionStates={accordionStates}/>
+      <TableDataMapper
+        tablesData={tablesData}
+        tableHeading={tableHeading}
+        setAccordionStates={setAccordionStates}
+        accordionStates={accordionStates}
+      />
       {/* <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map(
           (tableData, index) =>
