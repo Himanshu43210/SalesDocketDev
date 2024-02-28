@@ -13,7 +13,6 @@ describe('SideMenu component', () => {
         <SideMenu setsideMenu={jest.fn()} sideMenu={false} />
       </MemoryRouter>
       </Provider>
-      
     );
   });
 });

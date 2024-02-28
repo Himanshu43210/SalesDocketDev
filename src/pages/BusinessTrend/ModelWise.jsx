@@ -10,8 +10,14 @@ import TableDataMapper from "@/components/BusninessTracker/TableDataMapper";
 import Navbar from "@/components/ui/Navbar";
 
 function ModelWise() {
+  const selectedBtnDef = "Enquiry Wise";
+  const walkInWise = "Walk-In Wise";
+  const BookingWise = "Booking Wise";
+  const DeliveryWise = "Delivery Wise";
+  const CloseWise = "Closed Wise";
+  const ConvRatio = "Conversation Ratio";
   const [sideMenu, setsideMenu] = useState(false);
-  const [selectedBtn, setSelectedBtn] = useState("Enquiry Wise");
+  const [selectedBtn, setSelectedBtn] = useState(selectedBtnDef);
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState(false);
   const [tableHeading, setTableHeading] = useState("Enquiry Wise");
@@ -19,22 +25,22 @@ function ModelWise() {
 
   let selectedComponent;
   switch (selectedBtn) {
-    case "Enquiry Wise":
+    case selectedBtnDef:
       selectedComponent = (
         <SingleBarGraph graphLabels={graphLabels} title={"Enquiry-Wise"} />
       );
       break;
-    case "Walk-In Wise":
+    case walkInWise:
       selectedComponent = (
         <SingleBarGraph graphLabels={graphLabels} title={"Walk-In-Wise"} />
       );
       break;
-    case "Booking Wise":
+    case BookingWise:
       selectedComponent = (
         <SingleBarGraph graphLabels={graphLabels} title={"Booking-Wise"} />
       );
       break;
-    case "Delivery Wise":
+    case DeliveryWise:
       selectedComponent = (
         <SingleBarGraph graphLabels={graphLabels} title={"Delivery-Wise"} />
       );
@@ -44,12 +50,12 @@ function ModelWise() {
         <SingleBarGraph graphLabels={graphLabels} title={"Lost-Wise"} />
       );
       break;
-    case "Closed Wise":
+    case CloseWise:
       selectedComponent = (
         <SingleBarGraph graphLabels={graphLabels} title={"Closed-Wise"} />
       );
       break;
-    case "Conversation Ratio":
+    case ConvRatio:
       selectedComponent = (
         <SingleBarGraph
           graphLabels={graphLabels}
@@ -64,12 +70,10 @@ function ModelWise() {
       break;
   }
   const navigate = useNavigate();
-
   const [fromDate, setFromDate] = useState();
   const [toDate, setToDate] = useState();
   const [selected, setSelected] = useState([]);
   const [open, setOpen] = useState(true);
-
   const dealerOptions = [
     { label: "option A", value: "optiona" },
     { label: "option B", value: "optionb" },
@@ -78,24 +82,24 @@ function ModelWise() {
 
   const buttonData = [
     {
-      label: "Enquiry Wise ",
-      value: "Enquiry Wise",
-      tableHeading: "Dealer Wise Enquiry Table",
+      label: selectedBtnDef,
+      value: selectedBtnDef,
+      tableHeading: 'Dealer Wise Enquiry Table'
     },
     {
-      label: "Walk-In Wise ",
-      value: "Walk-In Wise",
-      tableHeading: "Dealer Wise Walk-In table",
+      label: walkInWise,
+      value: walkInWise,
+      tableHeading: 'Dealer Wise Walk-In table'
     },
     {
-      label: "Booking Wise ",
-      value: "Booking Wise",
-      tableHeading: "Dealer Wise Booking Table",
+      label: BookingWise,
+      value: BookingWise,
+      tableHeading: 'Dealer Wise Booking Table'
     },
     {
-      label: "Delivery Wise ",
-      value: "Delivery Wise",
-      tableHeading: "Dealer Wise Delivery Table",
+      label: DeliveryWise,
+      value: DeliveryWise,
+      tableHeading: 'Dealer Wise Delivery Table'
     },
     {
       label: "Lost Wise ",
@@ -103,9 +107,9 @@ function ModelWise() {
       tableHeading: "Dealer Wise Lost Table",
     },
     {
-      label: "Closed Wise ",
-      value: "Closed Wise",
-      tableHeading: "Dealer wise Closed Table",
+      label: CloseWise,
+      value: CloseWise,
+      tableHeading: 'Dealer wise Closed Table'
     },
     {
       label: "Conversation Ratio ",
@@ -127,24 +131,19 @@ function ModelWise() {
 
   return (
     <>
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
-
-      <BtrendFilter
-        open={open}
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
+      <BtrendFilter  open={open}
         setOpen={setOpen}
         fromDate={fromDate}
-        toDate={toDate}
-        setFromDate={setFromDate}
-        setToDate={setToDate}
-        dealerOptions={dealerOptions}
-        selected={selected}
-        setSelected={setSelected}
-      />
-
+            toDate={toDate}
+            setFromDate={setFromDate}
+            setToDate={setToDate}
+            dealerOptions={dealerOptions}
+            selected={selected}
+            setSelected={setSelected}/>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection setOpen={setOpen}></TableSelection>
       </div>
-
       <div className="flex justify-between">
         <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
           {buttonData.map((button, index) => (

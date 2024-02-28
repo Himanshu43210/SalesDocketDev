@@ -1,24 +1,14 @@
 import React, { useEffect, useState } from "react";
-import styles from "./RegisterUser.module.css";
 import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../../components/Admin_Navbar";
 import SideMenu from "../../components/SideMenu";
-import { BeatLoader } from "react-spinners";
 import axios from "axios";
-import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/io";
 import SuccessBox from "@/components/RegisterUser/SuccessBox";
 
 const RegisterUser = () => {
   const [sideMenu, setsideMenu] = useState(false);
   const [isTableLoaded, setIsTableLoaded] = useState(false);
-
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // setFormData({
-    //   ...formData,
-    // });
-  });
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -35,9 +25,6 @@ const RegisterUser = () => {
   const [errMsg, setErrMsg] = useState("");
   const [sucBox, setSucBox] = useState(false);
   const [failBox, setFailBox] = useState(false);
-
-  //storefilter
-  const [storeData, setStoreData] = useState([]);
   const [companyData, setCompanyData] = useState([]);
 
   const handleChange = (e) => {
@@ -81,8 +68,6 @@ const RegisterUser = () => {
     const data = JSON.stringify({
       firstName: formData.firstName,
       lastName: formData.lastName,
-      // email: formData.email,
-      // password: formData.password,
       phoneNumber: formData.phoneNumber,
       companyId: formData.companyId,
       role: formData.role,
@@ -128,11 +113,6 @@ const RegisterUser = () => {
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
       </div>
-      {/* {isTableLoaded && (
-        <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-          <BeatLoader color={"#EC2752"} loading={isTableLoaded} size={15} />
-        </div>
-      )} */}
       <SuccessBox sucBox={sucBox} failBox={failBox} errMsg={errMsg} setFailBox={setFailBox} setSucBox={setSucBox}/>
       <div
         style={{

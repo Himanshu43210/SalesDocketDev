@@ -11,7 +11,7 @@ import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/Line
 import axios from "axios";
 import Accordion from "@/components/Accordion/Accordion";
 
-function Closedleads() {
+const Closedleads = () => {
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("monthwiseclosed");
   const [graphLabels, setGraphLabels] = useState([]);
@@ -20,7 +20,7 @@ function Closedleads() {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
-  let selectedComponent = <LineBarGraph />;
+  const dealerWise = "Dealer Wise";
   // switch (selectedBtn) {
   //   case "monthwiseclosed":
   //     selectedComponent = <LineBarGraph />;
@@ -143,7 +143,7 @@ function Closedleads() {
         setBarGraphData(barData);
         setLineGraphData(lineData);
         setGraphLabels(labels);
-        setTitle("Dealer Wise");
+        setTitle(dealerWise);
         break;
       case "leadstatewise":
         labels = ["None", "HOT", "WARM", "COLD"];
@@ -152,7 +152,7 @@ function Closedleads() {
         setBarGraphData(barData);
         setLineGraphData(lineData);
         setGraphLabels(labels);
-        setTitle("Dealer Wise");
+        setTitle(dealerWise);
         break;
       case "scwise":
         labels = [
@@ -188,16 +188,16 @@ function Closedleads() {
   }, [selectedBtn]);
 
   const buttonData = [
-    { label: "Month Wise-closed", value: "monthwiseclosed" },
-    { label: "Model wise", value: "leadSource" },
-    { label: "RO Wise", value: "month" },
-    { label: "Dealer Wise", value: "lostmodelown" },
-    { label: "SC Wise", value: "ro1" },
-    { label: "City Wise", value: "ro2" },
-    { label: "Source Wise", value: "ro3" },
-    { label: "Lead State Wise", value: "ro4" },
-    { label: "Reason Wise", value: "ro5" },
-    { label: "Month Wise -Enquired", value: "dealer" },
+    { label: 'Month Wise-closed', value: 'monthwiseclosed' },
+    { label: 'Model wise', value: 'leadSource' },
+    { label: 'RO Wise', value: 'month' },
+    { label: dealerWise, value: 'lostmodelown' },
+    { label: 'SC Wise', value: 'ro1' },
+    { label: 'City Wise', value: 'ro2' },
+    { label: 'Source Wise', value: 'ro3' },
+    { label: 'Lead State Wise', value: 'ro4' },
+    { label: 'Reason Wise', value: 'ro5' },
+    { label: 'Month Wise -Enquired', value: 'dealer' }
   ];
 
   useEffect(() => {
@@ -326,6 +326,6 @@ function Closedleads() {
       </div>
     </>
   );
-}
+};
 
 export default Closedleads;

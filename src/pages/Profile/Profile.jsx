@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import User_Logo from "../../assets/User_Logo.jpeg";
-import AdminNavbar from "../../components/Admin_Navbar";
-import SideMenu from "../../components/SideMenu";
 import { MdModeEditOutline } from "react-icons/md";
 import axios from "axios";
 import styles from "./Profile.module.css";
-import { BeatLoader } from "react-spinners";
 import LoadingBeatLoader from "@/components/ui/LoadingBeatLoader";
 import Navbar from "@/components/ui/Navbar";
 
@@ -110,15 +107,13 @@ const Profile = () => {
         const storedProfile = JSON.parse(sessionStorage.getItem("profile"));
         storedProfile.profileImage = response.data.profileImageLink;
         sessionStorage.setItem("profile", JSON.stringify(storedProfile));
-
         setProfileImage(response.data.profileImageLink);
         setIsTableLoaded(false);
         setErrorMsg("Successfully uploaded profile image");
         handleEditClick();
       } else {
-        console.log("Failed to upload profile image");
         setIsTableLoaded(false);
-        setErrorMsg("Failed to upload profile image");
+        setErrorMsg("Failed to upload profile img");
       }
     } catch (error) {
       console.error(
@@ -126,7 +121,7 @@ const Profile = () => {
         error
       );
       setIsTableLoaded(false);
-      setErrorMsg("Failed to upload profile image");
+      setErrorMsg("Failed to update profile image");
     }
   };
 
@@ -216,7 +211,6 @@ const Profile = () => {
     }
   };
 
-  // console.log(profile);
   return (
     <div className="min-h-screen  pb-8 bg-[#F5F4F9] ">
       <LoadingBeatLoader isTableLoaded={isTableLoaded}/>

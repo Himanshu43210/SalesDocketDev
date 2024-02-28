@@ -25,7 +25,6 @@ const BusinessTrend = () => {
           <Link to="/BusinessTrend/ModelWise">
             <Button>Model Wise</Button>
           </Link>
-         
         </div>
       </div>
     </div>

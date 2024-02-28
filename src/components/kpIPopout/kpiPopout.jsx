@@ -1,11 +1,8 @@
 import { ImCancelCircle } from "react-icons/im";
 function Popout({setPopout,popout}){
-     
-
     const hndleSubmit=()=>{
         setPopout(!popout)
     }
-
     return(
         <>
         <div className="flex items-center justify-center h-[90vh] bg-gray-200">

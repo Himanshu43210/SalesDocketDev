@@ -16,6 +16,7 @@ const LeadsInDanger = () => {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
+  const monthwiseStyle = "bg-white text-black hover:bg-white";
 
   useEffect(() => {
     let labels = [];
@@ -141,7 +142,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black ${
             selectedBtn === "monthwise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("monthwise")}
@@ -151,7 +152,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "modelwise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("modelwise")}
@@ -161,7 +162,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "rowise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("rowise")}
@@ -172,7 +173,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "dealerwise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("dealerwise")}
@@ -182,7 +183,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "scwise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("scwise")}
@@ -192,7 +193,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "citywise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("citywise")}
@@ -202,7 +203,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "sourcewise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("sourcewise")}
@@ -212,7 +213,7 @@ const LeadsInDanger = () => {
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
             selectedBtn === "leadstatewise"
-              ? "bg-white text-black hover:bg-white"
+              ? monthwiseStyle
               : "none"
           }  `}
           onClick={() => setSelectedBtn("leadstatewise")}

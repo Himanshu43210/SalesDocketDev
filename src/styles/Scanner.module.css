@@ -38,9 +38,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .video_box {
-  }
-
   .video_box video {
     width: 340px;
   }

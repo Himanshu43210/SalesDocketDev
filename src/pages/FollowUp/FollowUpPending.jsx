@@ -72,17 +72,17 @@ const FollowUpPending = ({ button, setbutton }) => {
       </div>
       <div className="flex justify-between">
         <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
-          {buttonsInfo.map((button) => (
+          {buttonsInfo.map((item) => (
             <Button
-              key={button.key}
+              key={item.key}
               className={`border-2 hover:bg-white hover:text-black ${
-                selectedBtn === button.key
+                selectedBtn === item.key
                   ? "bg-white text-black hover:bg-white"
                   : ""
               }`}
-              onClick={() => setSelectedBtn(button.key)}
+              onClick={() => setSelectedBtn(item.key)}
             >
-              {button.label}
+              {item.label}
             </Button>
           ))}
         </div>

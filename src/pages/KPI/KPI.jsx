@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-
 import TableSelection from "@/components/Slection_Panel/Tableselection";
-
 import TableTwokpI from "@/components/kpIPopout/kpiTable2";
 import Popout from "@/components/kpIPopout/kpiPopout";
-
-import { useSelector } from "react-redux";
+import {  useSelector } from 'react-redux';
 import Navbar from "@/components/ui/Navbar";
 
-function KPI() {
+const KPI = () => {
   const [sideMenu, setsideMenu] = useState(false);
 
   const [popout, setPopout] = useState(true);
@@ -424,20 +421,127 @@ function KPI() {
       "0",
     ],
   ];
+   const  mainheader =[
+    "Total of all models"
+];
+  const  SubheaderFirst=[
+      "Activity",
+      "Digital",
+      "Others",
+      "Referal",
+      "Tele-In",
+      "Walk-In",
+      "Walkin",
+      "Total",
+    ];
+  
+    const SunheaderTwo=[
+      "DataCout",
+      "DataCout",
+      "DataCout",
+      "DataCout",
+      "DataCout",
+      "DataCout",
+      "DataCout",
+      "DataCout",
+    ];
+   const  mainheadertwo=[
+      "Grand",
+     " Creta",
+     "Verna",
+     "EON",
+     "New Santro",
+     "ELITE i20",
+     "XCENT",
+     "GRAND NIOS",
+     "Venue",
+     "KONA",
+];
 
-  const mainheader = ["Total of all models"];
-  const SubheaderFirst = [
+const SubheaderFirsttwo=[
     "Activity",
-    "Digital",
-    "Others",
+    'Digital',
+    'Others',
     "Referal",
     "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-  ];
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+    "Activity",
+    'Digital',
+    'Others',
+    "Referal",
+    "Tele-In",
+    'Walk-In',
+    'Walkin',
+    'Total',
+];
 
-  const SunheaderTwo = [
+const SunheaderTwo2=[
     "DataCout",
     "DataCout",
     "DataCout",
@@ -446,341 +550,233 @@ function KPI() {
     "DataCout",
     "DataCout",
     "DataCout",
-  ];
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+    "DataCout",
+];
 
-  const mainheadertwo = [
-    "Grand",
-    " Creta",
-    "Verna",
-    "EON",
-    "New Santro",
-    "ELITE i20",
-    "XCENT",
-    "GRAND NIOS",
-    "Venue",
-    "KONA",
-  ];
+const tableData = [
+  {
+    header: "Leads Received",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Leads Received",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Test Drive",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Test Drive",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Closed and Lost",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Closed and Lost",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Booking Delivery Conversion Ratio",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Booking Delivery CR",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Cash Vs Finance",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Cash Vs Finance",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Exchange Penetration",
+    rowdata: firstGrapDataKPI,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Exchange Penetration",
+    rowdata: SecondGrapDataKPI,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  }
+];
 
-  const SubheaderFirsttwo = [
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-    "Activity",
-    "Digital",
-    "Others",
-    "Referal",
-    "Tele-In",
-    "Walk-In",
-    "Walkin",
-    "Total",
-  ];
-
-  const SunheaderTwo2 = [
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-    "DataCout",
-  ];
-
-  const tableData = [
-    {
-      rowdata: firstGrapDataKPI,
-      header: "Leads Received",
-      mainheader: mainheader,
-      SunheaderTwo: SunheaderTwo,
-      SubheaderFirst: SubheaderFirst,
-    },
-    {
-      rowdata: SecondGrapDataKPI,
-      mainheader: mainheadertwo,
-      header: "Product wise Leads Received",
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-    },
-    {
-      rowdata: firstGrapDataKPI,
-      mainheader: mainheader,
-      SubheaderFirst: SubheaderFirst,
-      header: "Test Drive",
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      rowdata: SecondGrapDataKPI,
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-      header: "Product wise Test Drive",
-    },
-    {
-      header: "Closed and Lost",
-      mainheader: mainheader,
-      rowdata: firstGrapDataKPI,
-      SubheaderFirst: SubheaderFirst,
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      header: "Product wise Closed and Lost",
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      rowdata: SecondGrapDataKPI,
-      SunheaderTwo: SunheaderTwo2,
-    },
-    {
-      header: "Booking Delivery Conversion Ratio",
-      mainheader: mainheader,
-      SubheaderFirst: SubheaderFirst,
-      SunheaderTwo: SunheaderTwo,
-      rowdata: firstGrapDataKPI,
-    },
-    {
-      rowdata: SecondGrapDataKPI,
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      header: "Product wise Booking Delivery CR",
-      SunheaderTwo: SunheaderTwo2,
-    },
-    {
-      rowdata: firstGrapDataKPI,
-      SubheaderFirst: SubheaderFirst,
-      header: "Cash Vs Finance",
-      mainheader: mainheader,
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      rowdata: SecondGrapDataKPI,
-      header: "Product wise Cash Vs Finance",
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-      mainheader: mainheadertwo,
-    },
-    {
-      mainheader: mainheader,
-      header: "Exchange Penetration",
-      SunheaderTwo: SunheaderTwo,
-      rowdata: firstGrapDataKPI,
-      SubheaderFirst: SubheaderFirst,
-    },
-    {
-      header: "Product wise Exchange Penetration",
-      mainheader: mainheadertwo,
-      rowdata: SecondGrapDataKPI,
-      SunheaderTwo: SunheaderTwo2,
-      SubheaderFirst: SubheaderFirsttwo,
-    },
-  ];
-
-  const tableDataFollowups = [
-    {
-      header: "Call follow-ups",
-      rowdata: firstGrapDatakpiFollow,
-      mainheader: mainheader,
-      SubheaderFirst: SubheaderFirst,
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      header: "Product wise Call follow-ups",
-      rowdata: SecondGrapDatakpiFollow,
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-    },
-    {
-      header: "Home Follow Ups",
-      rowdata: firstGrapDatakpiFollow,
-      mainheader: mainheader,
-      SubheaderFirst: SubheaderFirst,
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      header: "Product wise Home Follow Ups",
-      rowdata: SecondGrapDatakpiFollow,
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-    },
-    {
-      header: "Showroom Followups",
-      rowdata: firstGrapDatakpiFollow,
-      mainheader: mainheader,
-      SubheaderFirst: SubheaderFirst,
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      header: "Product wise Showroom Followups",
-      rowdata: SecondGrapDatakpiFollow,
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-    },
-    {
-      header: "No.of Followups done and Delayed followups",
-      rowdata: firstGrapDatakpiFollow,
-      mainheader: mainheader,
-      SubheaderFirst: SubheaderFirst,
-      SunheaderTwo: SunheaderTwo,
-    },
-    {
-      header: "Product wise Followups done and Delayed",
-      rowdata: SecondGrapDatakpiFollow,
-      mainheader: mainheadertwo,
-      SubheaderFirst: SubheaderFirsttwo,
-      SunheaderTwo: SunheaderTwo2,
-    },
-  ];
+const tableDataFollowups = [
+  {
+    header: "Call follow-ups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Call follow-ups",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Home Follow Ups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Home Follow Ups",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "Showroom Followups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Showroom Followups",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  },
+  {
+    header: "No.of Followups done and Delayed followups",
+    rowdata: firstGrapDatakpiFollow,
+    mainheader: mainheader,
+    SubheaderFirst: SubheaderFirst,
+    SunheaderTwo: SunheaderTwo
+  },
+  {
+    header: "Product wise Followups done and Delayed",
+    rowdata: SecondGrapDatakpiFollow,
+    mainheader: mainheadertwo,
+    SubheaderFirst: SubheaderFirsttwo,
+    SunheaderTwo: SunheaderTwo2
+  }
+];
 
   useEffect(() => {
-    setPopout(true);
+    setPopout(true);    
   }, [nAME]);
 
   return (
     <>
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
-
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
       {popout ? (
         <div className="popout">
           <Popout setPopout={setPopout} popout={popout}></Popout>
@@ -790,7 +786,6 @@ function KPI() {
           <div className="flex w-[100vw] items-center justify-center mt-[5px]">
             <TableSelection></TableSelection>
           </div>
-
           {nAME === "KPI" ? (
             <div className="border-4 maintablelist border-stone-500 mt-4 mx-[5vw]">
               {tableData.map((data, index) => (
@@ -816,12 +811,12 @@ function KPI() {
                   SunheaderTwo={data.SunheaderTwo}
                 />
               ))}
-            </div>
+          </div>
           )}
         </>
       )}
     </>
   );
 }
-
 export default KPI;
+

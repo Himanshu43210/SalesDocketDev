@@ -3,19 +3,11 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Calendar } from "../ui/calendar";
-import { cn } from "@/lib/utils";
-import { CalendarIcon } from "lucide-react";
-import { format } from "date-fns";
 import { MultiSelect } from "react-multi-select-component";
 import { setSelectedField } from "@/store/slices/selectedFieldSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const FilterBT = ({
     MonthOptions,
@@ -26,7 +18,7 @@ const FilterBT = ({
   open,
   setOpen
   }) => {
-//   const [open, setOpen] = useState(true);
+
 
   const dispatch = useDispatch();
   const [selected, setSelected] = useState({
@@ -55,7 +47,6 @@ const FilterBT = ({
         fieldName:"product_name",
         value:[]
     }
-    
 });
 
 const [dealer,setDealer]=useState([])
@@ -64,12 +55,9 @@ const [City,setcity]=useState([])
 const [Model,setModel]=useState([])
 const [Month,setMonth]=useState([])
 
-
-
   const handleChange = (additionalInfo) => (selectedOptions) => {
     console.log(selectedOptions)
     const selectedValues = selectedOptions.map(option => option.value);
-    
 
     if(additionalInfo === "Dealer"){
         setDealer(selectedOptions)
@@ -121,41 +109,28 @@ const [Month,setMonth]=useState([])
             }
           }))
     }
-
-    
-    // setSelected(selectedValues);
-  
-   
     console.log(additionalInfo);
   };
-//   console.log(selected)
-
 
   const HanldeSubmit=()=>{
     setOpen(false)
 
-    if (dealer.length > 0) {
+      if (dealer.length > 0) {
         dispatch(setSelectedField(selected.Dealer));
       }
-    
       if (RO.length > 0) {
         dispatch(setSelectedField(selected.RO));
       }
-    
       if (City.length > 0) {
         dispatch(setSelectedField(selected.City));
       }
       if (Model.length > 0) {
         dispatch(setSelectedField(selected.Model));
       }
-    
       if (Month.length > 0) {
         dispatch(setSelectedField(selected.Month));
       }
-    
-   
   }
-  
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
@@ -176,7 +151,6 @@ const [Month,setMonth]=useState([])
                                 <i className="fas fa-times"></i>
                             </button>
                         </div>
-       
           <div className="flex flex-wrap gap-2">
             <div className="w-[44%]">
               <p>Dealer</p>
@@ -223,9 +197,6 @@ const [Month,setMonth]=useState([])
                 labelledBy="Select"
               />
             </div>
-           
-            
-           
           </div>
           <DialogFooter>
             <Button onClick={ HanldeSubmit} type="submit">

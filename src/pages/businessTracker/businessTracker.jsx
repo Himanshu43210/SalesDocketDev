@@ -3,17 +3,16 @@ import SideMenu from "@/components/SideMenu";
 import { useState } from "react";
 import style from "./Business.module.css";
 import { FaSignal } from "react-icons/fa6";
-import { IoChatbubbles } from "react-icons/io5";
+import { IoChatbubbles, IoServer } from "react-icons/io5";
 import { RiRecycleFill } from "react-icons/ri";
 import { FaDropbox } from "react-icons/fa";
-import { IoServer } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import BTrackerMonthWiseTable from "@/components/BusninessTracker/BTrackerMonthWiseTable";
 import FilterBT from "@/components/BusninessTracker/FilterBT";
 import ChartComponent from "@/components/BusninessTracker/Chart_BusinessTraker";
 
-function BusinessTra() {
+function BusinessTracker() {
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("MonthWise");
   const [accordionStates, setAccordionStates] = useState(false);
@@ -201,4 +200,4 @@ function BusinessTra() {
   );
 }
 
-export default BusinessTra;
+export default BusinessTracker;

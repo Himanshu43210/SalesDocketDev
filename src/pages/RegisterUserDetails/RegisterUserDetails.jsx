@@ -1,11 +1,7 @@
 import styles from "./RegisterUserDetails.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-import { BeatLoader } from "react-spinners";
 import {
-  IoIosCheckmarkCircle,
-  IoIosCloseCircle,
   IoMdAdd,
   IoMdSearch,
 } from "react-icons/io";
@@ -69,7 +65,6 @@ const RegisterUserDetails = () => {
 
   const getDataBySearch = () => {
     setIsTableLoaded(true);
-    const LoggedInUser = JSON.parse(sessionStorage.getItem("profile"));
     const token = sessionStorage.getItem("authToken");
 
     const config = {
@@ -123,7 +118,7 @@ const RegisterUserDetails = () => {
     const LoggedInUser = JSON.parse(sessionStorage.getItem("profile"));
     const token = sessionStorage.getItem("authToken");
 
-    const data = JSON.stringify({
+    const dataTo = JSON.stringify({
       userID: userID,
     });
 
@@ -137,7 +132,7 @@ const RegisterUserDetails = () => {
         Authorization: token,
         "Content-Type": "application/json",
       },
-      data: data,
+      data: dataTo,
     };
 
     axios
@@ -170,25 +165,6 @@ const RegisterUserDetails = () => {
     setStoreValue("");
     setRoleValue("");
     getData();
-  };
-
-  const downloadExcel = () => {
-    const fileType =
-      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
-    const fileExtension = ".xlsx";
-
-    const formattedData = data.map((item) => {
-      return {
-        "User Id": item._id,
-      };
-    });
-
-    const ws = XLSX.utils.json_to_sheet(formattedData);
-    const wb = { Sheets: { data: ws }, SheetNames: ["data"] };
-    const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-
-    const dataFile = new Blob([excelBuffer], { type: fileType });
-    saveAs(dataFile, "Users_Data" + fileExtension);
   };
 
   return (
@@ -232,7 +208,7 @@ const RegisterUserDetails = () => {
               </button>
               <button
                 onClick={() => {
-                  setConfBox(false), setIsTableLoaded(false);
+                  setConfBox(false); setIsTableLoaded(false);
                 }}
                 className="bg-white text-[#0F172A]"
               >
@@ -341,7 +317,7 @@ const RegisterUserDetails = () => {
                     </div>
                   </td>
                   <td className="p-2 text-sm text-center md:p-3 md:text-base">
-                    {val?.firstName + " " + val?.lastName}
+                    {`${val?.firstName} ${val?.lastName}`}
                   </td>
                   <td className="p-2 text-sm text-center md:p-3 md:text-base">
                     {val?.email}
