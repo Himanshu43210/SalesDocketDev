@@ -1,16 +1,11 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
 import { useEffect, useState } from "react";
-
 import TableSelection from "@/components/Slection_Panel/Tableselection";
-
 import TableTwokpI from "@/components/kpIPopout/kpiTable2";
 import Popout from "@/components/kpIPopout/kpiPopout";
-
 import {  useSelector } from 'react-redux';
 import Navbar from "@/components/ui/Navbar";
 
-function KPI() {
+const KPI = () => {
   const [sideMenu, setsideMenu] = useState(false);
 
   const [popout, setPopout] = useState(true);
@@ -427,10 +422,6 @@ function KPI() {
       "0",
     ],
   ];
-
-
-  
-
    const  mainheader =[
     "Total of all models"
 ];
@@ -455,9 +446,6 @@ function KPI() {
       "DataCout",
       "DataCout",
     ];
-  
-  
-   
    const  mainheadertwo=[
       "Grand",
      " Creta",
@@ -470,7 +458,6 @@ function KPI() {
      "Venue",
      "KONA",
 ];
-
 
 const SubheaderFirsttwo=[
     "Activity",
@@ -637,7 +624,7 @@ const SunheaderTwo2=[
     "DataCout",
     "DataCout",
 ];
- 
+
 const tableData = [
   {
     header: "Leads Received",
@@ -784,21 +771,14 @@ const tableDataFollowups = [
   }
 ];
 
-  
-
-
   useEffect(() => {
-    setPopout(true);
-
-
-    
+    setPopout(true);    
   }, [nAME]);
 
 
   return (
     <>
       <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
-  
       {popout ? (
         <div className="popout">
           <Popout setPopout={setPopout} popout={popout}></Popout>
@@ -808,10 +788,8 @@ const tableDataFollowups = [
           <div className="flex w-[100vw] items-center justify-center mt-[5px]">
             <TableSelection></TableSelection>
           </div>
-  
           {nAME === "KPI" ? (
             <div className="border-4 maintablelist border-stone-500 mt-4 mx-[5vw]">
-        
               {tableData.map((data, index) => (
                 <TableTwokpI
                   key={index}
@@ -835,18 +813,13 @@ const tableDataFollowups = [
                   SunheaderTwo={data.SunheaderTwo}
                 />
               ))}
-           
           </div>
           )}
         </>
       )}
     </>
   );
-
-    }
+}
   
-
-
-
-
 export default KPI;
+

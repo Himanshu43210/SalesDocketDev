@@ -4,7 +4,6 @@ import { setSelectedField } from "@/store/slices/selectedFieldSlice";
 
 const DeliveryAnalysisTableTwo = ({ tableName, tableData }) => {
   const dispatch = useDispatch();
-  
   const handleClick = (value) => {
     const columnName = tableData.table.tableHeader[0];
 

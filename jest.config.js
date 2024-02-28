@@ -1,5 +1,4 @@
-
-const config = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test/setupTests.js'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
@@ -9,7 +8,3 @@ const config = {
     "\\.(scss|css)$": "identity-obj-proxy"
   },
 };
-
-
-
-export default config;

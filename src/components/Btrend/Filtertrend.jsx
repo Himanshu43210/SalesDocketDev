@@ -3,8 +3,6 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
@@ -25,7 +23,6 @@ const BtrendFilter = ({
   open,
   setOpen
 }) => {
-//   const [open, setOpen] = useState(true);
   const [calendarOpenFrom, setCalendarOpenFrom] = useState(false);
   const [calendarOpenTo, setCalendarOpenTo] = useState(false);
   return (
@@ -107,7 +104,6 @@ const BtrendFilter = ({
                 labelledBy="Select"
               />
             </div>
-          
             <div className="w-[44%]">
               <p>Model</p>
               <MultiSelect
@@ -117,11 +113,6 @@ const BtrendFilter = ({
                 labelledBy="Select"
               />
             </div>
-           
-            
-           
-            
-            
           </div>
           <DialogFooter>
             <Button onClick={() => setOpen(false)} type="submit">

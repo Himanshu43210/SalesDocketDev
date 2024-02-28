@@ -1,20 +1,18 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import SingleBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import DataTable from "@/components/Table/DataTable";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import BtrendFilter from "@/components/Btrend/Filtertrend";
 import Navbar from "@/components/ui/Navbar";
 import TableDataMapper from "@/components/BusninessTracker/TableDataMapper";
 
-function DealerWisee() {
+function DealerWise() {
+  const selectedBtnDef = "Enquiry Wise";
   const [sideMenu, setsideMenu] = useState(false);
-  const [selectedBtn, setSelectedBtn] = useState("Enquiry Wise");
+  const [selectedBtn, setSelectedBtn] = useState(selectedBtnDef);
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState(false);
   const [tableHeading, setTableHeading] = useState(null);
@@ -26,7 +24,7 @@ function DealerWisee() {
 
   let selectedComponent;
   switch (selectedBtn) {
-    case "Enquiry Wise":
+    case selectedBtnDef:
       selectedComponent = (
         <SingleBarGraph graphLabels={graphLabels} title={"Enquiry-Wise"} />
       );
@@ -142,13 +140,10 @@ function DealerWisee() {
         selected={selected}
         setSelected={setSelected}
       />
-
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection setOpen={setOpen}></TableSelection>
       </div>
-
       <div className="flex justify-between">
-      
         <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
           {buttonData.map((button, index) => (
             <Button
@@ -211,4 +206,4 @@ function DealerWisee() {
   );
 }
 
-export default DealerWisee;
+export default DealerWise;

@@ -8,12 +8,6 @@ const testGraph = ({ type, labels, data }) => {
       {type === DOUBLE_BAR_GRAPH && (
         <DoubleBarGraph graphLabels={labels} data={data} />
       )}
-      {/* {type === DOUBLE_BAR_GRAPH && (
-        <DoubleBarGraph graphLabels={labels} data={data} />
-      )}
-      {type === DOUBLE_BAR_GRAPH && (
-        <DoubleBarGraph graphLabels={labels} data={data} />
-      )} */}
     </>
   );
 };

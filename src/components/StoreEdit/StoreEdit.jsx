@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
+import React, { useState } from "react";
 import axios from "axios";
 import { IoClose } from "react-icons/io5";
 import LoadingBeatLoader from "../ui/LoadingBeatLoader";
@@ -58,18 +57,18 @@ const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
       method: 'put',
       maxBodyLength: Infinity,
       url: `${import.meta.env.VITE_REACT_APP_ENDPOINT}/api/store/edit`,
-      headers: { 
-        'Authorization': token, 
-        'Content-Type': 'application/json', 
+      headers: {
+        'Authorization': token,
+        'Content-Type': 'application/json',
       },
       data : data
     };
-    
+
     axios.request(config)
-    .then((response) => {
-      console.log(response);
+    .then((res) => {
+      console.log(res);
       setIsTableLoaded(false);
-      setResponse(response.data.msg);
+      setResponse(res.data.msg);
       setEditSuccess(true);
     })
     .catch((error) => {
@@ -89,12 +88,10 @@ const StoreEdit = ({storeData, setEditBoxOpen, setEditSuccess}) => {
         }}
         className="items-center bg-white max-w-[900px] flex py-8 mx-auto mt-4 justify-center flex-col"
       >
-      
         <div className="flex flex-col w-[900px]">
           <div className="flex flex-col gap-2 pb-2 mb-6 ml-10 mr-10 border-b-2">
           <IoClose size={35} className="absolute right-[220px] text-[#EC2752] transition ease hover:rotate-[360deg] duration-500" onClick={closeHandler}/>
-            <p className="text-4xl font-bold">Update Store Details 
-            </p>
+            <p className="text-4xl font-bold">Update Store Details</p>
             <p className="text-lg">All fields marked with * are required</p>
           </div>
           <form className="flex flex-col gap-4 ml-10" onSubmit={submitHandler}>

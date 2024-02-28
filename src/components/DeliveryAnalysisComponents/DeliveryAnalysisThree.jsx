@@ -41,7 +41,6 @@ const graphLabel = {
   ],
   "Additional Buyer Model Aging": [
     ">7years old",
-   
   ],
   "Exchange Buyer": ["Yes"],
   "Exchange Brand Break Up": [
@@ -60,7 +59,6 @@ const graphLabel = {
   ],
   "Exchange Model Aging": [
     ">9years old",
-    
   ],
   "Repeat Buyer": ["Yes"],
   "Repeat Buyer Model": [
@@ -72,7 +70,6 @@ const graphLabel = {
   ],
   "Repeat Buyer Aging": [
     ">3years old",
-    
   ],
   "Interested In Comp": ["Yes"],
   "Model Interested": ["Swift"],
@@ -149,7 +146,6 @@ const DeliveryAnalysisThree = () => {
           </div>
         )}
       </div>
-
       {selectedBtn3 && (
         <div className="flex justify-center mt-4">
           <div>

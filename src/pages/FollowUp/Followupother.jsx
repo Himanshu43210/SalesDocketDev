@@ -6,7 +6,7 @@ import DataTable from "@/components/Table/DataTable";
 import { FaArrowLeft } from "react-icons/fa";
 
 function Followupother({page,button,setbutton}){
-   
+
     const [tablesData, setTablesData] = useState([]);
     const [accordionStates, setAccordionStates] = useState([]);
     const toggleAccordion = (index) => {
@@ -15,19 +15,18 @@ function Followupother({page,button,setbutton}){
       setAccordionStates(newAccordionStates);
       setIsCollapsed(!isCollapsed);
     };
-  
+
     useEffect(() => {
       axios
         .get("https://api.npoint.io/d63af4aab5f2eb3accfe")
         .then((res) => {
           console.log("asdas", res.data);
-        //   const { FollowupNonUniqueMonth } = res.data;
           setTablesData(res.data[page]);
         })
         .catch((err) => {
           console.log(err);
         });
-  
+
       const initialAccordionStates = tablesData.map(() => false);
       setAccordionStates(initialAccordionStates);
     }, []);
@@ -43,10 +42,8 @@ function Followupother({page,button,setbutton}){
           />
         </div>
         <div className="flex flex-row-reverse w-[95%] mt-1 backbutton">
-          
           <Button
-              className={`border-2 hover:bg-white hover:text-black `} 
-               
+              className={`border-2 hover:bg-white hover:text-black `}
               onClick={() => {setbutton(!button)}}
             >
               <FaArrowLeft  className="mr-[2px] animate-moveBackButton"/>

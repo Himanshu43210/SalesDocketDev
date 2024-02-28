@@ -1,12 +1,5 @@
 
-
-
-
-
-
 function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
-
-
     // const mainheader=[
     //       "Grand",
     //      " Creta",
@@ -19,7 +12,6 @@ function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
     //      "Venue",
     //      "KONA",
     // ]
-  
 
     // const SubheaderFirst=[
     //     "Activity",
@@ -186,7 +178,7 @@ function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
     //     "DataCout",
     //     "DataCout",
     // ]
-    
+
   return (
     <>
       <div className="h-[300px]  overflow-auto   border-2 border-stone-500 px-2 py-2">
@@ -198,9 +190,6 @@ function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
           <thead className="bg-[#0F172A] text-white">
             <tr>
               <th rowspan={3} className="mr-4 bg-[#90A4C9] text-black border-2 border-white">Parameter</th>
-
-             
-
               {
                 mainheader.map((value,index)=>(
                     <th colSpan={8} className="mr-4 bg-[#DF8C7A] text-black border-2 border-white" key={index}>{value}</th>
@@ -213,8 +202,6 @@ function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
                     <th className="mr-4 bg-[#B1E5E1] text-black border-2 border-white" key={index}>{value}</th>
                 ))
               }
-                
-             
             </tr>
             <tr>
               {
@@ -222,8 +209,6 @@ function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
                     <th className="mr-4 bg-[#A3E8BB] text-black border-2 border-white" key={index}>{value}</th>
                 ))
               }
-                
-             
             </tr>
           </thead>
           <tbody>
@@ -240,6 +225,5 @@ function TableTwokpI({header,rowdata ,mainheader,SubheaderFirst,SunheaderTwo}) {
     </>
   );
 }
-
 
 export default TableTwokpI;

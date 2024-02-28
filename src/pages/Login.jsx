@@ -6,8 +6,7 @@ import { SocialIcon } from "react-social-icons";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineMailLock } from "react-icons/md";
 import LoadingSpinner from "../components/LoadingSpinner";
-import { IoEye } from "react-icons/io5";
-import { IoEyeOffSharp } from "react-icons/io5";
+import { IoEye, IoEyeOffSharp } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
@@ -26,11 +25,6 @@ const Login = () => {
   }, []);
 
   const userLogin = () => {
-    // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    // if (!emailRegex.test(userEmail)) {
-    //   toast.error("Please enter a valid email address");
-    // } else {
       setIsLoading(true);
       setError(null);
       axios
@@ -44,9 +38,7 @@ const Login = () => {
           sessionStorage.setItem("authToken", authToken);
           sessionStorage.setItem("profile", JSON.stringify(profile));
           localStorage.removeItem("formData");
-
           // dispatch(setUserProfile(profile));
-
           navigate("/registeruser");
         })
         .catch((err) => {
@@ -57,7 +49,6 @@ const Login = () => {
               "Please enter correct login credentials"
           );
         });
-    
   };
 
   const handleClick = (event) => {

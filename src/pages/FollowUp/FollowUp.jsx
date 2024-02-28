@@ -17,7 +17,6 @@ const FollowUp = () => {
   }
 
   console.log(selectedPage)
-  
   return (
    <div className="bg-[#F4F3F9] h-screen w-screen">
     <div className="navbar ">
@@ -45,12 +44,10 @@ const FollowUp = () => {
       {
         selectedPage === 'pending'?<>
         <FollowUpPending setbutton={setbutton } button={button}></FollowUpPending>
-        </> : 
-          <Followupother page={selectedPage} setbutton={setbutton } button={button}></Followupother>
+        </> : <Followupother page={selectedPage} setbutton={setbutton } button={button}></Followupother>
       }
      </>
       }
-   
   </div>
   );
 };

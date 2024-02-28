@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import { Button } from "@/components/ui/button";
-import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
 import { FaCarAlt, FaDatabase } from "react-icons/fa";
 import { GiSteeringWheel } from "react-icons/gi";
 import { IoIosRefresh } from "react-icons/io";
@@ -65,7 +64,6 @@ const ActiveLeads = () => {
         setTitle("Lead Source Wise");
         break;
       default:
-        
         break;
     }
   }, [selectedBtn]);
