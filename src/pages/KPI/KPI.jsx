@@ -10,8 +10,7 @@ const KPI = () => {
 
   const [popout, setPopout] = useState(true);
 
-  const nAME = useSelector(state => state.selectpagekpi.name);
-  console.log(nAME)
+  const nAME = useSelector((state) => state.selectpagekpi.name);
 
   const firstGrapDataKPI = [
     [
@@ -775,7 +774,6 @@ const tableDataFollowups = [
     setPopout(true);    
   }, [nAME]);
 
-
   return (
     <>
       <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
@@ -803,7 +801,7 @@ const tableDataFollowups = [
             </div>
           ) : (
             <div className="border-4 maintablelist border-stone-500 mt-4 mx-[5vw]">
-            {tableDataFollowups.map((data, index) => (
+              {tableDataFollowups.map((data, index) => (
                 <TableTwokpI
                   key={index}
                   header={data.header}
@@ -820,6 +818,5 @@ const tableDataFollowups = [
     </>
   );
 }
-  
 export default KPI;
 

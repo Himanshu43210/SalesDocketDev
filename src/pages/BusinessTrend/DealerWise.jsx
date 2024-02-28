@@ -127,7 +127,7 @@ function DealerWise() {
 
   return (
     <>
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
 
       <BtrendFilter
         open={open}
@@ -178,7 +178,12 @@ function DealerWise() {
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
-      <TableDataMapper tablesData={tablesData} tableHeading={tableHeading} setAccordionStates={setAccordionStates} accordionStates={accordionStates}/>
+      <TableDataMapper
+        tablesData={tablesData}
+        tableHeading={tableHeading}
+        setAccordionStates={setAccordionStates}
+        accordionStates={accordionStates}
+      />
       {/* <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map(
           (tableData, index) =>

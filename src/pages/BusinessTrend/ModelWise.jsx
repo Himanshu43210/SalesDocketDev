@@ -102,9 +102,9 @@ function ModelWise() {
       tableHeading: 'Dealer Wise Delivery Table'
     },
     {
-      label: 'Lost Wise ',
-      value: 'Lost Wise',
-      tableHeading: 'Dealer Wise Lost Table'
+      label: "Lost Wise ",
+      value: "Lost Wise",
+      tableHeading: "Dealer Wise Lost Table",
     },
     {
       label: CloseWise,
@@ -112,10 +112,10 @@ function ModelWise() {
       tableHeading: 'Dealer wise Closed Table'
     },
     {
-      label: 'Conversation Ratio ',
-      value: 'Conversation Ratio',
-      tableHeading: null
-    }
+      label: "Conversation Ratio ",
+      value: "Conversation Ratio",
+      tableHeading: null,
+    },
   ];
   useEffect(() => {
     axios
@@ -145,34 +145,43 @@ function ModelWise() {
         <TableSelection setOpen={setOpen}></TableSelection>
       </div>
       <div className="flex justify-between">
-      <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
-      {buttonData.map((button, index) => (
-        <Button
-          key={index}
-          className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === button.value ? 'bg-white text-black hover:bg-white' : 'none'
-          }`}
-          onClick={() => {
-            setTableHeading(button.tableHeading);
-            setSelectedBtn(button.value);
-          }}
-        >
-          {button.label}
-        </Button>
-      ))}
+        <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
+          {buttonData.map((button, index) => (
+            <Button
+              key={index}
+              className={`border-2 hover:bg-white hover:text-black ${
+                selectedBtn === button.value
+                  ? "bg-white text-black hover:bg-white"
+                  : "none"
+              }`}
+              onClick={() => {
+                setTableHeading(button.tableHeading);
+                setSelectedBtn(button.value);
+              }}
+            >
+              {button.label}
+            </Button>
+          ))}
         </div>
         <div className="mx-2 mt-4 right">
-        <Button
-          className={`border-2 hover:bg-white hover:text-black `}
-          onClick={() => {navigate('/BusinessTrend')}}
-        >
-          <FaArrowLeft  className="mr-[2px] animate-moveBackButton"/>
-          Back
-        </Button>
+          <Button
+            className={`border-2 hover:bg-white hover:text-black `}
+            onClick={() => {
+              navigate("/BusinessTrend");
+            }}
+          >
+            <FaArrowLeft className="mr-[2px] animate-moveBackButton" />
+            Back
+          </Button>
         </div>
       </div>
       <div className="flex justify-center mt-4">{selectedComponent}</div>
-      <TableDataMapper tablesData={tablesData} tableHeading={tableHeading} setAccordionStates={setAccordionStates} accordionStates={accordionStates}/>
+      <TableDataMapper
+        tablesData={tablesData}
+        tableHeading={tableHeading}
+        setAccordionStates={setAccordionStates}
+        accordionStates={accordionStates}
+      />
       {/* <div className="grid grid-cols-1 gap-4 pb-10 mx-4 mt-4">
         {tablesData.map(
           (tableData, index) =>
