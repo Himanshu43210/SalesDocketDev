@@ -1,9 +1,9 @@
 import React from 'react';
-import businessTracker from '../../src/pages/businessTracker/businessTracker.jsx';
+import businessTracker from './businessTracker.jsx';
 import { render } from "@testing-library/react";
 import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
 import { Provider } from 'react-redux'; // Import Provider
-import store from '../../src/store/store.jsx'; // Import your Redux store
+import store from '../../store/store.jsx'; // Import your Redux store
 
 jest.mock('axios', () => ({
     get: jest.fn(() => Promise.resolve({ data: { businessTracker: [] } }))

@@ -1,20 +1,20 @@
 import React from "react";
-import FollowUpPending from "../../src/pages/FollowUp/FollowUpPending.jsx";
+import RegisterUserDetails from "./RegisterUserDetails.jsx";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom"; // Import MemoryRouter
 import { Provider } from "react-redux"; // Import Provider
-import store from "../../src/store/store.jsx"; // Import your Redux store
+import store from "../../store/store.jsx"; // Import your Redux store
 
 jest.mock("axios", () => ({
-  get: jest.fn(() => Promise.resolve({ data: { FollowUpPending: [] } })),
+  get: jest.fn(() => Promise.resolve({ data: { RegisterUserDetails: [] } })),
 }));
 
-describe("FollowUpPending component", () => {
+describe("RegisterUserDetails component", () => {
   test("renders without crashing", () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <FollowUpPending />
+          <RegisterUserDetails />
         </MemoryRouter>
       </Provider>
     );

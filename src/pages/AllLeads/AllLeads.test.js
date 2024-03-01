@@ -1,19 +1,15 @@
 import React from "react";
-import ActiveLeads from "../../src/pages/ActiveLeads/ActiveLeads.jsx";
+import AllLeads from "./AllLeads.jsx";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom"; // Import MemoryRouter
 import { Provider } from "react-redux"; // Import Provider
-import store from "../../src/store/store.jsx"; // Import your Redux store
-
-test("Always true test", () => {
-  expect(true).toBe.true;
-});
+import store from "../../store/store.jsx"; // Import your Redux store
 
 test("Render test", () => {
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <ActiveLeads setActiveLeads={jest.fn()} ActiveLeads={false} />
+        <AllLeads />
       </MemoryRouter>
     </Provider>
   );
