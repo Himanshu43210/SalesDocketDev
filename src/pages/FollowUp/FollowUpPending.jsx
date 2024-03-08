@@ -87,7 +87,7 @@ const FollowUpPending = ({ button, setbutton }) => {
           ))}
         </div>
 
-        <div className="mx-2 mt-4 right">
+        <div className="px-10 mt-4 right">
           <Button
             className={`border-2 hover:bg-white hover:text-black `}
             onClick={() => {
