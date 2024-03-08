@@ -4,7 +4,7 @@ import TableTwokpI from "@/components/kpIPopout/kpiTable2";
 import Popout from "@/components/kpIPopout/kpiPopout";
 import {  useSelector } from 'react-redux';
 import Navbar from "@/components/ui/Navbar";
-
+import { Dealer, SC, Model } from "@/utils/constants";
 const KPI = () => {
   const [sideMenu, setsideMenu] = useState(false);
 
@@ -770,6 +770,8 @@ const tableDataFollowups = [
   }
 ];
 
+
+
   useEffect(() => {
     setPopout(true);    
   }, [nAME]);
@@ -779,12 +781,12 @@ const tableDataFollowups = [
       <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
       {popout ? (
         <div className="popout">
-          <Popout setPopout={setPopout} popout={popout}></Popout>
+          <Popout setPopout={setPopout} popout={popout} Dealer={Dealer} SC={SC} Model={Model}></Popout>
         </div>
       ) : (
         <>
           <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-            <TableSelection></TableSelection>
+            <TableSelection setOpen={setPopout}></TableSelection>
           </div>
           {nAME === "KPI" ? (
             <div className="border-4 maintablelist border-stone-500 mt-4 mx-[5vw]">

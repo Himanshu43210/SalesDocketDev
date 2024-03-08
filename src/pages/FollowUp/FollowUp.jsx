@@ -5,25 +5,36 @@ import { Button } from "@/components/ui/button";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import FollowUpPending from "./FollowUpPending";
 import Followupother from "./Followupother";
+import Popout from "@/components/kpIPopout/kpiPopout";
+import { Dealer, SC, Model } from "@/utils/constants";
+
 const FollowUp = () => {
   const [sideMenu, setsideMenu] = useState(false);
-
+  const [popout, setPopout] = useState(true);
   const [button,setbutton]=useState(true);
   const [selectedPage,setSelectedPage]=useState("");
 
   const handleButtonClick =(val)=>{
     setSelectedPage(val)
+    setPopout(true)
     setbutton(false)
   }
 
   console.log(selectedPage)
   return (
-   <div className="bg-[#F4F3F9] h-screen w-screen">
+  
+   <div className="bg-[#F4F3F9] h-screen w-full overflow-x-hidden">
+      {
+      selectedPage != "" && popout &&  <div className="popout absolute  w-full">
+      <Popout setPopout={setPopout} popout={popout} Dealer={Dealer} SC={SC} Model={Model} selectedPage={selectedPage}></Popout>
+    </div>  
+    }
     <div className="navbar ">
       <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
       <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
     </div>
-
+    
+    
     {
        ( button) ?<>
           <div className="flex flex-col gap-4">
@@ -39,7 +50,7 @@ const FollowUp = () => {
       </div>
     </div></> :<>
     <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-        <TableSelection></TableSelection>
+        <TableSelection setOpen={setPopout}></TableSelection>
       </div>
       {
         selectedPage === 'pending'?<>
