@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitTest version="1">
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/components/SideMenu.test.js">
+        <testCase name="SideMenu component renders without crashing" duration="17"/>
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/AllLeads/AllLeads.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/businessTracker/businessTracker.test.js">
+        <testCase name="businessTracker component renders without crashing" duration="53"/>
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/Closedleads/ClosedLeads.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/login.test.js">
+        <testCase name="login component renders without crashing" duration="46"/>
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/DeliveryAnalysis/DeliveryAnalysis.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/FollowUp/FollowUp.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/BookingAnalysis/BookingAnalysis.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/KPI/KPI.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/FollowUp/FollowUpPending.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/LeadsInDanger/LeadsInDanger.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/LostLeads/LostLeads.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/Profile/Profile.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/RegisterUser/RegisterUser.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/ActiveLeads/ActiveLeads.test.js">
+    </file>
+    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/RegisterUserDetails/RegisterUserDetails.test.js">
+    </file>
+</unitTest>

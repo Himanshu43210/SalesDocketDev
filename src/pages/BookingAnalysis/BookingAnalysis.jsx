@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import { Button } from "@/components/ui/button";
@@ -36,7 +36,6 @@ const BookingAnalysis = () => {
     const newAccordionStates = [...accordionStates];
     newAccordionStates[index] = !newAccordionStates[index];
     setAccordionStates(newAccordionStates);
-    setIsCollapsed(!isCollapsed);
   };
 
   useEffect(() => {
@@ -94,11 +93,10 @@ const BookingAnalysis = () => {
         {bookingButtonList.map((bookingBtnText, index) => (
           <Button
             key={index}
-            className={`border-2 hover:bg-white hover:text-black ${
-              selectedBookingBtn === bookingBtnText
-                ? "bg-white text-black hover:bg-white"
-                : "none"
-            }  `}
+            className={`border-2 hover:bg-white hover:text-black ${selectedBookingBtn === bookingBtnText
+              ? "bg-white text-black hover:bg-white"
+              : "none"
+              }  `}
             onClick={() => {
               setSelectedBookingBtn(bookingBtnText);
             }}
