@@ -2,7 +2,7 @@ import React from 'react'
 import { MultiSelect } from 'react-multi-select-component'
 import { TempOption } from '@/utils/constants'
 import { ImCancelCircle } from 'react-icons/im'
-const FilterPopup = ({setOpen, getFields,FilterData, setFilterData }) => {
+const FilterPopup = ({setOpen, getFields,FilterData, setFilterData, showDate="false", fromDate, setFromDate, toDate, setToDate }) => {
 
     const handleChange = (selectedOptions, fieldKey) => {
         setFilterData({...FilterData, [fieldKey]: selectedOptions })        
@@ -22,7 +22,20 @@ const FilterPopup = ({setOpen, getFields,FilterData, setFilterData }) => {
             <div className='bg-black text-white py-2 mb-4 rounded-lg text-center'>
                 <p className='text-2xl font-medium'>Select Filters</p>
             </div>
-        <div className='flex flex-wrap gap-3 justify-around'>
+            {
+                showDate === "true" && 
+                <div className='mb-2 grid grid-cols-2 gap-3 place-items-center '>
+                    <div>                        
+                        <label htmlFor="fromDate" className='block'>From Date</label>
+                        <input className='w-[260px] py-1 border rounded px-2 border-gray-400' type="date" id='fromDate' />
+                    </div>
+                    <div>                        
+                        <label htmlFor="toDate" className='block'>From Date</label>
+                        <input className='w-[260px] py-1 border rounded px-2 border-gray-400' type="date" id='toDate' />
+                    </div>
+                </div>
+            }
+        <div className='grid grid-cols-2 gap-3 place-items-center'>
         {
             getFields.map((field, index) => (
              <div key={index}>
