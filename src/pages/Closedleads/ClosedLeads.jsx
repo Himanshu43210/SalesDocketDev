@@ -10,6 +10,8 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
 import axios from "axios";
 import Accordion from "@/components/Accordion/Accordion";
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
+import { Dealer } from '@/utils/constants';
 
 const Closedleads = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -20,7 +22,23 @@ const Closedleads = () => {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [closedFilterData, setClosedFilterData] = useState({
+    dealer: [],
+    city: [],
+    ro: [],
+    model: [],
+    enquirymonth: [],
+    closedmonth: [],
+    source: [],
+    consultantname: [],
+  })
   const dealerWise = "Dealer Wise";
+
+  const getClosedFields = [{ key:"dealer", title: "Dealer", options: Dealer}, {key:"city", title: "City" }, {key:"ro", title: "RO"}, {key:"model", title: "Model"},
+  {key:"enquirymonth", title: "Enquiry Month"}, {key:"closedmonth", title: "Closed Month"}, {key:"source", title: "Source"}, 
+  {key:"consultantname", title: "Consultant Name"}]
+
   // switch (selectedBtn) {
   //   case "monthwiseclosed":
   //     selectedComponent = <LineBarGraph />;
@@ -217,7 +235,11 @@ const Closedleads = () => {
 
   return (
     <>
-      {" "}
+      <div className="bg-[#F4F3F9]">
+      {
+
+        filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getClosedFields} FilterData={closedFilterData} setFilterData={setClosedFilterData} />
+      }
       <div className="navbar">
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
@@ -286,7 +308,7 @@ const Closedleads = () => {
         </div>
       </div>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-        <TableSelection></TableSelection>
+        <TableSelection setOpen={setFilterOpen}></TableSelection>
       </div>
       <div className="flex flex-wrap gap-2 mx-2 mt-4">
         {buttonData.map((button, index) => (
@@ -323,6 +345,7 @@ const Closedleads = () => {
               toggleAccordion={toggleAccordion}
             />
           ))}
+      </div>
       </div>
     </>
   );

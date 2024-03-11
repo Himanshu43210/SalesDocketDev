@@ -7,6 +7,9 @@ import DataTable from "@/components/Table/DataTable";
 import axios from "axios";
 import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";
 import Navbar from "@/components/ui/Navbar";
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
+import { Dealer } from '@/utils/constants';
+
 
 const LostLeadsCard = ({ icon, title }) => {
   return (
@@ -32,6 +35,22 @@ const LostLeads = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const getLostFields = [{ key:"dealer", title: "Dealer", options: Dealer}, {key:"city", title: "City" }, {key:"ro", title: "RO"}, {key:"model", title: "Model"},
+    {key:"enquirymonth", title: "Enquiry Month"}, {key:"lostmonth", title: "Lost Month"}, {key:"source", title: "Source"}, 
+    {key:"consultantname", title: "Consultant Name"}]
+
+const [lostFilterData, setLostFilterData] = useState({
+  dealer: [],
+  city: [],
+  ro: [],
+  model: [],
+  enquirymonth: [],
+  lostmonth: [],
+  source: [],
+  consultantname: [],
+})
+
   const lostToStyles = "bg-white text-black hover:bg-white";
   const toggleAccordion = (index) => {
     const newAccordionStates = [...accordionStates];
@@ -69,10 +88,16 @@ const LostLeads = () => {
 
   return (
     <div className="  bg-[#F4F3F9] w-[100%]  ">
+      {
+
+        filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getLostFields} FilterData={lostFilterData} setFilterData={setLostFilterData} />
+      }
+      
+      
       <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
       <StatsCardList/>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-        <TableSelection></TableSelection>
+        <TableSelection setOpen={setFilterOpen}></TableSelection>
       </div>
       {/*  */}
       <div className="flex flex-wrap gap-2 mx-2 mt-4">
@@ -219,7 +244,7 @@ const LostLeads = () => {
       <div className="flex justify-center mt-4">{selectedComponent}</div>
       <div className="grid grid-cols-2 gap-4 mx-4 mt-4 pb-10">
         {tablesData.map((tableData, index) => (
-          <div className="accordian border-2  rounded-lg bg-white p-4 ">
+          <div key={index} className="accordian border-2  rounded-lg bg-white p-4 ">
             <div className="flex items-center justify-between">
               <p className="font-medium ">{tableData.heading}</p>
               <Button onClick={() => toggleAccordion(index)}>
