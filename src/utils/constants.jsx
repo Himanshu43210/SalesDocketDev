@@ -26,6 +26,12 @@ export const Model = [
   { label: "Model 3", value: "Model 3"}
 ]
 
+export const TempOption = [
+  { label: "Choice 1", value: "Choice 1"},
+  { label: "Choice 2", value: "Choice 2"},
+  { label: "Choice 3", value: "Choice 3"}
+]
+
 // export const TEST_DRIVE_GIVEN = "Test Drive Given";
 
 // export const mappingData = {
