@@ -4,29 +4,45 @@ import AdminNavbar from "@/components/Admin_Navbar";
 import SideMenu from "@/components/SideMenu";
 import FilterModal from "@/components/AllLeadsComponents/FilterModal";
 import TableSelection from "@/components/Slection_Panel/Tableselection";
+import { Dealer, Model } from '@/utils/constants';
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
+
 const AllLeads = () => {
   const [sideMenu, setsideMenu] = useState(false);
   const [fromDate, setFromDate] = useState();
   const [toDate, setToDate] = useState();
-  const [selected, setSelected] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [allFilterData, setAllFilterData] = useState({
+    dealer: [],
+    consultantname: [],
+    model: [],
+    testdrivegiven: [],
+    firsttimebuyer: [],
+    interestedinexchange: [],
+    interestedincompetition: [],
+    leadsource: [],
+  })
 
-  const dealerOptions = [
-    { label: "option A", value: "optiona" },
-    { label: "option B", value: "optionb" },
-    { label: "option C", value: "optionc" },
-  ];
+  const getAllFields = [{ key:"dealer", title: "Dealer", options: Dealer},{key:"consultantname", title: "Consultant Name", options: Model}, {key:"model", title: "Model", options: Model},  {key:"testdrivegiven", title: "Test Drive Given"},
+  {key:"firsttimebuyer", title: "First Time Buyer" }, {key:"interestedinexchange", title: "Interested in Exchange" }, {key:"interestedincompetition", title: "Interested in Competition" }, 
+  {key:"leadsource", title: "Lead Source"}]
+
+
   return (
     <>
+     {
+      filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getAllFields} FilterData={allFilterData} setFilterData={setAllFilterData} showDate="true" fromDate={fromDate} setFromDate={setFromDate} toDate={toDate} setToDate={setToDate}/>
+     }
       <div>
         <div className="navbar">
           <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
           <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
         </div>
         <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-          <TableSelection></TableSelection>
+          <TableSelection setOpen={setFilterOpen}></TableSelection>
         </div>
 
-        <div>
+        {/* <div>
           <FilterModal
             fromDate={fromDate}
             toDate={toDate}
@@ -36,7 +52,7 @@ const AllLeads = () => {
             selected={selected}
             setSelected={setSelected}
           />
-        </div>
+        </div> */}
         <div className="flex flex-col gap-2">
           <div className="w-[90%] mx-auto">
             <DataCard
