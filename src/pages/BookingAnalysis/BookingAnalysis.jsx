@@ -11,6 +11,8 @@ import TableSelection from "@/components/Slection_Panel/Tableselection";
 import axios from "axios";
 import LineBarGraph2 from "@/components/common/LineBarGraph2";
 import Accordion from "@/components/Accordion/Accordion";
+import { Dealer, Model } from '@/utils/constants';
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
 
 const BookingAnalysis = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -19,6 +21,24 @@ const BookingAnalysis = () => {
   const [bookingButtonList, setBookingButtonList] = useState([]);
   const [bookingGraphLabel, setBookingGraphLabel] = useState([]);
   const [selectedBookingBtn, setSelectedBookingBtn] = useState("Type of Booking");
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [bookingFilterData, setBookingFilterData] = useState({
+    model: [],
+    dealer: [],
+    ro: [],
+    enquirymonth: [],
+    bookedmonth: [],
+    city: [],
+    location: [],
+    source: [],
+    sourceofinfo: [],
+    consultantname: [],
+  })
+
+  const getClosedFields = [{key:"model", title: "Model", options: Model}, { key:"dealer", title: "Dealer", options: Dealer}, {key:"ro", title: "RO"},{key:"enquirymonth", title: "Enquiry Month"},  
+  {key:"bookedmonth", title: "Booked Month" }, {key:"city", title: "City" }, {key:"location", title: "Location" }, {key:"source", title: "Source"}, {key:"sourceofinfo", title: "Source of Info"}, 
+  {key:"consultantname", title: "Consultant Name"}]
+
 
   useEffect(() => {
     axios
@@ -54,6 +74,10 @@ const BookingAnalysis = () => {
 
   return (
     <div className=" booking-parent bg-[#F4F3F9] w-[100%]  ">
+         {
+
+          filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getClosedFields} FilterData={bookingFilterData} setFilterData={setBookingFilterData} />
+        }
       <div className="navbar">
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
@@ -86,7 +110,7 @@ const BookingAnalysis = () => {
         />
       </div>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-        <TableSelection></TableSelection>
+        <TableSelection setOpen={setFilterOpen}></TableSelection>
       </div>
 
       <div className="flex flex-wrap gap-2 mx-2 mt-4">
