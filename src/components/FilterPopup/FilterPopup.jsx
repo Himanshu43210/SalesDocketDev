@@ -27,11 +27,11 @@ const FilterPopup = ({setOpen, getFields,FilterData, setFilterData, showDate="fa
                 <div className='mb-2 grid grid-cols-2 gap-3 place-items-center '>
                     <div>                        
                         <label htmlFor="fromDate" className='block'>From Date</label>
-                        <input className='w-[260px] py-1 border rounded px-2 border-gray-400' type="date" id='fromDate' />
+                        <input className='w-[260px] py-1 border rounded px-2 border-[#ccc]' type="date" id='fromDate' />
                     </div>
                     <div>                        
                         <label htmlFor="toDate" className='block'>From Date</label>
-                        <input className='w-[260px] py-1 border rounded px-2 border-gray-400' type="date" id='toDate' />
+                        <input className='w-[260px] py-1 border rounded px-2 border-[#ccc]' type="date" id='toDate' />
                     </div>
                 </div>
             }
