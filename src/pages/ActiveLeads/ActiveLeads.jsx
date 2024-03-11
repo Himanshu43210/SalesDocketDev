@@ -11,6 +11,8 @@ import StatsCard from "@/components/common/StatsCard/Graphs/LineBarGraph/StatsCa
 import TableSelection from "@/components/Slection_Panel/Tableselection";
 import axios from "axios";
 import Accordion from "@/components/Accordion/Accordion";
+import { Dealer, Model } from "@/utils/constants";
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
 
 const ActiveLeads = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -20,7 +22,22 @@ const ActiveLeads = () => {
   const [lineGraphData, setLineGraphData] = useState([]);
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
   const [title, setTitle] = useState("");
+  const [activeFilterData, setActiveFilterData] = useState({
+    month: [],
+    model: [],
+    dealer: [],
+    ro: [],
+    city: [],
+    source: [],
+    sourceofinfo: [],
+    consultantname: [],
+  })
+
+  const getActiveFields = [{ key:"month", title: "Month"},{ key:"model", title: "Model", options: Model}, { key:"dealer", title: "Dealer", options: Dealer},  { key:"ro", title: "RO"},
+   {key:"city", title: "City" }, {key:"source", title: "Source"}, {key:"sourceofinfo", title: "Source of Info"}, 
+  {key:"consultantname", title: "Consultant Name"}]
 
   useEffect(() => {
     let labels = [];
@@ -131,6 +148,9 @@ const ActiveLeads = () => {
 
   return (
     <div className="  bg-[#F4F3F9] w-[100%]  ">
+      {
+        filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getActiveFields} FilterData={activeFilterData} setFilterData={setActiveFilterData} />
+      }
       <div className="navbar">
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
@@ -163,7 +183,7 @@ const ActiveLeads = () => {
         />
       </div>
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-        <TableSelection></TableSelection>
+        <TableSelection setOpen={setFilterOpen}></TableSelection>
       </div>
       {/* //map button  */}
       <div className="flex flex-wrap gap-2 mx-2 mt-4 active-btn-list">

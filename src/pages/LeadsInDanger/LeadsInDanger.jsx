@@ -6,6 +6,8 @@ import axios from "axios";
 import Accordion from "@/components/Accordion/Accordion";
 import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";
 import Navbar from "@/components/ui/Navbar";
+import { Dealer, Model } from '@/utils/constants';
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
 
 const LeadsInDanger = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -16,6 +18,20 @@ const LeadsInDanger = () => {
   const [title, setTitle] = useState("");
   const [tablesData, setTablesData] = useState([]);
   const [accordionStates, setAccordionStates] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [dangerFilterData, setDangerFilterData] = useState({
+    dealer: [],
+    city: [],
+    ro: [],
+    model: [],
+    enquirymonth: [],
+    source: [],
+    consultantname: [],
+  })
+
+  const getDangerFields = [{ key:"dealer", title: "Dealer", options: Dealer}, {key:"city", title: "City" }, {key:"ro", title: "RO"}, {key:"model", title: "Model", options: Model},
+  {key:"enquirymonth", title: "Enquiry Month"}, {key:"source", title: "Source"}, 
+  {key:"consultantname", title: "Consultant Name"}]
   const monthwiseStyle = "bg-white text-black hover:bg-white";
 
   useEffect(() => {
@@ -133,10 +149,14 @@ const LeadsInDanger = () => {
   }, []);
   return (
     <div className="  bg-[#F4F3F9] w-[100%]  ">
+      {
+
+        filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getDangerFields} FilterData={dangerFilterData} setFilterData={setDangerFilterData} />
+      }
       <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
       <StatsCardList />
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-        <TableSelection></TableSelection>
+        <TableSelection setOpen={setFilterOpen}></TableSelection>
       </div>
       <div className="flex flex-wrap gap-2 mx-2 mt-4">
         <Button
