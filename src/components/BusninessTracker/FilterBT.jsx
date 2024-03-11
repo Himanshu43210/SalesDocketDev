@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import { MultiSelect } from "react-multi-select-component";
 import { setSelectedField } from "@/store/slices/selectedFieldSlice";
 import { useDispatch } from "react-redux";
+import { ImCancelCircle } from "react-icons/im";
 
 const FilterBT = ({
     MonthOptions,
@@ -133,7 +134,7 @@ const [Month,setMonth]=useState([])
   }
   return (
     <>
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={open} onOpenChange={setOpen} hideCloseButton>
         {/* <DialogTrigger asChild>
           <Button onClick={() => setOpen(!open)} variant="outline">
             Date Selection
@@ -144,13 +145,13 @@ const [Month,setMonth]=useState([])
             <DialogTitle>Select Filters</DialogTitle>
           </DialogHeader> */}
           <div className="flex items-center justify-between pb-4">
-                            <div className="px-4 py-2 text-white bg-black rounded-lg rounded-bl-lg w-[99%]">
-                                <h1 className="text-xl text-center">Select Filters</h1>
-                            </div>
-                            <button className="text-red-600">
-                                <i className="fas fa-times"></i>
-                            </button>
-                        </div>
+             <div className="px-4 py-2 text-white bg-black rounded-lg rounded-bl-lg w-[99%]">
+                 <h1 className="text-xl text-center">Select Filters</h1>
+             </div>
+             <button className="top-2 absolute right-2 " onClick={() => setOpen(false)}>
+                <ImCancelCircle size={22}/>
+             </button>
+          </div>
           <div className="flex flex-wrap gap-2">
             <div className="w-[44%]">
               <p>Dealer</p>

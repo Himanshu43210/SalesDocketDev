@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import BtrendFilter from "@/components/Btrend/Filtertrend";
 import Navbar from "@/components/ui/Navbar";
 import TableDataMapper from "@/components/BusninessTracker/TableDataMapper";
+import { Dealer, Model } from '@/utils/constants';
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
 
 function DealerWise() {
   const selectedBtnDef = "Enquiry Wise";
@@ -18,6 +19,12 @@ function DealerWise() {
   const [tableHeading, setTableHeading] = useState(null);
   const [selectedAccordionIndex, setSelectedAccordionIndex] = useState(null);
   const graphLabels = ["Today", "1_Day_Delay", "2_Day_Delay", "3_Day_Delay"];
+  const [dealerFilterData, setDealerFilterData] = useState({
+    dealer: [],
+    model: [],
+  })
+
+  const getDealerFields = [{ key:"dealer", title: "Dealer", options: Dealer}, {key:"model", title: "Model", options: Model}]
   const navigate = useNavigate();
 
   console.log(selectedAccordionIndex);
@@ -59,14 +66,13 @@ function DealerWise() {
 
   const [fromDate, setFromDate] = useState();
   const [toDate, setToDate] = useState();
-  const [selected, setSelected] = useState([]);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  const dealerOptions = [
-    { label: "option A", value: "optiona" },
-    { label: "option B", value: "optionb" },
-    { label: "option C", value: "optionc" },
-  ];
+  // const dealerOptions = [
+  //   { label: "option A", value: "optiona" },
+  //   { label: "option B", value: "optionb" },
+  //   { label: "option C", value: "optionc" },
+  // ];
 
   const buttonData = [
     {
@@ -127,9 +133,13 @@ function DealerWise() {
 
   return (
     <>
+      {
+
+        open && <FilterPopup setOpen={setOpen} getFields={getDealerFields} FilterData={dealerFilterData} setFilterData={setDealerFilterData} showDate="true" fromDate={fromDate} setFromDate={setFromDate} toDate={toDate} setToDate={setToDate} />
+      }
       <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
 
-      <BtrendFilter
+      {/* <BtrendFilter
         open={open}
         setOpen={setOpen}
         fromDate={fromDate}
@@ -139,7 +149,7 @@ function DealerWise() {
         dealerOptions={dealerOptions}
         selected={selected}
         setSelected={setSelected}
-      />
+      /> */}
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection setOpen={setOpen}></TableSelection>
       </div>

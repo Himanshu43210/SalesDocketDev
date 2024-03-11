@@ -11,40 +11,51 @@ import TableSelection from "@/components/Slection_Panel/Tableselection";
 import BTrackerMonthWiseTable from "@/components/BusninessTracker/BTrackerMonthWiseTable";
 import FilterBT from "@/components/BusninessTracker/FilterBT";
 import ChartComponent from "@/components/BusninessTracker/Chart_BusinessTraker";
+import FilterPopup from "@/components/FilterPopup/FilterPopup";
+import { Dealer, Model } from '@/utils/constants';
 
 function BusinessTracker() {
   const [sideMenu, setsideMenu] = useState(false);
   const [selectedBtn, setSelectedBtn] = useState("MonthWise");
   const [accordionStates, setAccordionStates] = useState(false);
-  const [open, setOpen] = useState(true);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [trackerFilterData, setTrackerFilterData] = useState({
+    dealer: [],
+    ro: [],
+    city: [],
+    model: [],
+    enquirymonth: [],
+    month: []
+  })
 
-  const [selected, setSelected] = useState([]);
+  const getTrackerFields = [ { key:"dealer", title: "Dealer", options: Dealer}, {key:"ro", title: "RO"}, {key:"city", title: "City" }, {key:"model", title: "Model", options: Model}, {key:"month", title: "Month"}]
 
-  const dealerOptions = [
-    { label: "ram Motors", value: "ram Motors" },
-    { label: "ganpati Motors", value: "ganpati Motors" },
-    { label: "shastri motors", value: "shastri motors" },
-  ];
-  const ROOptions = [
-    { label: "ro1", value: "ro1" },
-    { label: "ro2", value: "ro2" },
-    { label: "ro3", value: "ro3" },
-  ];
-  const CityOptions = [
-    { label: "ambala", value: "ambala" },
-    { label: "Chandigarh", value: "Chandigarh" },
-    { label: "shimla", value: "shimla" },
-  ];
-  const ModelOptions = [
-    { label: "alto", value: "alto" },
-    { label: "bugati", value: "bugati" },
-    { label: "scorpio", value: "scorpio" },
-  ];
-  const MonthOptions = [
-    { label: "jan", value: "jan" },
-    { label: "feb", value: "feb" },
-    { label: "july", value: "july" },
-  ];
+
+  // const dealerOptions = [
+  //   { label: "ram Motors", value: "ram Motors" },
+  //   { label: "ganpati Motors", value: "ganpati Motors" },
+  //   { label: "shastri motors", value: "shastri motors" },
+  // ];
+  // const ROOptions = [
+  //   { label: "ro1", value: "ro1" },
+  //   { label: "ro2", value: "ro2" },
+  //   { label: "ro3", value: "ro3" },
+  // ];
+  // const CityOptions = [
+  //   { label: "ambala", value: "ambala" },
+  //   { label: "Chandigarh", value: "Chandigarh" },
+  //   { label: "shimla", value: "shimla" },
+  // ];
+  // const ModelOptions = [
+  //   { label: "alto", value: "alto" },
+  //   { label: "bugati", value: "bugati" },
+  //   { label: "scorpio", value: "scorpio" },
+  // ];
+  // const MonthOptions = [
+  //   { label: "jan", value: "jan" },
+  //   { label: "feb", value: "feb" },
+  //   { label: "july", value: "july" },
+  // ];
 
   const ReportTypes = {
     DayWiseCount: [
@@ -80,12 +91,16 @@ function BusinessTracker() {
 
   return (
     <>
+     {
+
+      filterOpen && <FilterPopup setOpen={setFilterOpen} getFields={getTrackerFields} FilterData={trackerFilterData} setFilterData={setTrackerFilterData} />
+     }
       <div className="navbar">
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
       </div>
       <div className="maindata">
-        <FilterBT
+        {/* <FilterBT
           open={open}
           setOpen={setOpen}
           MonthOptions={MonthOptions}
@@ -95,7 +110,7 @@ function BusinessTracker() {
           dealerOptions={dealerOptions}
           selected={selected}
           setSelected={setSelected}
-        ></FilterBT>
+        ></FilterBT> */}
         <div className="flex w-[92vw] ml-[4vw] justify-between px-4 py-2">
           <div className={` ${style.box} flex flex-col`}>
             <h2 className={`${style.heading} mb-2 text-lg font-semibold `}>
@@ -161,7 +176,7 @@ function BusinessTracker() {
         </div>
 
         <div className="flex w-[100vw] items-center justify-center mt-[5px]">
-          <TableSelection setOpen={setOpen}></TableSelection>
+          <TableSelection setOpen={setFilterOpen}></TableSelection>
         </div>
 
         <div className="flex flex-wrap gap-2 mx-2 mt-4 left">
