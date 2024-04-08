@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "react-scripts test --env=jsdom --testResultsProcessor ./node_modules/jest-sonar-reporter/index.js --coverage",
     "test:coverage": "npm run test -- --coverage"
-  },
+  }, 
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
     "@radix-ui/react-dialog": "^1.0.5",

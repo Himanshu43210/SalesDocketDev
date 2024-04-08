@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch} from "react-redux";
-import { setSelectedField } from "@/store/slices/selectedFieldSlice";
+import { setSelectedField } from "../../store/slices/selectedFieldSlice";
 
 const DeliveryAnalysisTableTwo = ({ tableName, tableData }) => {
   const dispatch = useDispatch();

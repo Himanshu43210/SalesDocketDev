@@ -14,8 +14,8 @@ import AdminNavbar from "../../components/Admin_Navbar";
 import SideMenu from "../../components/SideMenu";
 import RegisterUserEdit from "../../components/RegisterUserEdit/RegisterUserEdit";
 import { useNavigate } from "react-router-dom";
-import SuccessBox from "@/components/RegisterUser/SuccessBox";
-import LoadingBeatLoader from "@/components/ui/LoadingBeatLoader";
+import SuccessBox from "../../components/RegisterUser/SuccessBox";
+import LoadingBeatLoader from "../../components/ui/LoadingBeatLoader";
 
 const RegisterUserDetails = () => {
   const [data, setData] = useState([]);

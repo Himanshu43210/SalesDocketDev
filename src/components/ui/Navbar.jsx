@@ -1,5 +1,7 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
+import AdminNavbar from "../../components/Admin_Navbar";
+import SideMenu from "../../components/SideMenu";
+import PropTypes from "prop-types";
+
 
 
 const Navbar = ({setsideMenu, sideMenu}) => {
@@ -11,3 +13,8 @@ const Navbar = ({setsideMenu, sideMenu}) => {
 };
 
 export default Navbar;
+
+Navbar.propTypes = {
+  setsideMenu: PropTypes.func.isRequired,
+  sideMenu: PropTypes.bool.isRequired
+};

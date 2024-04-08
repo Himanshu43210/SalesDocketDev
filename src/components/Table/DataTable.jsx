@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedField } from "@/store/slices/selectedFieldSlice";
+import { setSelectedField } from "../../store/slices/selectedFieldSlice";
 
 const DataTable = ({ tableName, columns, data, showLink = "true" }) => {
   const dispatch = useDispatch();

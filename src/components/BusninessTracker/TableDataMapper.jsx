@@ -1,5 +1,5 @@
 import DataTable from "../Table/DataTable";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 
 
 const TableDataMapper = ({tablesData, tableHeading, setAccordionStates, accordionStates}) => {

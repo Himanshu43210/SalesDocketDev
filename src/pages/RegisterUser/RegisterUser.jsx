@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../../components/Admin_Navbar";
 import SideMenu from "../../components/SideMenu";
 import axios from "axios";
-import SuccessBox from "@/components/RegisterUser/SuccessBox";
+import SuccessBox from "../../components/RegisterUser/SuccessBox";
 
 const RegisterUser = () => {
   const [sideMenu, setsideMenu] = useState(false);

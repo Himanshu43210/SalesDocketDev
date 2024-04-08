@@ -1,6 +1,6 @@
 {
   "presets": [
-    "@babel/preset-env",
+    ["@babel/preset-env", { "targets": "defaults" }],
     [
       "@babel/preset-react",
       {
@@ -20,5 +20,11 @@
         },
       }
     ]
+  ],
+  "overrides": [
+    {
+      "test": "./src/pages/RegisterUser/RegisterUser.jsx", // Update this with the path to your specific file
+      "sourceType": "module"
+    }
   ]
 }

@@ -1,9 +1,9 @@
-import DataCard from "@/components/AllLeadsComponents/DataCard";
+import DataCard from "../../components/AllLeadsComponents/DataCard";
 import { useState } from "react";
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
-import FilterModal from "@/components/AllLeadsComponents/FilterModal";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
+import AdminNavbar from "../../components/Admin_Navbar";
+import SideMenu from "../../components/SideMenu";
+import FilterModal from "../../components/AllLeadsComponents/FilterModal";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
 const AllLeads = () => {
   const [sideMenu, setsideMenu] = useState(false);
   const [fromDate, setFromDate] = useState();

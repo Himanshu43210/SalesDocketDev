@@ -4,11 +4,11 @@ import {
   DialogContent,
   DialogFooter,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Calendar } from "../ui/calendar";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { MultiSelect } from "react-multi-select-component";

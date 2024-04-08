@@ -4,8 +4,9 @@ import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom"; // Import MemoryRouter
 import { Provider } from "react-redux"; // Import Provider
 import store from "../../store/store.jsx"; // Import your Redux store
+import axios from "axios";
 
-jest.mock("../../src/assets/User_Logo.jpeg", () => "User_Logo");
+//jest.mock("../../src/assets/User_Logo.jpeg", () => "User_Logo");
 
 jest.mock("axios", () => ({
   get: jest.fn(() => Promise.resolve({ data: { Profile: [] } })),
@@ -21,6 +22,8 @@ describe("Profile component", () => {
       </Provider>
     );
   });
+
+  
 
   // Add more test cases as needed
 });

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import DataCard from "@/components/AllLeadsComponents/DataCard";
+import { Button } from "../../components/ui/button";
+import DataCard from "../../components/AllLeadsComponents/DataCard";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
-import Accordion from "@/components/Accordion/Accordion";
+import Accordion from "../../components/Accordion/Accordion";
 
 function Followupother({ page, button, setbutton }) {
   const [tablesData, setTablesData] = useState([]);

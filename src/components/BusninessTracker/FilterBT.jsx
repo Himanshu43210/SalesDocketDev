@@ -3,10 +3,10 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { Button } from "../ui/button";
 import { MultiSelect } from "react-multi-select-component";
-import { setSelectedField } from "@/store/slices/selectedFieldSlice";
+import { setSelectedField } from "../../store/slices/selectedFieldSlice";
 import { useDispatch } from "react-redux";
 
 const FilterBT = ({

@@ -1,7 +1,7 @@
 // Accordion.js
 import React from "react";
-import { Button } from "@/components/ui/button";
-import DataTable from "@/components/Table/DataTable";
+import { Button } from "../../components/ui/button";
+import DataTable from "../../components/Table/DataTable";
 
 const Accordion = ({
   tableData,

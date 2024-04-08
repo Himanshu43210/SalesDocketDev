@@ -1,4 +1,4 @@
-import StatsCard from "@/components/common/StatsCard/Graphs/LineBarGraph/StatsCard/StatsCard";
+import StatsCard from "../../../components/common/StatsCard/Graphs/LineBarGraph/StatsCard/StatsCard";
 import { FaCarAlt, FaDatabase } from "react-icons/fa";
 import { GiSteeringWheel } from "react-icons/gi";
 import { IoIosRefresh } from "react-icons/io";

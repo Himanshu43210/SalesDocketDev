@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { removeSelectedField } from "@/store/slices/selectedFieldSlice";
+import { Button } from "../../components/ui/button";
+import { removeSelectedField } from "../../store/slices/selectedFieldSlice";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 

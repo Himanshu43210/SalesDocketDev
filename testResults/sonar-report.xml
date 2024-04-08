@@ -1,38 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unitTest version="1">
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/components/SideMenu.test.js">
-        <testCase name="SideMenu component renders without crashing" duration="17"/>
+    <file path="C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\Closedleads\ClosedLeads.test.js">
+        <testCase name="ClosedLeads component renders without crashing" duration="266">
+            <failure message="TypeError: Cannot read properties of undefined (reading &apos;then&apos;)"><![CDATA[TypeError: Cannot read properties of undefined (reading 'then')
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\Closedleads\ClosedLeads.jsx:205:57
+    at commitHookEffectListMount (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24931:11)
+    at commitPassiveMountEffects_complete (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24891:9)
+    at commitPassiveMountEffects_begin (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24878:7)
+    at commitPassiveMountEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24866:3)
+    at flushPassiveEffectsImpl (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:27039:3)
+    at flushPassiveEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26984:14)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26769:9
+    at flushActQueue (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2667:24)
+    at act (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2582:11)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:180:26)
+    at render (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:266:10)
+    at Object.<anonymous> (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\Closedleads\ClosedLeads.test.js:14:11)
+    at Promise.then.completed (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+        </testCase>
     </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/AllLeads/AllLeads.test.js">
+    <file path="C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\LeadsInDanger\LeadsInDanger.test.js">
+        <testCase name="LeadsInDanger component renders without crashing" duration="265">
+            <failure message="TypeError: Cannot read properties of undefined (reading &apos;then&apos;)"><![CDATA[TypeError: Cannot read properties of undefined (reading 'then')
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\LeadsInDanger\LeadsInDanger.jsx:122:57
+    at commitHookEffectListMount (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24931:11)
+    at commitPassiveMountEffects_complete (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24891:9)
+    at commitPassiveMountEffects_begin (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24878:7)
+    at commitPassiveMountEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24866:3)
+    at flushPassiveEffectsImpl (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:27039:3)
+    at flushPassiveEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26984:14)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26769:9
+    at flushActQueue (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2667:24)
+    at act (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2582:11)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:180:26)
+    at render (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:266:10)
+    at Object.<anonymous> (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\LeadsInDanger\LeadsInDanger.test.js:14:11)
+    at Promise.then.completed (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+        </testCase>
     </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/businessTracker/businessTracker.test.js">
-        <testCase name="businessTracker component renders without crashing" duration="53"/>
+    <file path="C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\LostLeads\LostLeads.test.js">
+        <testCase name="LostLeads component renders without crashing" duration="266">
+            <failure message="TypeError: Cannot read properties of undefined (reading &apos;then&apos;)"><![CDATA[TypeError: Cannot read properties of undefined (reading 'then')
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\LostLeads\LostLeads.jsx:57:57
+    at commitHookEffectListMount (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24931:11)
+    at commitPassiveMountEffects_complete (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24891:9)
+    at commitPassiveMountEffects_begin (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24878:7)
+    at commitPassiveMountEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24866:3)
+    at flushPassiveEffectsImpl (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:27039:3)
+    at flushPassiveEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26984:14)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26769:9
+    at flushActQueue (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2667:24)
+    at act (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2582:11)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:180:26)
+    at render (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:266:10)
+    at Object.<anonymous> (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\LostLeads\LostLeads.test.js:14:11)
+    at Promise.then.completed (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+        </testCase>
     </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/Closedleads/ClosedLeads.test.js">
+    <file path="C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\AllLeads\AllLeads.test.js">
+        <testCase name="AllLeads Component renders without crashing" duration="168">
+            <failure message="Error: useNavigate() may be used only in the context of a &lt;Router&gt; component."><![CDATA[Error: useNavigate() may be used only in the context of a <Router> component.
+    at Object.invariant [as UNSAFE_invariant] (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@remix-run\router\history.ts:494:11)
+    at useNavigateUnstable (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-router\lib\hooks.tsx:188:3)
+    at useNavigate (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-router\lib\hooks.tsx:184:46)
+    at SideMenu (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\components\SideMenu.jsx:6:31)
+    at renderWithHooks (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:20074:13)
+    at beginWork (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:21587:16)
+    at beginWork$1 (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
+    at performUnitOfWork (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
+    at workLoopSync (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
+    at renderRootSync (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
+    at recoverFromConcurrentError (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:25850:20)
+    at performConcurrentWorkOnRoot (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:25750:22)
+    at flushActQueue (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2667:24)
+    at act (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2582:11)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:180:26)
+    at render (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:266:10)
+    at Object.<anonymous> (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\AllLeads\AllLeads.test.js:10:11)
+    at Promise.then.completed (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+        </testCase>
     </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/login.test.js">
-        <testCase name="login component renders without crashing" duration="46"/>
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/DeliveryAnalysis/DeliveryAnalysis.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/FollowUp/FollowUp.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/BookingAnalysis/BookingAnalysis.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/KPI/KPI.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/FollowUp/FollowUpPending.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/LeadsInDanger/LeadsInDanger.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/LostLeads/LostLeads.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/Profile/Profile.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/RegisterUser/RegisterUser.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/ActiveLeads/ActiveLeads.test.js">
-    </file>
-    <file path="/Users/ishasidhu20/Desktop/Himanshu/workspace /SalesDocketDev/src/pages/RegisterUserDetails/RegisterUserDetails.test.js">
+    <file path="C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\FollowUp\FollowUpPending.test.js">
+        <testCase name="FollowUpPending component renders without crashing" duration="266">
+            <failure message="TypeError: Cannot read properties of null (reading &apos;addEventListener&apos;)"><![CDATA[TypeError: Cannot read properties of null (reading 'addEventListener')
+    at addListener (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\platform\platform.dom.js:98:8)
+    at handler (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\platform\platform.dom.js:247:3)
+    at DomPlatform.addEventListener (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\platform\platform.dom.js:338:21)
+    at _add (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\core\core.controller.js:1004:16)
+    at call (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\core\core.controller.js:1014:41)
+    at Object.each (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\helpers\helpers.core.ts:149:12)
+    at Chart.bindUserEvents (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\core\core.controller.js:1014:5)
+    at Chart.bindEvents (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\core\core.controller.js:988:10)
+    at Chart._checkEventBindings (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\core\core.controller.js:580:12)
+    at Chart.update (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\chart.js\src\core\core.controller.js:501:10)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-chartjs-2\src\chart.tsx:85:24
+    at commitHookEffectListMount (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:23150:26)
+    at commitPassiveMountOnFiber (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24931:11)
+    at commitPassiveMountEffects_complete (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24891:9)
+    at commitPassiveMountEffects_begin (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24878:7)
+    at commitPassiveMountEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:24866:3)
+    at flushPassiveEffectsImpl (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:27039:3)
+    at flushPassiveEffects (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26984:14)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-dom\cjs\react-dom.development.js:26769:9
+    at flushActQueue (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2667:24)
+    at act (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react\cjs\react.development.js:2582:11)
+    at C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\act-compat.js:46:25
+    at renderRoot (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:180:26)
+    at render (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\@testing-library\react\dist\pure.js:266:10)
+    at Object.<anonymous> (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\src\pages\FollowUp\FollowUpPending.test.js:14:11)
+    at Promise.then.completed (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\jpati\OneDrive\Documents\GitHub\SalesDocketDev\node_modules\react-scripts\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+        </testCase>
     </file>
 </unitTest>

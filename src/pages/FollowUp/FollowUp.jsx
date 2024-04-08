@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
-import { Button } from "@/components/ui/button";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
+import AdminNavbar from "../../components/Admin_Navbar";
+import SideMenu from "../../components/SideMenu";
+import { Button } from "../../components/ui/button";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
 import FollowUpPending from "./FollowUpPending";
 import Followupother from "./Followupother";
 const FollowUp = () => {

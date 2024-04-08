@@ -1,4 +1,4 @@
-import { setSelectedField } from "@/store/slices/selectedFieldSlice";
+import { setSelectedField } from "../../store/slices/selectedFieldSlice";
 import React from "react";
 import { useDispatch } from "react-redux";
 const tableValues = [

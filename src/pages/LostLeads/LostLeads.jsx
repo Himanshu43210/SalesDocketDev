@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
-import LeadSource from "@/components/LostLeadsComponents/LeadSource/LeadSource";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
-import DataTable from "@/components/Table/DataTable";
+import { Button } from "../../components/ui/button";
+import LostTo from "../../components/LostLeadsComponents/LostTo/LostTo";
+import LeadSource from "../../components/LostLeadsComponents/LeadSource/LeadSource";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
+import DataTable from "../../components/Table/DataTable";
 import axios from "axios";
-import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";
-import Navbar from "@/components/ui/Navbar";
+import StatsCardList from "../../components/LostLeadsComponents/StatsCardList/StatsCardList";
+import Navbar from "../../components/ui/Navbar";
 
 const LostLeadsCard = ({ icon, title }) => {
   return (

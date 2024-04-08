@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { Button } from "../ui/button";
 import { MultiSelect } from "react-multi-select-component";
 import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";

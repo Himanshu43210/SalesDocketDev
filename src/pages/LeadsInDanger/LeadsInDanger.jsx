@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
+import { Button } from "../../components/ui/button";
+import LineBarGraph from "../../components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
 import axios from "axios";
-import Accordion from "@/components/Accordion/Accordion";
-import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";
-import Navbar from "@/components/ui/Navbar";
+import Accordion from "../../components/Accordion/Accordion";
+import StatsCardList from "../../components/LostLeadsComponents/StatsCardList/StatsCardList";
+import Navbar from "../../components/ui/Navbar";
 
 const LeadsInDanger = () => {
   const [sideMenu, setsideMenu] = useState(false);

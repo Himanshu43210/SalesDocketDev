@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import SingleBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
-import DataCard from "@/components/AllLeadsComponents/DataCard";
+import { Button } from "../../components/ui/button";
+import SingleBarGraph from "../../components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
+import DataCard from "../../components/AllLeadsComponents/DataCard";
 import { FaArrowLeft } from "react-icons/fa";
 
 const FollowUpPending = ({ button, setbutton }) => {
