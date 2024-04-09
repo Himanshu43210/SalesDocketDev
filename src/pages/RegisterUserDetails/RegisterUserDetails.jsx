@@ -1,10 +1,7 @@
 import styles from "./RegisterUserDetails.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  IoMdAdd,
-  IoMdSearch,
-} from "react-icons/io";
+import { IoMdAdd, IoMdSearch } from "react-icons/io";
 import { IoRefresh } from "react-icons/io5";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
@@ -14,8 +11,8 @@ import AdminNavbar from "../../components/Admin_Navbar";
 import SideMenu from "../../components/SideMenu";
 import RegisterUserEdit from "../../components/RegisterUserEdit/RegisterUserEdit";
 import { useNavigate } from "react-router-dom";
-import SuccessBox from "@/components/RegisterUser/SuccessBox";
-import LoadingBeatLoader from "@/components/ui/LoadingBeatLoader";
+import SuccessBox from "../../components/RegisterUser/SuccessBox";
+import LoadingBeatLoader from "../../components/ui/LoadingBeatLoader";
 
 const RegisterUserDetails = () => {
   const [data, setData] = useState([]);
@@ -184,7 +181,13 @@ const RegisterUserDetails = () => {
           <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
         </div>
       </div>
-      <SuccessBox sucBox={sucBox} failBox={failBox} errMsg={errMsg} setFailBox={setFailBox} setSucBox={setSucBox}/>
+      <SuccessBox
+        sucBox={sucBox}
+        failBox={failBox}
+        errMsg={errMsg}
+        setFailBox={setFailBox}
+        setSucBox={setSucBox}
+      />
       {confBox && (
         <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
           <div
@@ -208,7 +211,8 @@ const RegisterUserDetails = () => {
               </button>
               <button
                 onClick={() => {
-                  setConfBox(false); setIsTableLoaded(false);
+                  setConfBox(false);
+                  setIsTableLoaded(false);
                 }}
                 className="bg-white text-[#0F172A]"
               >
@@ -218,7 +222,7 @@ const RegisterUserDetails = () => {
           </div>
         </div>
       )}
-      <LoadingBeatLoader isTableLoaded={isTableLoaded}/>
+      <LoadingBeatLoader isTableLoaded={isTableLoaded} />
 
       <div className="m-2 flex flex-col gap-2 items-center w-[100%]">
         <div className="flex gap-2 items-center justify-center outline-none mt-5 w-[100%]">

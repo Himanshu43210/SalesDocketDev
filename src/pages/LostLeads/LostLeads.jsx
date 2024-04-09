@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import LostTo from "@/components/LostLeadsComponents/LostTo/LostTo";
-import LeadSource from "@/components/LostLeadsComponents/LeadSource/LeadSource";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
-import DataTable from "@/components/Table/DataTable";
+import { Button } from "../../components/ui/button";
+import LostTo from "../../components/LostLeadsComponents/LostTo/LostTo";
+import LeadSource from "../../components/LostLeadsComponents/LeadSource/LeadSource";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
+import DataTable from "../../components/Table/DataTable";
 import axios from "axios";
-import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";
-import Navbar from "@/components/ui/Navbar";
+import StatsCardList from "../../components/LostLeadsComponents/StatsCardList/StatsCardList";
+import Navbar from "../../components/ui/Navbar";
 
 const LostLeadsCard = ({ icon, title }) => {
   return (
@@ -69,8 +69,8 @@ const LostLeads = () => {
 
   return (
     <div className="  bg-[#F4F3F9] w-[100%]  ">
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
-      <StatsCardList/>
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
+      <StatsCardList />
       <div className="flex w-[100vw] items-center justify-center mt-[5px]">
         <TableSelection></TableSelection>
       </div>
@@ -78,9 +78,7 @@ const LostLeads = () => {
       <div className="flex flex-wrap gap-2 mx-2 mt-4">
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "lostTo"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "lostTo" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("lostTo")}
         >
@@ -88,9 +86,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === "leadSource"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "leadSource" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("leadSource")}
         >
@@ -98,9 +94,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "month"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "month" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("month")}
         >
@@ -108,9 +102,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "lostmodelown"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "lostmodelown" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("lostmodelown")}
         >
@@ -126,9 +118,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "dealer"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "dealer" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("dealer")}
         >
@@ -136,9 +126,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "city"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "city" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("city")}
         >
@@ -146,9 +134,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "losttomodels"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "losttomodels" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("losttomodels")}
         >
@@ -156,9 +142,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "losttobrand"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "losttobrand" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("losttobrand")}
         >
@@ -166,9 +150,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "reasonscompetition"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "reasonscompetition" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("reasonscompetition")}
         >
@@ -176,9 +158,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "losttocodealer"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "losttocodealer" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("losttocodealer")}
         >
@@ -186,9 +166,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "leadstatus"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "leadstatus" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("leadstatus")}
         >
@@ -196,9 +174,7 @@ const LostLeads = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "reasonscodealer"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "reasonscodealer" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("reasonscodealer")}
         >
@@ -207,9 +183,7 @@ const LostLeads = () => {
 
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "monthwiseenquired"
-              ? lostToStyles
-              : "none"
+            selectedBtn === "monthwiseenquired" ? lostToStyles : "none"
           }  `}
           onClick={() => setSelectedBtn("monthwiseenquired")}
         >

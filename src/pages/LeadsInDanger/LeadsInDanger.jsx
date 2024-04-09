@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
+import { Button } from "../../components/ui/button";
+import LineBarGraph from "../../components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
 import axios from "axios";
-import Accordion from "@/components/Accordion/Accordion";
-import StatsCardList from "@/components/LostLeadsComponents/StatsCardList/StatsCardList";
-import Navbar from "@/components/ui/Navbar";
+import Accordion from "../../components/Accordion/Accordion";
+import StatsCardList from "../../components/LostLeadsComponents/StatsCardList/StatsCardList";
+import Navbar from "../../components/ui/Navbar";
 
 const LeadsInDanger = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -141,9 +141,7 @@ const LeadsInDanger = () => {
       <div className="flex flex-wrap gap-2 mx-2 mt-4">
         <Button
           className={`border-2 hover:bg-white hover:text-black ${
-            selectedBtn === "monthwise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "monthwise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("monthwise")}
         >
@@ -151,9 +149,7 @@ const LeadsInDanger = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "modelwise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "modelwise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("modelwise")}
         >
@@ -161,9 +157,7 @@ const LeadsInDanger = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "rowise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "rowise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("rowise")}
         >
@@ -172,9 +166,7 @@ const LeadsInDanger = () => {
 
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "dealerwise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "dealerwise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("dealerwise")}
         >
@@ -182,9 +174,7 @@ const LeadsInDanger = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "scwise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "scwise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("scwise")}
         >
@@ -192,9 +182,7 @@ const LeadsInDanger = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "citywise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "citywise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("citywise")}
         >
@@ -202,9 +190,7 @@ const LeadsInDanger = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "sourcewise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "sourcewise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("sourcewise")}
         >
@@ -212,9 +198,7 @@ const LeadsInDanger = () => {
         </Button>
         <Button
           className={`border-2 hover:bg-white hover:text-black  ${
-            selectedBtn === "leadstatewise"
-              ? monthwiseStyle
-              : "none"
+            selectedBtn === "leadstatewise" ? monthwiseStyle : "none"
           }  `}
           onClick={() => setSelectedBtn("leadstatewise")}
         >

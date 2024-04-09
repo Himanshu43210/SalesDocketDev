@@ -3,8 +3,8 @@ import User_Logo from "../../assets/User_Logo.jpeg";
 import { MdModeEditOutline } from "react-icons/md";
 import axios from "axios";
 import styles from "./Profile.module.css";
-import LoadingBeatLoader from "@/components/ui/LoadingBeatLoader";
-import Navbar from "@/components/ui/Navbar";
+import LoadingBeatLoader from "../../components/ui/LoadingBeatLoader";
+import Navbar from "../../components/ui/Navbar";
 
 const Profile = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -200,7 +200,6 @@ const Profile = () => {
         setIsTableLoaded(false);
         setErrorMsg("Profile updated successfully");
       } else {
-       
         setIsTableLoaded(false);
         setErrorMsg("Failed to");
       }
@@ -213,8 +212,8 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen  pb-8 bg-[#F5F4F9] ">
-      <LoadingBeatLoader isTableLoaded={isTableLoaded}/>
-      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu}/>
+      <LoadingBeatLoader isTableLoaded={isTableLoaded} />
+      <Navbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
 
       <div
         style={{

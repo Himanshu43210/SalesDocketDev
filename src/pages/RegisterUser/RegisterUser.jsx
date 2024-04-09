@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../../components/Admin_Navbar";
 import SideMenu from "../../components/SideMenu";
 import axios from "axios";
-import SuccessBox from "@/components/RegisterUser/SuccessBox";
+import SuccessBox from "../../components/RegisterUser/SuccessBox";
 
 const RegisterUser = () => {
   const [sideMenu, setsideMenu] = useState(false);
@@ -113,7 +113,13 @@ const RegisterUser = () => {
         <AdminNavbar setsideMenu={setsideMenu} sideMenu={sideMenu} />
         <SideMenu setsideMenu={setsideMenu} sideMenu={sideMenu} />
       </div>
-      <SuccessBox sucBox={sucBox} failBox={failBox} errMsg={errMsg} setFailBox={setFailBox} setSucBox={setSucBox}/>
+      <SuccessBox
+        sucBox={sucBox}
+        failBox={failBox}
+        errMsg={errMsg}
+        setFailBox={setFailBox}
+        setSucBox={setSucBox}
+      />
       <div
         style={{
           boxShadow:
