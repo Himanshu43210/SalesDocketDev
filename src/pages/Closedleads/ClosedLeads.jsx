@@ -1,15 +1,15 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
+import AdminNavbar from "../../components/Admin_Navbar";
+import SideMenu from "../../components/SideMenu";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
+import { Button } from "../../components/ui/button";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
 import { GiSteeringWheel } from "react-icons/gi";
 import { FaCarAlt, FaDatabase } from "react-icons/fa";
 import { IoIosRefresh } from "react-icons/io";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
-import LineBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
+import LineBarGraph from "../../components/common/StatsCard/Graphs/LineBarGraph/LineBarGraph";
 import axios from "axios";
-import Accordion from "@/components/Accordion/Accordion";
+import Accordion from "../../components/Accordion/Accordion";
 
 const Closedleads = () => {
   const [sideMenu, setsideMenu] = useState(false);

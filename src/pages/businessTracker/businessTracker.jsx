@@ -1,16 +1,16 @@
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
+import AdminNavbar from "../../components/Admin_Navbar";
+import SideMenu from "../../components/SideMenu";
 import { useState } from "react";
 import style from "./Business.module.css";
 import { FaSignal } from "react-icons/fa6";
 import { IoChatbubbles, IoServer } from "react-icons/io5";
 import { RiRecycleFill } from "react-icons/ri";
 import { FaDropbox } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
-import BTrackerMonthWiseTable from "@/components/BusninessTracker/BTrackerMonthWiseTable";
-import FilterBT from "@/components/BusninessTracker/FilterBT";
-import ChartComponent from "@/components/BusninessTracker/Chart_BusinessTraker";
+import { Button } from "../../components/ui/button";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
+import BTrackerMonthWiseTable from "../../components/BusninessTracker/BTrackerMonthWiseTable";
+import FilterBT from "../../components/BusninessTracker/FilterBT";
+import ChartComponent from "../../components/BusninessTracker/Chart_BusinessTraker";
 
 function BusinessTracker() {
   const [sideMenu, setsideMenu] = useState(false);

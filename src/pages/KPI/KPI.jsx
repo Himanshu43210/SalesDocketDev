@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import TableSelection from "@/components/Slection_Panel/Tableselection";
-import TableTwokpI from "@/components/kpIPopout/kpiTable2";
-import Popout from "@/components/kpIPopout/kpiPopout";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
+import TableTwokpI from "../../components/kpIPopout/kpiTable2";
+import Popout from "../../components/kpIPopout/kpiPopout";
 import {  useSelector } from 'react-redux';
-import Navbar from "@/components/ui/Navbar";
+import Navbar from "../../components/ui/Navbar";
 
 const KPI = () => {
   const [sideMenu, setsideMenu] = useState(false);

@@ -1,13 +1,13 @@
-import TableSelection from "@/components/Slection_Panel/Tableselection";
-import SingleBarGraph from "@/components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
+import TableSelection from "../../components/Slection_Panel/Tableselection";
+import SingleBarGraph from "../../components/common/StatsCard/Graphs/LineBarGraph/SingleBarGraph";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import BtrendFilter from "@/components/Btrend/Filtertrend";
-import TableDataMapper from "@/components/BusninessTracker/TableDataMapper";
-import Navbar from "@/components/ui/Navbar";
+import BtrendFilter from "../../components/Btrend/Filtertrend";
+import TableDataMapper from "../../components/BusninessTracker/TableDataMapper";
+import Navbar from "../../components/ui/Navbar";
 
 function ModelWise() {
   const selectedBtnDef = "Enquiry Wise";

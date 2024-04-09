@@ -1,9 +1,9 @@
 
 
 import React, { useState } from "react";
-import AdminNavbar from "@/components/Admin_Navbar";
-import SideMenu from "@/components/SideMenu";
-import { Button } from "@/components/ui/button";
+import AdminNavbar from "../../components/Admin_Navbar";
+import SideMenu from "../../components/SideMenu";
+import { Button } from "../../components/ui/button";
 import { Link } from "react-router-dom";
 const BusinessTrend = () => {
   const [sideMenu, setsideMenu] = useState(false);
