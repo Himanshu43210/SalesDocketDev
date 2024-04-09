@@ -16,20 +16,20 @@
     </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\FollowUp\FollowUp.test.js">
     </file>
-    <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\DeliveryAnalysis\DeliveryAnalysis.test.js">
-    </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\Closedleads\ClosedLeads.test.js">
     </file>
+    <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\DeliveryAnalysis\DeliveryAnalysis.test.js">
+    </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\components\SideMenu.test.js">
-        <testCase name="SideMenu component renders without crashing" duration="66"/>
+        <testCase name="SideMenu component renders without crashing" duration="40"/>
     </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\businessTracker\businessTracker.test.js">
-        <testCase name="businessTracker component renders without crashing" duration="145"/>
+        <testCase name="businessTracker component renders without crashing" duration="132"/>
     </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\ActiveLeads\ActiveLeads.test.js">
     </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\login.test.js">
-        <testCase name="login component renders without crashing" duration="139"/>
+        <testCase name="login component renders without crashing" duration="110"/>
     </file>
     <file path="C:\Users\saura\Desktop\SalesDocketDev\src\pages\BookingAnalysis\BookingAnalysis.test.js">
     </file>

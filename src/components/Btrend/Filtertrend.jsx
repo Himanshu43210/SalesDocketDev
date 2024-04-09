@@ -4,7 +4,7 @@ import {
   DialogContent,
   DialogFooter,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Calendar } from "../ui/calendar";
@@ -21,7 +21,7 @@ const BtrendFilter = ({
   selected,
   setSelected,
   open,
-  setOpen
+  setOpen,
 }) => {
   const [calendarOpenFrom, setCalendarOpenFrom] = useState(false);
   const [calendarOpenTo, setCalendarOpenTo] = useState(false);
@@ -34,14 +34,14 @@ const BtrendFilter = ({
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px] lg:min-w-[600px]">
-        <div className="flex items-center justify-between pb-4">
-                            <div className="px-4 py-2 text-white bg-black rounded-lg rounded-bl-lg w-[99%]">
-                                <h1 className="text-xl text-center">Select Filters</h1>
-                            </div>
-                            <button className="text-red-600">
-                                <i className="fas fa-times"></i>
-                            </button>
-                        </div>
+          <div className="flex items-center justify-between pb-4">
+            <div className="px-4 py-2 text-white bg-black rounded-lg rounded-bl-lg w-[99%]">
+              <h1 className="text-xl text-center">Select Filters</h1>
+            </div>
+            <button className="text-red-600">
+              <i className="fas fa-times"></i>
+            </button>
+          </div>
           <div className="flex flex-wrap gap-4">
             <Popover open={calendarOpenFrom} onOpenChange={setCalendarOpenFrom}>
               <PopoverTrigger asChild>

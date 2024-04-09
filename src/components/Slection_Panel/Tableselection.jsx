@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { removeSelectedField } from "@/store/slices/selectedFieldSlice";
+import { Button } from "../../components/ui/button";
+import { removeSelectedField } from "../../store/slices/selectedFieldSlice";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-function TableSelection({setOpen}) {
+function TableSelection({ setOpen }) {
   const [selectedBtn, setSelectedBtn] = useState("");
 
-   console.log(selectedBtn);
+  console.log(selectedBtn);
 
   const dispatch = useDispatch();
   const selectedField = useSelector((state) => state.selectedField);
@@ -23,9 +23,7 @@ function TableSelection({setOpen}) {
 
           <h1 className="text-2xl font-semibold">Selection Panel</h1>
 
-          <Button onClick={() => setOpen(true)}>
-            Select Filter
-          </Button>
+          <Button onClick={() => setOpen(true)}>Select Filter</Button>
         </div>
         <div className="rounded-md ">
           <table className="border-2 w-full  border-[#0F172A]">

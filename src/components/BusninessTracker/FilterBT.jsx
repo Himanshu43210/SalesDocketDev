@@ -3,134 +3,128 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { Button } from "../ui/button";
 import { MultiSelect } from "react-multi-select-component";
-import { setSelectedField } from "@/store/slices/selectedFieldSlice";
+import { setSelectedField } from "../../store/slices/selectedFieldSlice";
 import { useDispatch } from "react-redux";
 
 const FilterBT = ({
-    MonthOptions,
+  MonthOptions,
   ModelOptions,
   CityOptions,
   ROOptions,
   dealerOptions,
   open,
-  setOpen
-  }) => {
-
-
+  setOpen,
+}) => {
   const dispatch = useDispatch();
   const [selected, setSelected] = useState({
-    Dealer:{
-        tableName:"Dealer_Selection",
-        fieldName:"organization_name",
-        value:[]
+    Dealer: {
+      tableName: "Dealer_Selection",
+      fieldName: "organization_name",
+      value: [],
     },
-    RO:{
-        tableName:"RO_Selection",
-        fieldName:"RO_Name",
-        value:[]
+    RO: {
+      tableName: "RO_Selection",
+      fieldName: "RO_Name",
+      value: [],
     },
-    City:{
-        tableName:"City_Selection",
-        fieldName:"city_Name",
-        value:[]
+    City: {
+      tableName: "City_Selection",
+      fieldName: "city_Name",
+      value: [],
     },
-    Month:{
-        tableName:"Month Selection",
-        fieldName:"epr_monthname",
-        value:[]
+    Month: {
+      tableName: "Month Selection",
+      fieldName: "epr_monthname",
+      value: [],
     },
-    Model:{
-        tableName:"Model Selection",
-        fieldName:"product_name",
-        value:[]
-    }
-});
+    Model: {
+      tableName: "Model Selection",
+      fieldName: "product_name",
+      value: [],
+    },
+  });
 
-const [dealer,setDealer]=useState([])
-const [RO,setRO]=useState([])
-const [City,setcity]=useState([])
-const [Model,setModel]=useState([])
-const [Month,setMonth]=useState([])
+  const [dealer, setDealer] = useState([]);
+  const [RO, setRO] = useState([]);
+  const [City, setcity] = useState([]);
+  const [Model, setModel] = useState([]);
+  const [Month, setMonth] = useState([]);
 
   const handleChange = (additionalInfo) => (selectedOptions) => {
-    console.log(selectedOptions)
-    const selectedValues = selectedOptions.map(option => option.value);
+    console.log(selectedOptions);
+    const selectedValues = selectedOptions.map((option) => option.value);
 
-    if(additionalInfo === "Dealer"){
-        setDealer(selectedOptions)
-        setSelected(prevState => ({
-            ...prevState,
-            Dealer: {
-              ...prevState.Dealer,
-              value: selectedValues
-            }
-          }))
-    }
-    else if(additionalInfo === "RO"){
-        setRO(selectedOptions)
-        setSelected(prevState => ({
-            ...prevState,
-           RO: {
-              ...prevState.RO,
-              value: selectedValues
-            }
-          }))
-    }
-    else if(additionalInfo === "City"){
-        setcity(selectedOptions)
-        setSelected(prevState => ({
-            ...prevState,
-           City: {
-              ...prevState.City,
-              value: selectedValues
-            }
-          }))
-    }
-    else if(additionalInfo === "Model"){
-        setModel(selectedOptions)
-        setSelected(prevState => ({
-            ...prevState,
-            Model: {
-              ...prevState.Model,
-              value: selectedValues
-            }
-          }))
-    }
-    else if(additionalInfo === "Month"){
-        setMonth(selectedOptions)
-        setSelected(prevState => ({
-            ...prevState,
-            Month: {
-              ...prevState.Month,
-              value: selectedValues
-            }
-          }))
+    if (additionalInfo === "Dealer") {
+      setDealer(selectedOptions);
+      setSelected((prevState) => ({
+        ...prevState,
+        Dealer: {
+          ...prevState.Dealer,
+          value: selectedValues,
+        },
+      }));
+    } else if (additionalInfo === "RO") {
+      setRO(selectedOptions);
+      setSelected((prevState) => ({
+        ...prevState,
+        RO: {
+          ...prevState.RO,
+          value: selectedValues,
+        },
+      }));
+    } else if (additionalInfo === "City") {
+      setcity(selectedOptions);
+      setSelected((prevState) => ({
+        ...prevState,
+        City: {
+          ...prevState.City,
+          value: selectedValues,
+        },
+      }));
+    } else if (additionalInfo === "Model") {
+      setModel(selectedOptions);
+      setSelected((prevState) => ({
+        ...prevState,
+        Model: {
+          ...prevState.Model,
+          value: selectedValues,
+        },
+      }));
+    } else if (additionalInfo === "Month") {
+      setMonth(selectedOptions);
+      setSelected((prevState) => ({
+        ...prevState,
+        Month: {
+          ...prevState.Month,
+          value: selectedValues,
+        },
+      }));
     }
     console.log(additionalInfo);
   };
 
-  const HanldeSubmit=()=>{
-    setOpen(false)
+  const HanldeSubmit = () => {
+    setOpen(false);
 
-      if (dealer.length > 0) {
-        dispatch(setSelectedField(selected.Dealer));
-      }
-      if (RO.length > 0) {
-        dispatch(setSelectedField(selected.RO));
-      }
-      if (City.length > 0) {
-        dispatch(setSelectedField(selected.City));
-      }
-      if (Model.length > 0) {
-        dispatch(setSelectedField(selected.Model));
-      }
-      if (Month.length > 0) {
-        dispatch(setSelectedField(selected.Month));
-      }
-  }
+    if (dealer.length > 0) {
+      dispatch(setSelectedField(selected.Dealer));
+    }
+    if (RO.length > 0) {
+      dispatch(setSelectedField(selected.RO));
+    }
+    if (City.length > 0) {
+      dispatch(setSelectedField(selected.City));
+    }
+    if (Model.length > 0) {
+      dispatch(setSelectedField(selected.Model));
+    }
+    if (Month.length > 0) {
+      dispatch(setSelectedField(selected.Month));
+    }
+  };
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
@@ -144,13 +138,13 @@ const [Month,setMonth]=useState([])
             <DialogTitle>Select Filters</DialogTitle>
           </DialogHeader> */}
           <div className="flex items-center justify-between pb-4">
-                            <div className="px-4 py-2 text-white bg-black rounded-lg rounded-bl-lg w-[99%]">
-                                <h1 className="text-xl text-center">Select Filters</h1>
-                            </div>
-                            <button className="text-red-600">
-                                <i className="fas fa-times"></i>
-                            </button>
-                        </div>
+            <div className="px-4 py-2 text-white bg-black rounded-lg rounded-bl-lg w-[99%]">
+              <h1 className="text-xl text-center">Select Filters</h1>
+            </div>
+            <button className="text-red-600">
+              <i className="fas fa-times"></i>
+            </button>
+          </div>
           <div className="flex flex-wrap gap-2">
             <div className="w-[44%]">
               <p>Dealer</p>
@@ -199,7 +193,7 @@ const [Month,setMonth]=useState([])
             </div>
           </div>
           <DialogFooter>
-            <Button onClick={ HanldeSubmit} type="submit">
+            <Button onClick={HanldeSubmit} type="submit">
               Generate
             </Button>
           </DialogFooter>
