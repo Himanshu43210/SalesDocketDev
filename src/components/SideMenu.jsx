@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { setName } from '../store/slices/kpireducer';
+import { useDispatch } from "react-redux";
+import { setName } from "../store/slices/kpireducer";
 
 function SideMenu({ setsideMenu, sideMenu }) {
   const navigate = useNavigate();
@@ -11,15 +11,15 @@ function SideMenu({ setsideMenu, sideMenu }) {
     navigate("/");
   };
 
-  const handleProfile = () => {
-    setsideMenu(!sideMenu);
-    navigate("/profile");
-  };
+  // const handleProfile = () => {
+  //   setsideMenu(!sideMenu);
+  //   navigate("/profile");
+  // };
 
-  const handleRegister = () => {
-    setsideMenu(!sideMenu);
-    navigate("/registeruser");
-  };
+  // const handleRegister = () => {
+  //   setsideMenu(!sideMenu);
+  //   navigate("/registeruser");
+  // };
 
   const handleLostLeads = () => {
     setsideMenu(!sideMenu);
@@ -159,7 +159,7 @@ function SideMenu({ setsideMenu, sideMenu }) {
           >
             KPI Follow
           </li>
-          <li
+          {/* <li
             className="text-[20px] font-[300] cursor-pointer mb-[2vh]"
             onClick={handleProfile}
           >
@@ -171,7 +171,7 @@ function SideMenu({ setsideMenu, sideMenu }) {
             onClick={handleRegister}
           >
             Register User
-          </li>
+          </li> */}
         </ul>
       </div>
     </>
