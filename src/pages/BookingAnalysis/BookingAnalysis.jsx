@@ -59,14 +59,21 @@ const BookingAnalysis = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("https://api.npoint.io/e5821b0e062ec043f23e")
-      .then((res) => {
-        setTablesData(res.data?.BookingAnalysis);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'http://127.0.0.1:8000/booking/sp',
+      headers: { }
+    };
+    
+    axios.request(config)
+    .then((res) => {
+      console.log(res.data);
+      setTablesData(res.data?.BookingAnalysis);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
     const initialAccordionStates = tablesData.map(() => false);
     setAccordionStates(initialAccordionStates);
