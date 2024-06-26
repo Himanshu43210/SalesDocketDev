@@ -8,7 +8,7 @@ function SideMenu({ setsideMenu, sideMenu }) {
 
   const handleHome = () => {
     setsideMenu(!sideMenu);
-    navigate("/");
+    navigate("/home");
   };
 
   // const handleProfile = () => {

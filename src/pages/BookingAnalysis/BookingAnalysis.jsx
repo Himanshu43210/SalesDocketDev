@@ -59,11 +59,15 @@ const BookingAnalysis = () => {
   };
 
   useEffect(() => {
+    const userToken = sessionStorage.getItem("authToken");
     const config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'http://127.0.0.1:8000/booking/sp',
-      headers: { }
+      url: `${import.meta.env.VITE_REACT_APP_ENDPOINT}/booking/sp`,
+      headers: {
+        Authorization: userToken,
+        "Content-Type": "application/json",
+      }
     };
     
     axios.request(config)

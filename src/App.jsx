@@ -15,19 +15,27 @@ import FollowUp from "./pages/FollowUp/FollowUp";
 import BusinessTrend from "./pages/BusinessTrend/BusinessTrend";
 import DealerWise from "./pages/BusinessTrend/DealerWise";
 import ModelWise from "./pages/BusinessTrend/ModelWise";
+import Login from "./pages/Login/Login";
+import PasswordReset from "./pages/PasswordReset/PasswordReset";
+import CompanyListing from "./pages/CompanyListing/CompanyListing";
+import BranchListing from "./pages/BranchListing/BranchListing";
+import BranchDetails from "./pages/BranchDetails/BranchDetails";
+import CompanyDetails from "./pages/CompanyDetails/CompanyDetails";
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Login />}></Route> */}
-          <Route path="/" element={<ActiveLeads />}></Route>
-          <Route path="/registeruser" element={<RegisterUser />}></Route>
-          <Route
-            path="/registeruserdetails"
-            element={<RegisterUserDetails />}
-          ></Route>
-
+          <Route path="/home" element={<ActiveLeads />}></Route>
+          <Route path="/" element={<Login/>}></Route>
+          <Route path="/passReset" element={<PasswordReset/>}></Route>
+          <Route path="/register" element={<RegisterUser/>}></Route>
+          <Route path="/userDetails" element={<RegisterUserDetails/>}></Route>
+          <Route path="/companylisting" element={<CompanyListing/>}></Route>
+          <Route path="/companyDetails" element={<CompanyDetails/>}></Route>
+          <Route path="/branchlisting" element={<BranchListing/>}></Route>
+          <Route path="/branchDetails" element={<BranchDetails/>}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/lostleads" element={<LostLeads />}></Route>
           <Route path="/businessTra" element={<BusinessTra />}></Route>
